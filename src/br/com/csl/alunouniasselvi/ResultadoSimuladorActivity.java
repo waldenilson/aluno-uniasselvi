@@ -12,7 +12,7 @@ import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.Menu;
 import android.view.View;
 
-public class MainActivity extends Activity implements IActivity {
+public class ResultadoSimuladorActivity extends Activity implements IActivity {
 
     private ProgressDialog pd;
 	private GlobalController control = new GlobalController();
@@ -20,7 +20,7 @@ public class MainActivity extends Activity implements IActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_resultado_simulador);
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
 	}
@@ -36,11 +36,6 @@ public class MainActivity extends Activity implements IActivity {
 		return true;
 	}
 	
-	public void bt_simulador_notas(View v){
-		
-		
-	}
-
 	@Override
 	public void click_bt_bar_back(View v) {
 		// TODO Auto-generated method stub

@@ -12,7 +12,7 @@ import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.Menu;
 import android.view.View;
 
-public class MainActivity extends Activity implements IActivity {
+public class SimuladorNotasActivity extends Activity implements IActivity {
 
     private ProgressDialog pd;
 	private GlobalController control = new GlobalController();
@@ -20,7 +20,7 @@ public class MainActivity extends Activity implements IActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_simulador_notas);
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
 	}
@@ -36,7 +36,39 @@ public class MainActivity extends Activity implements IActivity {
 		return true;
 	}
 	
-	public void bt_simulador_notas(View v){
+	public void bt_simular(View v){
+		
+		
+		final double p1=1.0,p2=1.0,p3=3.2,p4=4.8;
+		double redacao,res;
+		List<String> mensagens = new ArrayList<String>(); 
+		
+		double peso = p1+p2+p3+p4;
+		
+		redacao = 10/(p1*peso);
+		
+		int pos = 0;
+		
+		for (int x=0; x<=10;x++)
+		{
+			
+			for ( int y=0; y<=15;y++)
+			{
+				for ( int z=1; z<=3; z++)
+				{
+					res = redacao + (x/(p1*peso)) + (y*(p3/15)) + (z*(p4/3));
+					if(res>6.6 && res<=6.7)
+					{
+						pos++;
+						mensagens.add("Acertando "+x+" na 1ª objetiva, "+y+" na objetiva final e "+z+" na discursiva.");
+						//System.out.println("Acertando "+x+" na 2ª semana, "+y+" na objetiva final e "+z+" na discursiva, voce passa. nota: "+res);					
+						break;
+					}	
+				}
+				
+			}
+		}
+
 		
 		
 	}
