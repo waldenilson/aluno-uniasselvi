@@ -20,21 +20,8 @@ public class GlobalController implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private String keyAccess = "chave";
-	private String nomeUsuario;
-	private Integer regiao;
-	private Integer servico;
-	private Integer estabelecimento;
-	private Integer categoria;
-	
-	private String urlImgAreas;
-	private String urlImgModulos;
-	private String jsonArrayAreas,jsonArrayModulos,jsonArrayRelatorios,jsonArrayDadosRelatorio,
-					jsonArrayContasBancarias;
-	
-	public GlobalController()
-	{
-		setUrlImgAreas("http://187.33.1.93/e-cidade/imagens/files/area/");
-		setUrlImgModulos("http://187.33.1.93/e-cidade/imagens/modulos/");
+		
+	public GlobalController(){
 	}
 
 	public Bitmap getBitmapFromURL(String src) {
@@ -84,101 +71,5 @@ public class GlobalController implements Serializable {
 
 	public void setKeyAccess(String keyAccess) {
 		this.keyAccess = keyAccess;
-	}
-	
-	public String getNomeUsuario() {
-		return nomeUsuario;
-	}
-
-	public void setNomeUsuario(String nomeUsuario) {
-		this.nomeUsuario = nomeUsuario;
-	}
-
-	public String getJsonArrayAreas() {
-		return jsonArrayAreas;
-	}
-
-	public void setJsonArrayAreas(String jsonArrayAreas) {
-		this.jsonArrayAreas = jsonArrayAreas;
-	}
-
-	public String getJsonArrayModulos() {
-		return jsonArrayModulos;
-	}
-
-	public void setJsonArrayModulos(String jsonArrayModulos) {
-		this.jsonArrayModulos = jsonArrayModulos;
-	}
-
-	public String getJsonArrayRelatorios() {
-		return jsonArrayRelatorios;
-	}
-
-	public void setJsonArrayRelatorios(String jsonArrayRelatorios) {
-		this.jsonArrayRelatorios = jsonArrayRelatorios;
-	}
-
-	public String getUrlImgAreas() {
-		return urlImgAreas;
-	}
-
-	public void setUrlImgAreas(String urlImgAreas) {
-		this.urlImgAreas = urlImgAreas;
-	}
-
-	public String getUrlImgModulos() {
-		return urlImgModulos;
-	}
-
-	public void setUrlImgModulos(String urlImgModulos) {
-		this.urlImgModulos = urlImgModulos;
-	}
-
-	public String getJsonArrayDadosRelatorio() {
-		return jsonArrayDadosRelatorio;
-	}
-
-	public void setJsonArrayDadosRelatorio(String jsonArrayDadosRelatorio) {
-		this.jsonArrayDadosRelatorio = jsonArrayDadosRelatorio;
-	}
-
-	public String getJsonArrayContasBancarias() {
-		return jsonArrayContasBancarias;
-	}
-
-	public void setJsonArrayContasBancarias(String jsonArrayContasBancarias) {
-		this.jsonArrayContasBancarias = jsonArrayContasBancarias;
-	}
-
-	public Integer getRegiao() {
-		return regiao;
-	}
-
-	public void setRegiao(Integer regiao) {
-		this.regiao = regiao;
-	}
-
-	public Integer getServico() {
-		return servico;
-	}
-
-	public void setServico(Integer servico) {
-		this.servico = servico;
-	}
-
-	public Integer getEstabelecimento() {
-		return estabelecimento;
-	}
-
-	public void setEstabelecimento(Integer estabelecimento) {
-		this.estabelecimento = estabelecimento;
-	}
-
-	public Integer getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(Integer categoria) {
-		this.categoria = categoria;
-	} 
+	}	
 }

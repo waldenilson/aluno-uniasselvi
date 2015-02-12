@@ -11,6 +11,7 @@ import android.app.ProgressDialog;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Toast;
 
 public class SimuladorNotasActivity extends Activity implements IActivity {
 
@@ -69,7 +70,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity {
 			}
 		}
 
-		
+		Toast.makeText(this, "Possibilidades: "+pos, Toast.LENGTH_LONG).show();
 		
 	}
 

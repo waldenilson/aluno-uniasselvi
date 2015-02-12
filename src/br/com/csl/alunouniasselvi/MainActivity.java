@@ -1,13 +1,10 @@
 package br.com.csl.alunouniasselvi;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import br.com.csl.alunouniasselvi.abstractactivity.IActivity;
-import br.com.csl.alunouniasselvi.controller.GlobalController;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.Menu;
 import android.view.View;
@@ -15,7 +12,6 @@ import android.view.View;
 public class MainActivity extends Activity implements IActivity {
 
     private ProgressDialog pd;
-	private GlobalController control = new GlobalController();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +33,8 @@ public class MainActivity extends Activity implements IActivity {
 	}
 	
 	public void bt_simulador_notas(View v){
-		
-		
+		Intent data = new Intent(this, SimuladorNotasActivity.class);
+		startActivityForResult(data,1);		
 	}
 
 	@Override
@@ -69,7 +65,6 @@ public class MainActivity extends Activity implements IActivity {
 	@Override
 	public void finish() 
 	{
-		getIntent().putExtra("control", control);
 		setResult(1, getIntent());
 		super.finish();
 	}

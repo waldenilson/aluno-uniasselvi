@@ -23,23 +23,18 @@
             android:gravity="center_vertical"
             android:orientation="vertical" >
 
-	        <Button
-	            android:id="@+id/button1"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 	            android:layout_marginLeft="10dp"
 	            android:layout_marginRight="10dp"
-	            android:onClick="bt_simulador_notas"
-	            android:text="@string/lb_simulador_notas" />
-	
-	        <Button
-	            android:id="@+id/button2"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_marginLeft="10dp"
-	            android:layout_marginRight="10dp"
-	            android:layout_marginTop="50dp"
-	            android:text="@string/lb_seminarios" />
+				android:hint="@string/lb_nota_redacao"
+                android:ems="10"
+                android:inputType="numberDecimal" >
+
+                <requestFocus />
+            </EditText>
 	
 	        <Button
 	            android:id="@+id/button3"
@@ -48,7 +43,8 @@
 	            android:layout_marginLeft="10dp"
 	            android:layout_marginRight="10dp"
 	            android:layout_marginTop="50dp"
-	            android:text="@string/lb_creditos" />
+	            android:onClick="bt_simular"
+	            android:text="@string/lb_simular" />
                     
         </LinearLayout>
 

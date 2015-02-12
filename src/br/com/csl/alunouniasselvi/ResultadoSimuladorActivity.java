@@ -1,8 +1,5 @@
 package br.com.csl.alunouniasselvi;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import br.com.csl.alunouniasselvi.abstractactivity.IActivity;
 import br.com.csl.alunouniasselvi.controller.GlobalController;
 import android.os.Bundle;

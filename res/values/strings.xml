@@ -10,4 +10,7 @@
     <string name="lb_seminarios">Meus Seminários Interdisciplinares</string>
     <string name="lb_creditos">Créditos</string>
     
+    <string name="lb_nota_redacao">Nota da Redação</string>
+    <string name="lb_simular">Simular</string>
+    
 </resources>
