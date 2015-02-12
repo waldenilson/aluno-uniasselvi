@@ -6,4 +6,8 @@
     <string name="menu_settings">Settings</string>
     <string name="ale_buscando_dados">Buscando Dados. . .</string>
     
+    <string name="lb_simulador_notas">Simulador de Notas Finais</string>
+    <string name="lb_seminarios">Meus Seminários Interdisciplinares</string>
+    <string name="lb_creditos">Créditos</string>
+    
 </resources>
