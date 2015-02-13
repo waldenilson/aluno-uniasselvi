@@ -49,7 +49,7 @@
                 android:layout_marginRight="10dp"
                 android:ems="10"
                 android:hint="@string/lb_nota_redacao"
-                android:inputType="numberDecimal" />
+                android:inputType="number" />
 	
 	        <Button
 	            android:id="@+id/button3"

@@ -51,6 +51,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 		
 		final double p1=1.0,p2=1.0,p3=3.2,p4=4.8;
 		double redacao,res;
+		int nota2;
 		List<String> mensagens = new ArrayList<String>(); 
 		
 		if ( etredacao.getText().toString().equals("") || etredacao.getText().toString().equals(".") ) 
@@ -68,23 +69,50 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 			
 			int pos = 0;
 			
-			for (int x=0; x<=10;x++)
+			if( !etnota2.isShown() )
 			{
-				
-				for ( int y=0; y<=15;y++)
+				for (int x=0; x<=10;x++)
 				{
-					for ( int z=1; z<=3; z++)
+					for ( int y=0; y<=15;y++)
 					{
-						res = redacao + (x/(p1*peso)) + (y*(p3/15)) + (z*(p4/3));
-						if(res>6.6 && res<=6.7)
+						for ( int z=1; z<=3; z++)
 						{
-							pos++;
-							mensagens.add("Acertando "+x+" na 1ª objetiva, "+y+" na objetiva final e "+z+" na discursiva.");
-							//System.out.println("Acertando "+x+" na 2ª semana, "+y+" na objetiva final e "+z+" na discursiva, voce passa. nota: "+res);					
-							break;
-						}	
+							res = redacao + (x/(p1*peso)) + (y*(p3/15)) + (z*(p4/3));
+							if(res>6.6 && res<=6.7)
+							{
+								pos++;
+								mensagens.add("Acertando "+x+" na 1ª objetiva, "+y+" na objetiva final e "+z+" na discursiva.");
+								//System.out.println("Acertando "+x+" na 2ª semana, "+y+" na objetiva final e "+z+" na discursiva, voce passa. nota: "+res);					
+								break;
+							}	
+						}						
 					}
+				}
+			}
+			else
+			{
+				if ( etnota2.getText().toString().equals("") ) 
+				{
+					Toast.makeText(this, "Informe a nota da 2ª prova", Toast.LENGTH_LONG).show();			
+				}
+				else
+				{
+					nota2 = Integer.parseInt( etnota2.getText().toString() );
 					
+					for ( int y=0; y<=15;y++)
+					{
+						for ( int z=1; z<=3; z++)
+						{
+							res = redacao + (nota2/(p1*peso)) + (y*(p3/15)) + (z*(p4/3));
+							if(res>6.6 && res<=7.0)
+							{
+								pos++;
+								mensagens.add("Acertando "+y+" na objetiva final e "+z+" na discursiva.");
+								//System.out.println("Acertando "+x+" na 2ª semana, "+y+" na objetiva final e "+z+" na discursiva, voce passa. nota: "+res);					
+								break;
+							}	
+						}						
+					}				
 				}
 			}
 	
