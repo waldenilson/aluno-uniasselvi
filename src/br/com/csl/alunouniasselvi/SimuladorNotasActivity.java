@@ -7,6 +7,7 @@ import br.com.csl.alunouniasselvi.controller.GlobalController;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.Menu;
 import android.view.View;
@@ -70,7 +71,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 		
 		final double p1=1.0,p2=1.0,p3=3.2,p4=4.8;
 		double redacao,res;
-		int nota2;
+		int nota2 = 0;
 		List<String> mensagens = new ArrayList<String>(); 
 		
 		if ( etredacao.getText().toString().equals("") || etredacao.getText().toString().equals(".") ) 
@@ -107,6 +108,15 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 						}						
 					}
 				}
+				if ( pos > 0)
+				{
+					Intent data = new Intent(this, ResultadoSimuladorActivity.class);
+					data.putExtra("redacao", redacao);
+					data.putExtra("2nota", nota2);
+					data.putExtra("possibilidades", mensagens.toString());
+					data.putExtra("total", pos);
+					startActivityForResult(data,1);		
+				}
 			}
 			else
 			{
@@ -131,11 +141,18 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 								break;
 							}	
 						}						
-					}				
+					}
+					if ( pos > 0)
+					{
+						Intent data = new Intent(this, ResultadoSimuladorActivity.class);
+						data.putExtra("redacao", redacao);
+						data.putExtra("2nota", nota2);
+						data.putExtra("possibilidades", mensagens.toString());
+						data.putExtra("total", pos);
+						startActivityForResult(data,1);		
+					}
 				}
-			}
-	
-			Toast.makeText(this, "Possibilidades: "+pos, Toast.LENGTH_LONG).show();
+			}			
 		}
 		
 	}

@@ -22,24 +22,6 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:orientation="vertical" >
-
-	        <Button
-	            android:id="@+id/button1"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_marginLeft="10dp"
-	            android:layout_marginRight="10dp"
-	            android:onClick="bt_simulador_notas"
-	            android:text="@string/lb_simulador_notas" />
-	
-	        <Button
-	            android:id="@+id/button2"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_marginLeft="10dp"
-	            android:layout_marginRight="10dp"
-	            android:layout_marginTop="50dp"
-	            android:text="@string/lb_seminarios" />
 	
 	        <Button
 	            android:id="@+id/button3"
@@ -48,7 +30,7 @@
 	            android:layout_marginLeft="10dp"
 	            android:layout_marginRight="10dp"
 	            android:layout_marginTop="50dp"
-	            android:text="@string/lb_creditos" />
+	            android:text="Voltar" />
                     
         </LinearLayout>
 
