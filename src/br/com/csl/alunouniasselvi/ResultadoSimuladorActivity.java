@@ -76,10 +76,13 @@ public class ResultadoSimuladorActivity extends Activity implements IActivity {
 				pd.dismiss();		
 	}
 
+	public void voltar(View v){
+		finish();
+	}
+	
 	@Override
 	public void finish() 
 	{
-		getIntent().putExtra("control", control);
 		setResult(1, getIntent());
 		super.finish();
 	}
