@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -24,6 +25,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 	private EditText etredacao;
 	private Spinner spnota2;
 	private CheckBox cbnota2;
+	private ArrayAdapter<String> aa;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,21 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
 		cbnota2.setOnCheckedChangeListener(this);
+		aa = new ArrayAdapter<String>(this, R.layout.spinner_item);
+		aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spnota2.setAdapter(aa);
+		aa.add("0");
+		aa.add("1");
+		aa.add("2");
+		aa.add("3");
+		aa.add("4");
+		aa.add("5");
+		aa.add("6");
+		aa.add("7");
+		aa.add("8");
+		aa.add("9");
+		aa.add("10");
+		
 		spnota2.setVisibility(View.INVISIBLE);
 	}
 
@@ -160,9 +177,9 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 	public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
 		// TODO Auto-generated method stub
 		if( arg0.getId() == cbnota2.getId() )
-			if (arg1)
+			if (arg1){
 				spnota2.setVisibility(View.VISIBLE);
-			else
+			}else
 				spnota2.setVisibility(View.INVISIBLE);
 	}
 
