@@ -24,17 +24,32 @@
             android:orientation="vertical" >
 
             <EditText
-                android:id="@+id/editText1"
+                android:id="@+id/et_redacao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-	            android:layout_marginLeft="10dp"
-	            android:layout_marginRight="10dp"
-				android:hint="@string/lb_nota_redacao"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:ems="10"
-                android:inputType="numberDecimal" >
+                android:hint="@string/lb_nota_redacao"
+                android:inputType="numberDecimal" />
 
-                <requestFocus />
-            </EditText>
+            <CheckBox
+                android:id="@+id/cb_2nota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+	            android:layout_marginRight="10dp"
+				android:text="CheckBox" />
+
+            <EditText
+                android:id="@+id/et_2nota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:ems="10"
+                android:hint="@string/lb_nota_redacao"
+                android:inputType="numberDecimal" />
 	
 	        <Button
 	            android:id="@+id/button3"
