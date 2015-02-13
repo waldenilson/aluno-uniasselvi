@@ -129,7 +129,11 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 	@Override
 	public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
 		// TODO Auto-generated method stub
-		Toast.makeText(this, ""+arg1, Toast.LENGTH_LONG).show();
+		if( arg0.getId() == cbnota2.getId() )
+			if (arg1)
+				etnota2.setVisibility(View.VISIBLE);
+			else
+				etnota2.setVisibility(View.INVISIBLE);
 	}
 
 }
