@@ -4,7 +4,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import br.com.csl.alunouniasselvi.abstractactivity.IActivity;
-import br.com.csl.alunouniasselvi.controller.GlobalController;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -16,7 +15,6 @@ import android.widget.TextView;
 public class ResultadoSimuladorActivity extends Activity implements IActivity {
 
     private ProgressDialog pd;
-	private GlobalController control = new GlobalController();
 	private TextView tvlistaresultado;
 	
 	@Override

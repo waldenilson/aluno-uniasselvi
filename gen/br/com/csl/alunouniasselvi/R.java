@@ -40,10 +40,12 @@ public final class R {
         public static final int app_name=0x7f040000;
         public static final int hello_world=0x7f040001;
         public static final int lb_creditos=0x7f040006;
-        public static final int lb_nota_redacao=0x7f040007;
-        public static final int lb_seminarios=0x7f040005;
+        public static final int lb_marcar_nota2=0x7f040008;
+        public static final int lb_nota_redacao=0x7f040009;
+        public static final int lb_novidades=0x7f040005;
         public static final int lb_simulador_notas=0x7f040004;
-        public static final int lb_simular=0x7f040008;
+        public static final int lb_simular=0x7f04000a;
+        public static final int lb_voltar=0x7f040007;
         public static final int menu_settings=0x7f040002;
     }
     public static final class style {

@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
 	            android:layout_marginRight="10dp"
-				android:text="CheckBox" />
+				android:text="@string/lb_marcar_nota2" />
 
             <Spinner
                 android:id="@+id/sp_2nota"

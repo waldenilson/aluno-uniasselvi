@@ -39,7 +39,7 @@
 	            android:layout_marginRight="10dp"
 	            android:layout_marginTop="50dp"
 	            android:onClick="voltar"
-	            android:text="Voltar" />
+	            android:text="@string/lb_voltar" />
                     
         </LinearLayout>
 

@@ -7,10 +7,12 @@
     <string name="ale_buscando_dados">Buscando Dados. . .</string>
     
     <string name="lb_simulador_notas">Simulador de Notas Finais</string>
-    <string name="lb_seminarios">Meus Seminários Interdisciplinares</string>
+    <string name="lb_novidades">Novidades</string>
     <string name="lb_creditos">Créditos</string>
+    <string name="lb_voltar">VOLTAR</string>
+    <string name="lb_marcar_nota2">Marque para informar a nota da 2ª prova.</string>
     
     <string name="lb_nota_redacao">Nota da Redação</string>
-    <string name="lb_simular">Simular</string>
+    <string name="lb_simular">SIMULAR</string>
     
 </resources>
