@@ -2,7 +2,6 @@ package br.com.csl.alunouniasselvi;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import br.com.csl.alunouniasselvi.abstractactivity.IActivity;
 import br.com.csl.alunouniasselvi.controller.GlobalController;
 import android.os.Bundle;
@@ -11,15 +10,16 @@ import android.app.ProgressDialog;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.Menu;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class SimuladorNotasActivity extends Activity implements IActivity {
 
     private ProgressDialog pd;
 	private GlobalController control = new GlobalController();
-	private EditText etredacao;
+	private EditText etredacao, etnota2;
+	private CheckBox cbnota2;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +27,13 @@ public class SimuladorNotasActivity extends Activity implements IActivity {
 		setContentView(R.layout.activity_simulador_notas);
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
+		etnota2.setVisibility(View.INVISIBLE);
 	}
 
-	private void init(){
+	private void init() {
 		etredacao = (EditText) findViewById( R.id.et_redacao );
+		etnota2 = (EditText) findViewById(R.id.et_2nota);
+		cbnota2 = (CheckBox) findViewById(R.id.cb_2nota);
 	}
 
 	@Override
