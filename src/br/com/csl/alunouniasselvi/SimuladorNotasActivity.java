@@ -14,13 +14,15 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class SimuladorNotasActivity extends Activity implements IActivity, OnCheckedChangeListener {
 
     private ProgressDialog pd;
 	private GlobalController control = new GlobalController();
-	private EditText etredacao, etnota2;
+	private EditText etredacao;
+	private Spinner spnota2;
 	private CheckBox cbnota2;
 	
 	@Override
@@ -30,12 +32,12 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
 		cbnota2.setOnCheckedChangeListener(this);
-		etnota2.setVisibility(View.INVISIBLE);
+		spnota2.setVisibility(View.INVISIBLE);
 	}
 
 	private void init() {
 		etredacao = (EditText) findViewById( R.id.et_redacao );
-		etnota2 = (EditText) findViewById(R.id.et_2nota);
+		spnota2 = (Spinner) findViewById(R.id.sp_2nota);
 		cbnota2 = (CheckBox) findViewById(R.id.cb_2nota);
 	}
 
@@ -69,7 +71,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 			
 			int pos = 0;
 			
-			if( !etnota2.isShown() )
+			if( !spnota2.isShown() )
 			{
 				for (int x=0; x<=10;x++)
 				{
@@ -91,13 +93,13 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 			}
 			else
 			{
-				if ( etnota2.getText().toString().equals("") ) 
+				if ( spnota2.getSelectedItem().toString().equals("") ) 
 				{
 					Toast.makeText(this, "Informe a nota da 2ª prova", Toast.LENGTH_LONG).show();			
 				}
 				else
 				{
-					nota2 = Integer.parseInt( etnota2.getText().toString() );
+					nota2 = Integer.parseInt( spnota2.getSelectedItem().toString() );
 					
 					for ( int y=0; y<=15;y++)
 					{
@@ -159,9 +161,9 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 		// TODO Auto-generated method stub
 		if( arg0.getId() == cbnota2.getId() )
 			if (arg1)
-				etnota2.setVisibility(View.VISIBLE);
+				spnota2.setVisibility(View.VISIBLE);
 			else
-				etnota2.setVisibility(View.INVISIBLE);
+				spnota2.setVisibility(View.INVISIBLE);
 	}
 
 }

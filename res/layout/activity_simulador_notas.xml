@@ -41,15 +41,12 @@
 	            android:layout_marginRight="10dp"
 				android:text="CheckBox" />
 
-            <EditText
-                android:id="@+id/et_2nota"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <Spinner
+                android:id="@+id/sp_2nota"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:ems="10"
-                android:hint="@string/lb_nota_redacao"
-                android:inputType="number" />
+	            android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 	
 	        <Button
 	            android:id="@+id/button3"
