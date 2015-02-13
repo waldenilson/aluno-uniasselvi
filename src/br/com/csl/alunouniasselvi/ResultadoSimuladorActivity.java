@@ -1,5 +1,8 @@
 package br.com.csl.alunouniasselvi;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import br.com.csl.alunouniasselvi.abstractactivity.IActivity;
 import br.com.csl.alunouniasselvi.controller.GlobalController;
 import android.os.Bundle;
@@ -23,9 +26,18 @@ public class ResultadoSimuladorActivity extends Activity implements IActivity {
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
 		final Bundle extra = getIntent().getExtras();
-//		List<String> possibilidades = extra.getStringArrayList("possibilidades");
-//		for( String s : possibilidades)
-			tvlistaresultado.setText( extra.getString("possibilidades") );
+		JSONObject possibilidades = null;
+		try
+		{
+			possibilidades = new JSONObject( extra.getString("possibilidades") );
+			for( int x=0; x< possibilidades.length();x++)
+			{
+				int pos = x+1;
+				tvlistaresultado.setText( tvlistaresultado.getText()+"\n"+ possibilidades.getString(pos+"") );
+			}
+		}
+		catch (JSONException e) {}
+		
 	}
 
 	private void init(){

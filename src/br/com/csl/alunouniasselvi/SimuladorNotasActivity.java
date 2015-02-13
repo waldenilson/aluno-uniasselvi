@@ -2,6 +2,10 @@ package br.com.csl.alunouniasselvi;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import br.com.csl.alunouniasselvi.abstractactivity.IActivity;
 import br.com.csl.alunouniasselvi.controller.GlobalController;
 import android.os.Bundle;
@@ -66,13 +70,13 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 		return true;
 	}
 	
-	public void bt_simular(View v){
+	public void bt_simular(View v) throws JSONException{
 		
 		
 		final double p1=1.0,p2=1.0,p3=3.2,p4=4.8;
 		double redacao,res;
 		int nota2 = 0;
-		List<String> mensagens = new ArrayList<String>(); 
+		JSONObject mensagens = new JSONObject();
 		
 		if ( etredacao.getText().toString().equals("") || etredacao.getText().toString().equals(".") ) 
 		{
@@ -101,7 +105,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 							if(res>6.6 && res<=6.7)
 							{
 								pos++;
-								mensagens.add("Acertando "+x+" na 1ª objetiva, "+y+" na objetiva final e "+z+" na discursiva.");
+								mensagens.put(pos+"","Acertando "+x+" na 1ª objetiva, "+y+" na objetiva final e "+z+" na discursiva.");
 								//System.out.println("Acertando "+x+" na 2ª semana, "+y+" na objetiva final e "+z+" na discursiva, voce passa. nota: "+res);					
 								break;
 							}	
@@ -136,7 +140,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 							if(res>6.6 && res<=7.0)
 							{
 								pos++;
-								mensagens.add("Acertando "+y+" na objetiva final e "+z+" na discursiva.");
+								mensagens.put(pos+"","Acertando "+y+" na objetiva final e "+z+" na discursiva.");
 								//System.out.println("Acertando "+x+" na 2ª semana, "+y+" na objetiva final e "+z+" na discursiva, voce passa. nota: "+res);					
 								break;
 							}	
