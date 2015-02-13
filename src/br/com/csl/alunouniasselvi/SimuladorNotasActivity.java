@@ -11,10 +11,12 @@ import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.Menu;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class SimuladorNotasActivity extends Activity implements IActivity {
+public class SimuladorNotasActivity extends Activity implements IActivity, OnCheckedChangeListener {
 
     private ProgressDialog pd;
 	private GlobalController control = new GlobalController();
@@ -27,6 +29,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity {
 		setContentView(R.layout.activity_simulador_notas);
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
+		cbnota2.setOnCheckedChangeListener(this);
 		etnota2.setVisibility(View.INVISIBLE);
 	}
 
@@ -121,6 +124,12 @@ public class SimuladorNotasActivity extends Activity implements IActivity {
 		getIntent().putExtra("control", control);
 		setResult(1, getIntent());
 		super.finish();
+	}
+
+	@Override
+	public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+		// TODO Auto-generated method stub
+		Toast.makeText(this, ""+arg1, Toast.LENGTH_LONG).show();
 	}
 
 }
