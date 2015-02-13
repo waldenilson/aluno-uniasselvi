@@ -8,22 +8,28 @@ import android.app.ProgressDialog;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 
 public class ResultadoSimuladorActivity extends Activity implements IActivity {
 
     private ProgressDialog pd;
 	private GlobalController control = new GlobalController();
-
+	private TextView tvlistaresultado;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_resultado_simulador);
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
+		final Bundle extra = getIntent().getExtras();
+//		List<String> possibilidades = extra.getStringArrayList("possibilidades");
+//		for( String s : possibilidades)
+			tvlistaresultado.setText( extra.getString("possibilidades") );
 	}
 
 	private void init(){
-
+		tvlistaresultado = (TextView) findViewById(R.id.tv_lista_resultado);
 	}
 
 	@Override
