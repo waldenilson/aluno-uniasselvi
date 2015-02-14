@@ -118,6 +118,8 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 					data.putExtra("total", pos);
 					startActivityForResult(data,1);		
 				}
+				else
+					Toast.makeText(this, "Nenhuma possibilidade para sua aprovação.", Toast.LENGTH_LONG).show();
 			}
 			else
 			{
@@ -134,7 +136,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 						for ( int z=1; z<=3; z++)
 						{
 							res = redacao + (nota2/(p1*peso)) + (y*(p3/15)) + (z*(p4/3));
-							if(res>6.6 && res<=7.0)
+							if(res>6.6 && res<=6.8)
 							{
 								pos++;
 								mensagens.put(pos+"","Acertando "+y+" na objetiva final e "+z+" na discursiva.");
@@ -152,6 +154,8 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 						data.putExtra("total", pos);
 						startActivityForResult(data,1);		
 					}
+					else
+						Toast.makeText(this, "Nenhuma possibilidade para sua aprovação.", Toast.LENGTH_LONG).show();			
 				}
 			}			
 		}
@@ -183,7 +187,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 				pd.dismiss();		
 	}
 	
-	public void voltar(View v){
+	public void bt_voltar(View v){
 		finish();
 	}
 
