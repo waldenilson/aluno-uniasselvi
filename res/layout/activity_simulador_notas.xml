@@ -5,10 +5,12 @@
     tools:context=".MainActivity" >
 
     <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_marginBottom="50dp"
         android:orientation="vertical" >
 
         <ImageView
@@ -20,6 +22,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
             android:gravity="center_vertical"
             android:orientation="vertical" >
 
@@ -38,28 +41,44 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-	            android:layout_marginRight="10dp"
-				android:text="@string/lb_marcar_nota2" />
+                android:layout_marginRight="10dp"
+                android:text="@string/lb_marcar_nota2" />
 
             <Spinner
                 android:id="@+id/sp_2nota"
-                android:layout_marginLeft="10dp"
-	            android:layout_marginRight="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-	
-	        <Button
-	            android:id="@+id/button3"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_marginLeft="10dp"
-	            android:layout_marginRight="10dp"
-	            android:layout_marginTop="50dp"
-	            android:onClick="bt_simular"
-	            android:text="@string/lb_simular" />
-                    
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
         </LinearLayout>
-
     </LinearLayout>
 
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/linearLayout1"
+        android:layout_alignParentLeft="true"
+         >
+    
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:onClick="bt_voltar"
+        android:text="@string/lb_voltar" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:onClick="bt_simular"
+        android:text="@string/lb_simular" />
+    
+    </LinearLayout>
+    
 </RelativeLayout>

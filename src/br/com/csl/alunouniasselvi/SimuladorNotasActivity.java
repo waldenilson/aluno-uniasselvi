@@ -182,6 +182,10 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 			if(pd.isShowing())
 				pd.dismiss();		
 	}
+	
+	public void voltar(View v){
+		finish();
+	}
 
 	@Override
 	public void finish() 
