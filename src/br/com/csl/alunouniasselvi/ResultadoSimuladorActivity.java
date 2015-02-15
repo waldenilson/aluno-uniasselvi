@@ -20,7 +20,7 @@ public class ResultadoSimuladorActivity extends Activity implements IActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_resultado_simulador);
+		setContentView(R.layout.activity_layout);
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
 		final Bundle extra = getIntent().getExtras();
@@ -31,7 +31,7 @@ public class ResultadoSimuladorActivity extends Activity implements IActivity {
 			for( int x=0; x< possibilidades.length();x++)
 			{
 				int pos = x+1;
-				tvlistaresultado.setText( tvlistaresultado.getText()+"\n"+ possibilidades.getString(pos+"") );
+//				tvlistaresultado.setText( tvlistaresultado.getText()+"\n"+ possibilidades.getString(pos+"") );
 			}
 		}
 		catch (JSONException e) {}
