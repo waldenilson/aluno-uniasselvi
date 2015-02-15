@@ -23,7 +23,7 @@ public final class R {
         public static final int et_redacao=0x7f070009;
         public static final int imageView1=0x7f070000;
         public static final int lv_menu=0x7f070005;
-        public static final int menu_settings=0x7f07000f;
+        public static final int menu_settings=0x7f070010;
         public static final int scrollView1=0x7f070004;
         public static final int sp_2nota=0x7f07000b;
         public static final int textView1=0x7f070002;
@@ -32,6 +32,7 @@ public final class R {
         public static final int textView4=0x7f07000c;
         public static final int tv_lista_resultado=0x7f070007;
         public static final int tv_listconfig=0x7f07000e;
+        public static final int tv_listconfigdesc=0x7f07000f;
     }
     public static final class layout {
         public static final int activity_layout=0x7f030000;
