@@ -7,7 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@android:color/darker_gray"
+        android:background="@drawable/aluno_uniasselvi_top"
         android:orientation="horizontal"
         android:gravity="center_vertical" >
 
@@ -15,7 +15,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:gravity="center_horizontal|center_vertical" >
 	        <ImageView
 	            android:id="@+id/imageView1"
@@ -35,16 +35,23 @@
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:text="@string/app_name"
-	            android:textAppearance="?android:attr/textAppearanceLarge" />
+	            android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
-   
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal|center_vertical" >
+        </LinearLayout>
+        
    </LinearLayout>
     
     
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@android:color/black"
+        android:background="@drawable/aluno_uniasselvi_subtop"
         android:orientation="vertical"
         android:gravity="center_vertical" >
 
@@ -54,16 +61,15 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="TITULO"
-            android:textColor="#fff"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:textColor="#fff"
-            android:text="Descrição" />
+            android:text="Descrição"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
         
     </LinearLayout>
     
@@ -90,7 +96,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@android:color/darker_gray"
+        android:background="@drawable/aluno_uniasselvi_top"
         android:orientation="horizontal" >
         
     </LinearLayout>
