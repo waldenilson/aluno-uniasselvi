@@ -35,7 +35,7 @@
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:text="@string/app_name"
-	            android:textAppearance="?android:attr/textAppearanceMedium" />
+	            android:textSize="15sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -50,7 +50,7 @@
     
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:background="@drawable/aluno_uniasselvi_subtop"
         android:orientation="vertical"
         android:gravity="center_vertical" >
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="TITULO"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/textView2"
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="Descrição"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:textSize="10sp" />
         
     </LinearLayout>
     
@@ -83,15 +83,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
                 android:orientation="vertical" >
 
 		        <ListView
 		            android:id="@+id/lv_menu"
 		            android:layout_width="match_parent"
-		            android:layout_height="wrap_content" >
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="10dp"
+		            android:layout_marginRight="10dp"
+		            android:layout_marginLeft="10dp" >
 		        </ListView>
 	        
             </LinearLayout>
@@ -103,7 +103,16 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/aluno_uniasselvi_top"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:gravity="center_horizontal" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/aluno_uniasselvi_top"
+            android:text="SAIR"
+            android:onClick="bt_sair" />
         
     </LinearLayout>
     
