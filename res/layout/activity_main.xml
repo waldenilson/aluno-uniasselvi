@@ -36,8 +36,7 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/app_name"
-                android:textSize="12sp" />
+                android:text="@string/app_name" />
 			
 			<TextView
                 android:id="@+id/textView1"
@@ -45,7 +44,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_desc"
                 android:layout_marginTop="5dp"
-                android:textSize="10sp"
+                android:textSize="12sp"
+                android:textColor="#666"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 		
 		</LinearLayout>
