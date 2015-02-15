@@ -47,32 +47,6 @@
         
    </LinearLayout>
     
-    
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="@drawable/aluno_uniasselvi_subtop"
-        android:orientation="vertical"
-        android:gravity="center_vertical" >
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="TITULO"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Descrição"
-            android:textSize="10sp" />
-        
-    </LinearLayout>
-    
 
         <ScrollView
             android:id="@+id/scrollView1"
