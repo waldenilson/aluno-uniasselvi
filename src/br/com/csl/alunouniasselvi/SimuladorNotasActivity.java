@@ -103,7 +103,6 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 							{
 								pos++;
 								mensagens.put(pos+"","Acertando "+x+" na 1ª objetiva, "+y+" na objetiva final e "+z+" na discursiva.");
-								//System.out.println("Acertando "+x+" na 2ª semana, "+y+" na objetiva final e "+z+" na discursiva, voce passa. nota: "+res);					
 								break;
 							}	
 						}						
@@ -140,7 +139,6 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 							{
 								pos++;
 								mensagens.put(pos+"","Acertando "+y+" na objetiva final e "+z+" na discursiva.");
-								//System.out.println("Acertando "+x+" na 2ª semana, "+y+" na objetiva final e "+z+" na discursiva, voce passa. nota: "+res);					
 								break;
 							}	
 						}						

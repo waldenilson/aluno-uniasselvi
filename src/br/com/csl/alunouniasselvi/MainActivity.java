@@ -28,8 +28,9 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
 		List<String> lista = new ArrayList<String>();
-		lista.add( getString(R.string.lb_simulador_notas) );
-		ListViewConfigAdapter lv = new ListViewConfigAdapter(this, lista);
+		List<String> desc = new ArrayList<String>();
+		lista.add( getString(R.string.lb_simulador_notas) ); desc.add("Informações do menu.");
+		ListViewConfigAdapter lv = new ListViewConfigAdapter(this, lista, desc);
 		lvmenu.setAdapter(lv);
 		lvmenu.setTextFilterEnabled(true);
 		lvmenu.setOnItemClickListener(this);	

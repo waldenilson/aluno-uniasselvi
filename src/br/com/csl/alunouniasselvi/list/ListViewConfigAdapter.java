@@ -15,11 +15,13 @@ public class ListViewConfigAdapter extends BaseAdapter
 {
 	Activity context;
 	List<String> title;
+	List<String> desc;
 
-	public ListViewConfigAdapter(Activity context, List<String> title) {
+	public ListViewConfigAdapter(Activity context, List<String> title, List<String> desc) {
 		super();
 		this.context = context;
 		this.title = title;
+		this.desc = desc;
 	}
 
 	public int getCount() {
@@ -38,7 +40,7 @@ public class ListViewConfigAdapter extends BaseAdapter
 	}
 
 	private class ViewHolder {
-        TextView txtViewTitle;
+        TextView txtViewTitle, txtViewDesc;
 	}
 
 	public View getView(int position, View convertView, ViewGroup parent)
@@ -52,6 +54,7 @@ public class ListViewConfigAdapter extends BaseAdapter
 			convertView = inflater.inflate(R.layout.listconfig, null);
 			holder = new ViewHolder();
 			holder.txtViewTitle = (TextView) convertView.findViewById(R.id.tv_listconfig);
+			holder.txtViewDesc = (TextView) convertView.findViewById(R.id.tv_listconfigdesc);
 			convertView.setTag(holder);
 		}
 		else
@@ -59,6 +62,7 @@ public class ListViewConfigAdapter extends BaseAdapter
 			holder = (ViewHolder) convertView.getTag();
 		}
 		holder.txtViewTitle.setText(title.get(position).toString());
+		holder.txtViewDesc.setText(desc.get(position).toString());
 		
 	return convertView;
 	}

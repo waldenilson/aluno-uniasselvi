@@ -31,7 +31,10 @@ public class ResultadoSimuladorActivity extends Activity implements IActivity {
 			for( int x=0; x< possibilidades.length();x++)
 			{
 				int pos = x+1;
-				tvlistaresultado.setText( tvlistaresultado.getText()+"\n"+ possibilidades.getString(pos+"") );
+				if( pos==1 )
+					tvlistaresultado.setText( tvlistaresultado.getText()+"\n"+ possibilidades.getString(pos+"") );
+				else
+					tvlistaresultado.setText( tvlistaresultado.getText()+"\nou\n"+ possibilidades.getString(pos+"") );
 			}
 		}
 		catch (JSONException e) {}
