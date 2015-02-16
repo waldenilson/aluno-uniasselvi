@@ -12,7 +12,6 @@
         android:orientation="horizontal"
         android:gravity="center_vertical" >
 
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -82,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="2dp"
-            android:text="Resultado da simulação"
+            android:text="@string/lb_info"
             android:textSize="12sp" />
 
         <TextView
@@ -92,7 +91,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="3dp"
             android:layout_marginBottom="2dp"
-            android:text="Possibilidades para você ser aprovado."
+            android:text="@string/lb_desc_info"
             android:textSize="10sp" />
         
     </LinearLayout>

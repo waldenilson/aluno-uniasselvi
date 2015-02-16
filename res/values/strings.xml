@@ -12,9 +12,17 @@
     <string name="lb_desc_simulador_notas">Simule quanto necessitará para ser aprovado.</string>
     <string name="lb_resultado_simulador_notas">Resultado da Simulação</string>
     <string name="lb_desc_resultado_simulador_notas">Possibilidades para você ser aprovado.</string>
-
+    <string name="lb_codigo_fonte">Simulador de Notas Finais</string>
+    <string name="lb_seminarios">Simulador de Notas Finais</string>
     <string name="lb_novidades">Novidades</string>
     <string name="lb_creditos">Créditos</string>
+    <string name="lb_desc_codigo_fonte">Simulador de Notas Finais</string>
+    <string name="lb_desc_seminarios">Simulador de Notas Finais</string>
+    <string name="lb_desc_novidades">Novidades</string>
+    <string name="lb_desc_creditos">Créditos</string>
+    <string name="lb_info">Simulador de Notas Finais</string>
+    <string name="lb_desc_info">Simule quanto necessitará para ser aprovado.</string>
+    
     <string name="lb_voltar">VOLTAR</string>
     <string name="lb_marcar_nota2">Marque para informar a nota da 2ª prova.</string>
     

@@ -28,11 +28,11 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 		init();
 		List<String> lista = new ArrayList<String>();
 		List<String> desc = new ArrayList<String>();
-		lista.add( getString(R.string.lb_simulador_notas) ); desc.add( getString( R.string.lb_desc_simulador_notas) );
-		lista.add( getString(R.string.lb_simulador_notas) ); desc.add( getString( R.string.lb_desc_simulador_notas) );
-		lista.add( getString(R.string.lb_simulador_notas) ); desc.add( getString( R.string.lb_desc_simulador_notas) );
-		lista.add( getString(R.string.lb_simulador_notas) ); desc.add( getString( R.string.lb_desc_simulador_notas) );
-		lista.add( getString(R.string.lb_simulador_notas) ); desc.add( getString( R.string.lb_desc_simulador_notas) );
+		lista.add( getString(R.string.lb_simulador_notas) ); desc.add( getString( R.string.lb_desc_simulador_notas) );//simulador
+		lista.add( getString(R.string.lb_seminarios) ); desc.add( getString( R.string.lb_desc_seminarios) );//seminario
+		lista.add( getString(R.string.lb_creditos) ); desc.add( getString( R.string.lb_desc_creditos) );//creditos
+		lista.add( getString(R.string.lb_codigo_fonte) ); desc.add( getString( R.string.lb_desc_codigo_fonte) );//codigo fonte
+		lista.add( getString(R.string.lb_novidades) ); desc.add( getString( R.string.lb_desc_novidades) );//novidades
 
 		ListViewMenuAdapter lv = new ListViewMenuAdapter(this, lista, desc);
 		lvmenu.setAdapter(lv);
