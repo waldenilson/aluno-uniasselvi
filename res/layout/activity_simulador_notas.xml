@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="2dp"
-            android:text="Resultado da simulação"
+            android:text="@string/lb_simulador_notas"
             android:textSize="12sp" />
 
         <TextView
@@ -83,7 +83,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="3dp"
             android:layout_marginBottom="2dp"
-            android:text="Possibilidades para você ser aprovado."
+            android:text="@string/lb_desc_simulador_notas"
             android:textSize="10sp" />
         
     </LinearLayout>    
@@ -99,42 +99,59 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
                 android:orientation="vertical" >
 
 	            <EditText
 	                android:id="@+id/et_redacao"
 	                android:layout_width="match_parent"
 	                android:layout_height="wrap_content"
-	                android:layout_marginLeft="10dp"
-	                android:layout_marginRight="10dp"
-	                android:layout_marginTop="20dp"
 	                android:ems="10"
-	                android:hint="@string/lb_nota_redacao"
+	                android:layout_marginTop="10dp"
+	                android:layout_marginLeft="5dp"
+	                android:layout_marginRight="5dp"
+                    android:hint="@string/lb_nota_redacao"
 	                android:inputType="numberDecimal" />
 	
 	            <CheckBox
 	                android:id="@+id/cb_2nota"
 	                android:layout_width="match_parent"
 	                android:layout_height="wrap_content"
-	                android:layout_marginLeft="10dp"
-	                android:layout_marginRight="10dp"
-	                android:layout_marginTop="30dp"
+	                android:layout_marginTop="20dp"
 	                android:textColor="#666"
+	                android:layout_marginLeft="5dp"
+	                android:layout_marginRight="5dp"
 	                android:textSize="15sp"
 	                android:text="@string/lb_marcar_nota2" />
 	
-	            <Spinner
-	                android:id="@+id/sp_2nota"
-	                android:layout_width="match_parent"
-	                android:layout_height="wrap_content"
-	                android:layout_marginLeft="10dp"
-	                android:layout_marginRight="10dp"
-	                android:layout_marginTop="30dp" />
-	                
-            
+			    <LinearLayout
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:orientation="horizontal"
+		            android:layout_marginTop="20dp"
+		            android:layout_marginLeft="5dp"
+		            android:layout_marginRight="5dp"
+			        android:gravity="center_horizontal|center_vertical" >
+
+			        <TextView
+			            android:id="@+id/tv_1_objetiva"
+			            android:layout_width="match_parent"
+			            android:layout_height="wrap_content"
+			            android:text="@string/lb_nota_1_objetiva"
+			            android:textColor="#666"
+			            android:layout_weight="2"
+			            android:layout_marginLeft="5dp"
+			            android:textSize="15sp" />
+	            
+	        	   <Spinner
+		                android:id="@+id/sp_2nota"
+		                android:layout_weight="1"
+		                android:layout_marginLeft="10dp"
+		                android:layout_width="250dp"
+		                android:layout_height="wrap_content" />
+	            
+	            </LinearLayout>    
+            	
             </LinearLayout>
         </ScrollView>
 

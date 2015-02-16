@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="2dp"
-            android:text="Resultado da simulação"
+            android:text="@string/lb_resultado_simulador_notas"
             android:textSize="12sp" />
 
         <TextView
@@ -83,7 +83,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="3dp"
             android:layout_marginBottom="2dp"
-            android:text="Possibilidades para você ser aprovado."
+            android:text="@string/lb_desc_resultado_simulador_notas"
             android:textSize="10sp" />
         
     </LinearLayout>

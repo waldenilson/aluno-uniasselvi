@@ -3,18 +3,22 @@
 
     <string name="app_name">AlunoUni v0.32</string>
     <string name="app_desc">Descrição do aplicativo</string>
-    <string name="app_version">v0.31</string>
+    <string name="app_version">v0.32</string>
     
-    <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="ale_buscando_dados">Buscando Dados. . .</string>
     
     <string name="lb_simulador_notas">Simulador de Notas Finais</string>
+    <string name="lb_desc_simulador_notas">Simule quanto necessitará para ser aprovado.</string>
+    <string name="lb_resultado_simulador_notas">Resultado da Simulação</string>
+    <string name="lb_desc_resultado_simulador_notas">Possibilidades para você ser aprovado.</string>
+
     <string name="lb_novidades">Novidades</string>
     <string name="lb_creditos">Créditos</string>
     <string name="lb_voltar">VOLTAR</string>
     <string name="lb_marcar_nota2">Marque para informar a nota da 2ª prova.</string>
     
+    <string name="lb_nota_1_objetiva">Nota da 1ª Objetiva:</string>
     <string name="lb_nota_redacao">Nota da Redação</string>
     <string name="lb_simular">SIMULAR</string>
     

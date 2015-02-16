@@ -18,6 +18,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class SimuladorNotasActivity extends Activity implements IActivity, OnCheckedChangeListener {
@@ -27,6 +28,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 	private EditText etredacao;
 	private Spinner spnota2;
 	private CheckBox cbnota2;
+	private TextView tv1objetiva;
 	private ArrayAdapter<String> aa;
 	
 	@Override
@@ -52,12 +54,14 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 		aa.add("10");
 		
 		spnota2.setVisibility(View.INVISIBLE);
+		tv1objetiva.setVisibility(View.INVISIBLE);
 	}
 
 	private void init() {
 		etredacao = (EditText) findViewById( R.id.et_redacao );
 		spnota2 = (Spinner) findViewById(R.id.sp_2nota);
 		cbnota2 = (CheckBox) findViewById(R.id.cb_2nota);
+		tv1objetiva = (TextView) findViewById(R.id.tv_1_objetiva);
 	}
 
 	@Override
@@ -203,8 +207,11 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 		if( arg0.getId() == cbnota2.getId() )
 			if (arg1){
 				spnota2.setVisibility(View.VISIBLE);
-			}else
+				tv1objetiva.setVisibility(View.VISIBLE);
+			}else{
 				spnota2.setVisibility(View.INVISIBLE);
+				tv1objetiva.setVisibility(View.INVISIBLE);
+			}
 	}
 
 }
