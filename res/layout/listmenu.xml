@@ -13,7 +13,7 @@
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
         android:textSize="12sp"
-        android:text="Item" />
+        android:text="" />
 	
 	<TextView
         android:id="@+id/tv_listmenudesc"
@@ -23,5 +23,5 @@
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="10dp"
         android:layout_height="wrap_content"
-        android:text="Descrição" />
+        android:text="" />
 </LinearLayout>
