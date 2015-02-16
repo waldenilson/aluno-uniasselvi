@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.support.v4.view.ViewPager.LayoutParams;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -55,13 +54,6 @@ public class ResultadoSimuladorActivity extends Activity implements IActivity, O
 		listresultado = (ListView) findViewById(R.id.lv_resultado);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_main, menu);
-		return true;
-	}
-	
 	@Override
 	public void click_bt_bar_back(View v) {
 		// TODO Auto-generated method stub

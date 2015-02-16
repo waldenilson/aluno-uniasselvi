@@ -10,7 +10,6 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v4.view.ViewPager.LayoutParams;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -42,13 +41,6 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 		lvmenu = (ListView) findViewById(R.id.lv_menu);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_main, menu);
-		return true;
-	}
-	
 	public void bt_sair(View v){
 		finish();
 	}

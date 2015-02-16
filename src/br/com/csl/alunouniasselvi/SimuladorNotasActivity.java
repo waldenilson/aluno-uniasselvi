@@ -10,7 +10,6 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v4.view.ViewPager.LayoutParams;
-import android.view.Menu;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -64,13 +63,6 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 		tv1objetiva = (TextView) findViewById(R.id.tv_1_objetiva);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_main, menu);
-		return true;
-	}
-	
 	public void bt_simular(View v) throws JSONException{
 		
 		
