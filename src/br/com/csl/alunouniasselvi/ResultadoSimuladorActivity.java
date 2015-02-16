@@ -1,21 +1,27 @@
 package br.com.csl.alunouniasselvi;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import br.com.csl.alunouniasselvi.abstractactivity.IActivity;
+import br.com.csl.alunouniasselvi.list.ListViewSimpleAdapter;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.Menu;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
 
-public class ResultadoSimuladorActivity extends Activity implements IActivity {
+public class ResultadoSimuladorActivity extends Activity implements IActivity, OnItemClickListener {
 
     private ProgressDialog pd;
-	private TextView tvlistaresultado;
+	private ListView listresultado;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,9 @@ public class ResultadoSimuladorActivity extends Activity implements IActivity {
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
 		final Bundle extra = getIntent().getExtras();
+		
+		List<String> title = new ArrayList<String>();
+		
 		JSONObject possibilidades = null;
 		try
 		{
@@ -31,18 +40,19 @@ public class ResultadoSimuladorActivity extends Activity implements IActivity {
 			for( int x=0; x< possibilidades.length();x++)
 			{
 				int pos = x+1;
-				if( pos==1 )
-					tvlistaresultado.setText( tvlistaresultado.getText()+"\n"+ possibilidades.getString(pos+"") );
-				else
-					tvlistaresultado.setText( tvlistaresultado.getText()+"\nou\n"+ possibilidades.getString(pos+"") );
+				title.add(possibilidades.getString(pos+""));
 			}
 		}
 		catch (JSONException e) {}
 		
+		ListViewSimpleAdapter list = new ListViewSimpleAdapter(this, title);
+		listresultado.setAdapter(list);
+		listresultado.setTextFilterEnabled(true);	
+		listresultado.setOnItemClickListener(this);
 	}
 
 	private void init(){
-		tvlistaresultado = (TextView) findViewById(R.id.tv_lista_resultado);
+		listresultado = (ListView) findViewById(R.id.lv_resultado);
 	}
 
 	@Override
@@ -86,6 +96,12 @@ public class ResultadoSimuladorActivity extends Activity implements IActivity {
 	{
 		setResult(1, getIntent());
 		super.finish();
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

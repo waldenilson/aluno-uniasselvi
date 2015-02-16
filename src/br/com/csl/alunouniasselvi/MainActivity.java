@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.csl.alunouniasselvi.abstractactivity.IActivity;
-import br.com.csl.alunouniasselvi.list.ListViewConfigAdapter;
+import br.com.csl.alunouniasselvi.list.ListViewMenuAdapter;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -29,8 +29,9 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 		init();
 		List<String> lista = new ArrayList<String>();
 		List<String> desc = new ArrayList<String>();
-		lista.add( getString(R.string.lb_simulador_notas) ); desc.add("Informações do menu.");
-		ListViewConfigAdapter lv = new ListViewConfigAdapter(this, lista, desc);
+		lista.add( getString(R.string.lb_simulador_notas) ); desc.add( getString( R.string.lb_desc_simulador_notas) );
+
+		ListViewMenuAdapter lv = new ListViewMenuAdapter(this, lista, desc);
 		lvmenu.setAdapter(lv);
 		lvmenu.setTextFilterEnabled(true);
 		lvmenu.setOnItemClickListener(this);	
