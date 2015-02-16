@@ -29,6 +29,10 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 		List<String> lista = new ArrayList<String>();
 		List<String> desc = new ArrayList<String>();
 		lista.add( getString(R.string.lb_simulador_notas) ); desc.add( getString( R.string.lb_desc_simulador_notas) );
+		lista.add( getString(R.string.lb_simulador_notas) ); desc.add( getString( R.string.lb_desc_simulador_notas) );
+		lista.add( getString(R.string.lb_simulador_notas) ); desc.add( getString( R.string.lb_desc_simulador_notas) );
+		lista.add( getString(R.string.lb_simulador_notas) ); desc.add( getString( R.string.lb_desc_simulador_notas) );
+		lista.add( getString(R.string.lb_simulador_notas) ); desc.add( getString( R.string.lb_desc_simulador_notas) );
 
 		ListViewMenuAdapter lv = new ListViewMenuAdapter(this, lista, desc);
 		lvmenu.setAdapter(lv);
@@ -51,9 +55,10 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 	}
 
 	@Override
-	public void click_bt_bar_back(View v) {
+	public void click_bt_bar_info(View v) {
 		// TODO Auto-generated method stub
-		
+		Intent data = new Intent(this, InfoActivity.class);
+		startActivityForResult(data,1);				
 	}
 
 	@Override

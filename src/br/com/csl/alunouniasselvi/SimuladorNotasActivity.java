@@ -157,9 +157,10 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 	}
 
 	@Override
-	public void click_bt_bar_back(View v) {
+	public void click_bt_bar_info(View v) {
 		// TODO Auto-generated method stub
-		
+		Intent data = new Intent(this, InfoActivity.class);
+		startActivityForResult(data,1);						
 	}
 
 	@Override

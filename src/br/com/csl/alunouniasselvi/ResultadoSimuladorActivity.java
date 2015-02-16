@@ -11,6 +11,7 @@ import br.com.csl.alunouniasselvi.list.ListViewSimpleAdapter;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.View;
 import android.widget.AdapterView;
@@ -55,9 +56,10 @@ public class ResultadoSimuladorActivity extends Activity implements IActivity, O
 	}
 
 	@Override
-	public void click_bt_bar_back(View v) {
+	public void click_bt_bar_info(View v) {
 		// TODO Auto-generated method stub
-		
+		Intent data = new Intent(this, InfoActivity.class);
+		startActivityForResult(data,1);						
 	}
 
 	@Override
