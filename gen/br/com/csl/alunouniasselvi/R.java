@@ -15,37 +15,42 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int button1=0x7f07000a;
-        public static final int button3=0x7f070007;
-        public static final int button4=0x7f070010;
-        public static final int cb_2nota=0x7f07000d;
-        public static final int et_redacao=0x7f07000c;
+        public static final int button1=0x7f07000b;
+        public static final int button3=0x7f070008;
+        public static final int button4=0x7f070011;
+        public static final int cb_2nota=0x7f07000e;
+        public static final int et_redacao=0x7f07000d;
         public static final int imageView1=0x7f070000;
-        public static final int imageView2=0x7f070008;
-        public static final int lv_menu=0x7f070009;
-        public static final int lv_resultado=0x7f07000b;
-        public static final int menu_settings=0x7f070014;
-        public static final int scrollView1=0x7f070005;
-        public static final int sp_2nota=0x7f07000f;
+        public static final int imageView2=0x7f070003;
+        public static final int lv_menu=0x7f07000a;
+        public static final int lv_resultado=0x7f07000c;
+        public static final int menu_settings=0x7f070015;
+        public static final int scrollView1=0x7f070006;
+        public static final int sp_2nota=0x7f070010;
         public static final int textView1=0x7f070002;
-        public static final int textView2=0x7f070003;
+        public static final int textView2=0x7f070004;
         public static final int textView3=0x7f070001;
-        public static final int textView4=0x7f070004;
-        public static final int tv_1_objetiva=0x7f07000e;
-        public static final int tv_info=0x7f070006;
-        public static final int tv_listmenu=0x7f070011;
-        public static final int tv_listmenudesc=0x7f070012;
-        public static final int tv_listsimple=0x7f070013;
+        public static final int textView4=0x7f070005;
+        public static final int tv_1_objetiva=0x7f07000f;
+        public static final int tv_creditos=0x7f070007;
+        public static final int tv_info=0x7f070009;
+        public static final int tv_listmenu=0x7f070012;
+        public static final int tv_listmenudesc=0x7f070013;
+        public static final int tv_listsimple=0x7f070014;
     }
     public static final class layout {
-        public static final int activity_info=0x7f030000;
-        public static final int activity_layout=0x7f030001;
-        public static final int activity_main=0x7f030002;
-        public static final int activity_resultado_simulador=0x7f030003;
-        public static final int activity_simulador_notas=0x7f030004;
-        public static final int listmenu=0x7f030005;
-        public static final int listsimple=0x7f030006;
-        public static final int spinner_item=0x7f030007;
+        public static final int activity_codigo_fonte=0x7f030000;
+        public static final int activity_creditos=0x7f030001;
+        public static final int activity_info=0x7f030002;
+        public static final int activity_layout=0x7f030003;
+        public static final int activity_main=0x7f030004;
+        public static final int activity_novidades=0x7f030005;
+        public static final int activity_resultado_simulador=0x7f030006;
+        public static final int activity_seminarios=0x7f030007;
+        public static final int activity_simulador_notas=0x7f030008;
+        public static final int listmenu=0x7f030009;
+        public static final int listsimple=0x7f03000a;
+        public static final int spinner_item=0x7f03000b;
     }
     public static final class menu {
         public static final int activity_main=0x7f060000;
@@ -57,12 +62,12 @@ public final class R {
         public static final int app_version=0x7f040002;
         public static final int lb_codigo_fonte=0x7f040009;
         public static final int lb_creditos=0x7f04000c;
-        public static final int lb_desc_codigo_fonte=0x7f04000d;
-        public static final int lb_desc_creditos=0x7f040010;
+        public static final int lb_desc_codigo_fonte=0x7f04000e;
+        public static final int lb_desc_creditos=0x7f04000d;
         public static final int lb_desc_info=0x7f040012;
-        public static final int lb_desc_novidades=0x7f04000f;
+        public static final int lb_desc_novidades=0x7f040010;
         public static final int lb_desc_resultado_simulador_notas=0x7f040008;
-        public static final int lb_desc_seminarios=0x7f04000e;
+        public static final int lb_desc_seminarios=0x7f04000f;
         public static final int lb_desc_simulador_notas=0x7f040006;
         public static final int lb_info=0x7f040011;
         public static final int lb_marcar_nota2=0x7f040014;

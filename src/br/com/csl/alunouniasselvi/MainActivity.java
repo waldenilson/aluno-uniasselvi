@@ -30,8 +30,8 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 		List<String> desc = new ArrayList<String>();
 		lista.add( getString(R.string.lb_simulador_notas) ); desc.add( getString( R.string.lb_desc_simulador_notas) );//simulador
 		lista.add( getString(R.string.lb_seminarios) ); desc.add( getString( R.string.lb_desc_seminarios) );//seminario
-		lista.add( getString(R.string.lb_creditos) ); desc.add( getString( R.string.lb_desc_creditos) );//creditos
 		lista.add( getString(R.string.lb_codigo_fonte) ); desc.add( getString( R.string.lb_desc_codigo_fonte) );//codigo fonte
+		lista.add( getString(R.string.lb_creditos) ); desc.add( getString( R.string.lb_desc_creditos) );//creditos
 		lista.add( getString(R.string.lb_novidades) ); desc.add( getString( R.string.lb_desc_novidades) );//novidades
 
 		ListViewMenuAdapter lv = new ListViewMenuAdapter(this, lista, desc);
@@ -93,6 +93,22 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 		
 		if( arg2 == 0 )
 			bt_simulador_notas();
+		else if( arg2 == 1){
+			Intent data = new Intent(this, SeminariosActivity.class);
+			startActivityForResult(data,1);				
+		}
+		else if( arg2 == 3){
+			Intent data = new Intent(this, CreditosActivity.class);
+			startActivityForResult(data,1);				
+		}
+		else if( arg2 == 2){
+			Intent data = new Intent(this, CodigoFonteActivity.class);
+			startActivityForResult(data,1);				
+		}
+		else if( arg2 == 4){
+			Intent data = new Intent(this, NovidadesActivity.class);
+			startActivityForResult(data,1);				
+		}		
 	}
 
 }
