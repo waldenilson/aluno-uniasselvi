@@ -17,7 +17,15 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
+            android:onClick="voltar"
             android:gravity="center_horizontal|center_vertical" >
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow" />
+
 	        <ImageView
 	            android:id="@+id/imageView1"
 	            android:layout_width="wrap_content"
@@ -128,23 +136,5 @@
 
             </LinearLayout>
         </ScrollView>
-
-
-    
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/aluno_uniasselvi_top"
-        android:orientation="horizontal" >
-	        <Button
-	            android:id="@+id/button3"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_marginLeft="5dp"
-	            android:layout_marginRight="5dp"
-	            android:background="@drawable/aluno_uniasselvi_top"
-	            android:onClick="voltar"
-	            android:text="@string/lb_voltar" />
-    </LinearLayout>
     
 </LinearLayout>

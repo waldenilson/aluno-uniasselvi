@@ -182,7 +182,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 				pd.dismiss();		
 	}
 	
-	public void bt_voltar(View v){
+	public void voltar(View v){
 		finish();
 	}
 
