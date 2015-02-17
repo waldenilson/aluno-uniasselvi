@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.csl.alunouniasselvi.abstractactivity.IActivity;
+import br.com.csl.alunouniasselvi.list.ListViewImageAdapter;
 import br.com.csl.alunouniasselvi.list.ListViewMenuAdapter;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.View;
 import android.widget.AdapterView;
@@ -28,13 +30,20 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 		init();
 		List<String> lista = new ArrayList<String>();
 		List<String> desc = new ArrayList<String>();
+		List<Drawable> img = new ArrayList<Drawable>();
+		
 		lista.add( getString(R.string.lb_simulador_notas) ); desc.add( getString( R.string.lb_desc_simulador_notas) );//simulador
+		img.add( getResources().getDrawable(R.drawable.calculator) );
 		lista.add( getString(R.string.lb_seminarios) ); desc.add( getString( R.string.lb_desc_seminarios) );//seminario
+		img.add( getResources().getDrawable(R.drawable.paper) );
 		lista.add( getString(R.string.lb_codigo_fonte) ); desc.add( getString( R.string.lb_desc_codigo_fonte) );//codigo fonte
+		img.add( getResources().getDrawable(R.drawable.code) );
 		lista.add( getString(R.string.lb_creditos) ); desc.add( getString( R.string.lb_desc_creditos) );//creditos
+		img.add( getResources().getDrawable(R.drawable.user) );
 		lista.add( getString(R.string.lb_novidades) ); desc.add( getString( R.string.lb_desc_novidades) );//novidades
-
-		ListViewMenuAdapter lv = new ListViewMenuAdapter(this, lista, desc);
+		img.add( getResources().getDrawable(R.drawable.newspaper) );
+		
+		ListViewImageAdapter lv = new ListViewImageAdapter(this, lista, desc, img);
 		lvmenu.setAdapter(lv);
 		lvmenu.setTextFilterEnabled(true);
 		lvmenu.setOnItemClickListener(this);	

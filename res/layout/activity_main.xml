@@ -54,10 +54,10 @@
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="70dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="click_bt_bar_info"
-                android:src="@android:drawable/ic_dialog_info" />
+                android:src="@drawable/about" />
 
         </LinearLayout>
         
