@@ -6,13 +6,10 @@ import java.net.URL;
 
 public class WebService 
 {	
-	private String URL = "http://192.168.2.100:8080/cweb/ChamaGarcomWS";
-	private String NAMESPACE = "http://webservice.qp.com.br/ChamaGarcomService";
-	
-	private static final String PROTOCOL = "http";
-	private static final String SERVER = "10.12.4.54";//"192.168.2.105";
-	private static final String PORT = "80";
-	private static final String PROJECT = "ws";
+	private static final String PROTOCOL = "";//http
+	private static final String SERVER = "";//IP;
+	private static final String PORT = "";//80
+	private static final String PROJECT = "";//ws
 	
 	public WebService(){
 	}
@@ -23,7 +20,6 @@ public class WebService
 		try
 		{
 			URL url = new URL(PROTOCOL+"://"+SERVER+":"+PORT+"/"+PROJECT+"/"+servico);
-			//URL url = new URL("/"+PROJECT+"/"+servico);
 
 			 BufferedReader br = new BufferedReader(
 			 new InputStreamReader(url.openStream()));
@@ -44,20 +40,6 @@ public class WebService
 		}
 
 		return res;
-	}
-		
-	
-	public String getURL() {
-		return URL;
-	}
-	public void setURL(String uRL) {
-		URL = uRL;
-	}
-	public String getNAMESPACE() {
-		return NAMESPACE;
-	}
-	public void setNAMESPACE(String nAMESPACE) {
-		NAMESPACE = nAMESPACE;
 	}
 
 	public static String getProtocol() {
