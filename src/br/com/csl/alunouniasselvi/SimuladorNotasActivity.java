@@ -104,10 +104,13 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 								if(res>6.6 && res<=6.7)
 								{
 									pos++;
-									String q1 = "questão", q2 = "questões";
-									String str1 = "";
-									if (x == 0) str1 = q1; else str1 = q2;
-									mensagens.put(pos+"","Acertando "+x+" "+str1+" na 1ª objetiva, "+y+" na objetiva final e "+z+" na discursiva.");
+									String qx1 = x+" questão", qx2 = x+" questões";
+									String qy1 = y+" questão", qy2 = y+" questões";
+									
+									String str1 = "", str2 = "";
+									if (x == 1) str1 = qx1; else if(x==0) str1 = "nenhuma questão"; else str1 = qx2;
+									if (y == 1) str2 = qy1; else if(y==0) str2 = "nenhuma questão"; else str2 = qy2;
+									mensagens.put(pos+"","Acertando "+str1+" na 1ª objetiva, "+str2+" na objetiva final e "+z+" na discursiva.");
 									break;
 								}	
 							}						
