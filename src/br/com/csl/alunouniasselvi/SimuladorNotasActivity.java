@@ -80,64 +80,35 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 		
 			redacao = Double.parseDouble( etredacao.getText().toString() );
 			
-			double peso = p1+p2+p3+p4;
-			
-			redacao = redacao/(p1*peso);
-			
-			int pos = 0;
-			
-			if( !spnota2.isShown() )
+			if( redacao < 0 || redacao > 10)
 			{
-				for (int x=0; x<=10;x++)
-				{
-					for ( int y=0; y<=15;y++)
-					{
-						for ( int z=1; z<=3; z++)
-						{
-							res = redacao + (x/(p1*peso)) + (y*(p3/15)) + (z*(p4/3));
-							if(res>6.6 && res<=6.7)
-							{
-								pos++;
-								mensagens.put(pos+"","Acertando "+x+" na 1ª objetiva, "+y+" na objetiva final e "+z+" na discursiva.");
-								break;
-							}	
-						}						
-					}
-				}
-				if ( pos > 0)
-				{
-					Intent data = new Intent(this, ResultadoSimuladorActivity.class);
-					data.putExtra("redacao", redacao);
-					data.putExtra("2nota", nota2);
-					data.putExtra("possibilidades", mensagens.toString());
-					data.putExtra("total", pos);
-					startActivityForResult(data,1);		
-				}
-				else
-					Toast.makeText(this, "Nenhuma possibilidade para sua aprovação.", Toast.LENGTH_LONG).show();
+				Toast.makeText(this, "Informe uma nota de 0 a 10.", Toast.LENGTH_LONG).show();							
 			}
 			else
 			{
-				if ( spnota2.getSelectedItem().toString().equals("") ) 
+				double peso = p1+p2+p3+p4;
+				
+				redacao = redacao/(p1*peso);
+				
+				int pos = 0;
+				
+				if( !spnota2.isShown() )
 				{
-					Toast.makeText(this, "Informe a nota da 2ª prova", Toast.LENGTH_LONG).show();			
-				}
-				else
-				{
-					nota2 = Integer.parseInt( spnota2.getSelectedItem().toString() );
-					
-					for ( int y=0; y<=15;y++)
+					for (int x=0; x<=10;x++)
 					{
-						for ( int z=1; z<=3; z++)
+						for ( int y=0; y<=15;y++)
 						{
-							res = redacao + (nota2/(p1*peso)) + (y*(p3/15)) + (z*(p4/3));
-							if(res>6.6 && res<=6.8)
+							for ( int z=1; z<=3; z++)
 							{
-								pos++;
-								mensagens.put(pos+"","Acertando "+y+" na objetiva final e "+z+" na discursiva.");
-								break;
-							}	
-						}						
+								res = redacao + (x/(p1*peso)) + (y*(p3/15)) + (z*(p4/3));
+								if(res>6.6 && res<=6.7)
+								{
+									pos++;
+									mensagens.put(pos+"","Acertando "+x+" na 1ª objetiva, "+y+" na objetiva final e "+z+" na discursiva.");
+									break;
+								}	
+							}						
+						}
 					}
 					if ( pos > 0)
 					{
@@ -149,9 +120,45 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 						startActivityForResult(data,1);		
 					}
 					else
-						Toast.makeText(this, "Nenhuma possibilidade para sua aprovação.", Toast.LENGTH_LONG).show();			
+						Toast.makeText(this, "Nenhuma possibilidade para sua aprovação.", Toast.LENGTH_LONG).show();
 				}
-			}			
+				else
+				{
+					if ( spnota2.getSelectedItem().toString().equals("") ) 
+					{
+						Toast.makeText(this, "Informe a nota da 2ª prova", Toast.LENGTH_LONG).show();			
+					}
+					else
+					{
+						nota2 = Integer.parseInt( spnota2.getSelectedItem().toString() );
+						
+						for ( int y=0; y<=15;y++)
+						{
+							for ( int z=1; z<=3; z++)
+							{
+								res = redacao + (nota2/(p1*peso)) + (y*(p3/15)) + (z*(p4/3));
+								if(res>6.6 && res<=6.8)
+								{
+									pos++;
+									mensagens.put(pos+"","Acertando "+y+" na objetiva final e "+z+" na discursiva.");
+									break;
+								}	
+							}						
+						}
+						if ( pos > 0)
+						{
+							Intent data = new Intent(this, ResultadoSimuladorActivity.class);
+							data.putExtra("redacao", redacao);
+							data.putExtra("2nota", nota2);
+							data.putExtra("possibilidades", mensagens.toString());
+							data.putExtra("total", pos);
+							startActivityForResult(data,1);		
+						}
+						else
+							Toast.makeText(this, "Nenhuma possibilidade para sua aprovação.", Toast.LENGTH_LONG).show();			
+					}
+				}			
+			}
 		}
 		
 	}
