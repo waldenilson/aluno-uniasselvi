@@ -3,7 +3,7 @@
 
     <string name="app_name">AlunoUniasselvi</string>
     <string name="app_desc">Aplicativo de controle do aluno uniasselvi NEAD.</string>
-    <string name="app_version">v0.49</string>
+    <string name="app_version">v0.60</string>
     
     <string name="menu_settings">Settings</string>
     <string name="ale_buscando_dados">Buscando Dados. . .</string>
@@ -29,7 +29,7 @@
 
     <string name="txt_codigo_fonte">Este aplicativo foi idealizado, desenvolvido e disponibilizado por um aluno da faculdade Uniasselvi.\n\n Aluno: Waldenilson Carneiro\n\n Email: waldenilsonnovaes@gmail.com\n\n Pólo de ensino a distância Athenas / São Luis - Maranhão.\n\n---\n\nO código fonte do aplicativo pode ser acessado no repositório online do github no link abaixo.\n\nhttps://github.com/waldenilson/aluno-uniasselvi\n\n---\n\nO git é um programa de controle de versões.\n\nO github é um site para gerenciar os projetos que usam o git.</string>
     <string name="txt_seminarios">Esta será uma das próximas funcionalidades do app.\n\nVocê poderá controlar as tarefas do seu grupo do seminário interdisciplinar semestre a semestre.\n\n---\n\nAs tarefas serão organizadas dentro das etapas do cronograma:\n\nOrientação\nEstudos Preliminares\nPlanejamento\nExecução\nAnálise\nSocialização</string>
-    <string name="txt_info">O app foi desenvolvido com o intuito de reunir na palma da mão as funcionalidades que podem ser úteis para o aluno Uniasselvi.\n\nTodas as funções são baseadas nas informações do portal ava da universidade e envolvimento com alunos e tutores da instituição.\n\nA versão do app é baseada nos commits do git. Em torno de 10 commits gera uma pequena release, em torno de 5 release gera uma atualização no app.\n\nVersão atual: 0.57\n\n---\n\nFerramentas utilizadas no desenvolvimento:\n\nEclipse IDE com SDK Android\n\nControle de projeto XP (métodos ágeis) - Trello\n\nControle de versões - GIT\n\nSistema Operacional - Linux</string>
+    <string name="txt_info">O app foi desenvolvido com o intuito de reunir na palma da mão as funcionalidades que podem ser úteis para o aluno Uniasselvi.\n\nTodas as funções são baseadas nas informações do portal ava da universidade e envolvimento com alunos e tutores da instituição.\n\nA versão do app é baseada nos commits do git. Em torno de 10 commits gera uma pequena release, em torno de 5 release gera uma atualização no app.\n\nVersão atual: 0.60\n\n---\n\nFerramentas utilizadas no desenvolvimento:\n\nEclipse IDE com SDK Android\n\nControle de projeto XP (métodos ágeis) - Trello\n\nControle de versões - GIT\n\nSistema Operacional - Linux</string>
     <string name="txt_creditos">Criador: Waldenilson Carneiro\n\nDesenvolve em Python/Django, Java/Android\n\nOutras principais tecnologias que utiliza:\n\nMySQL/PostgreSQL\n\neXtreme Programming - XP\n\nGIT\n\n---\n\nProgramador - Ministério Desenvolvimento Agrário\n\nColaborador no portal do software público\n\nFundador da Casa do Software Livre\nNão pague, contribua!\n\nhttp://www.acasadosoftwarelivre.com.br\n\ncontato@acasadosoftwarelivre.com.br\n\nSão Luis - Maranhão</string>
     <string name="txt_novidades">Novas versões serão desenvolvidas de acordo com a necessidade dos alunos da Uniasselvi.\n\nEntre em contato para informar sugestôes, críticas ou propostas de parcerias, trabalhos etc.\n\nEmail: contato@acasadosoftwarelivre.com.br\n\nEmail Pessoal: waldenilsonnovaes@gmail.com\n\nWebSite: http://www.acasadosoftwarelivre.com.br</string>
     
