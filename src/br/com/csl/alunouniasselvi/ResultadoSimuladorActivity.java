@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
@@ -22,6 +23,7 @@ public class ResultadoSimuladorActivity extends Activity implements IActivity, O
 
     private ProgressDialog pd;
 	private ListView listresultado;
+	private TextView tvdesc;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +38,14 @@ public class ResultadoSimuladorActivity extends Activity implements IActivity, O
 		JSONObject possibilidades = null;
 		try
 		{
+			int pos = 0;
 			possibilidades = new JSONObject( extra.getString("possibilidades") );
 			for( int x=0; x< possibilidades.length();x++)
 			{
-				int pos = x+1;
+				pos = x+1;
 				title.add(possibilidades.getString(pos+""));
 			}
+			tvdesc.setText( pos+" "+tvdesc.getText() );
 		}
 		catch (JSONException e) {}
 		
@@ -53,6 +57,7 @@ public class ResultadoSimuladorActivity extends Activity implements IActivity, O
 
 	private void init(){
 		listresultado = (ListView) findViewById(R.id.lv_resultado);
+		tvdesc = (TextView) findViewById(R.id.tv_resultado_desc);
 	}
 
 	@Override

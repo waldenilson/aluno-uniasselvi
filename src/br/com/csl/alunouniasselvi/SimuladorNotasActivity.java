@@ -104,7 +104,10 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 								if(res>6.6 && res<=6.7)
 								{
 									pos++;
-									mensagens.put(pos+"","Acertando "+x+" na 1ª objetiva, "+y+" na objetiva final e "+z+" na discursiva.");
+									String q1 = "questão", q2 = "questões";
+									String str1 = "";
+									if (x == 0) str1 = q1; else str1 = q2;
+									mensagens.put(pos+"","Acertando "+x+" "+str1+" na 1ª objetiva, "+y+" na objetiva final e "+z+" na discursiva.");
 									break;
 								}	
 							}						
@@ -140,7 +143,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 								if(res>6.6 && res<=6.8)
 								{
 									pos++;
-									mensagens.put(pos+"","Acertando "+y+" na objetiva final e "+z+" na discursiva.");
+									mensagens.put(pos+"","Acertando "+y+" questão(ôes) na objetiva final e "+z+" na discursiva.");
 									break;
 								}	
 							}						

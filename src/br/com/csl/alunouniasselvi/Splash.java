@@ -7,7 +7,7 @@ import android.os.Handler;
 
 public class Splash extends Activity {
 
-	private final int TIME_SPLASH = 2000;
+	private final int TIME_SPLASH = 2500;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
