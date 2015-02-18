@@ -20,17 +20,17 @@
     <string name="lb_seminarios">Seminário Interdisciplinar</string>
     <string name="lb_novidades">Novidades</string>
     <string name="lb_creditos">Créditos</string>
-    <string name="lb_desc_creditos">Saiba mais sobre o desenvolvimento desse app.</string>
+    <string name="lb_desc_creditos">Saiba mais sobre o desenvolvedor deste app.</string>
     <string name="lb_desc_codigo_fonte">App desenvolvimento através de ferramentas livres.</string>
     <string name="lb_desc_seminarios">Simulador de Notas Finais</string>
     <string name="lb_desc_novidades">Novidades</string>
     <string name="lb_info">Informações</string>
     <string name="lb_desc_info">Saiba como funciona o app.</string>
 
-    <string name="txt_codigo_fonte">Este aplicativo foi idealizado, desenvolvido e disponibilizado por um aluno da faculdade Uniasselvi.\n\n Aluno: Waldenilson Carneiro\n\n Email: waldenilsonnovaes@gmail.com\n\n Pólo de ensino a distância Athenas / São Luis - Maranhão.\n\n\nO código fonte do aplicativo pode ser acessado no repositório online do github no link abaixo.\n\nhttps://github.com/waldenilson/aluno-uniasselvi\n\n\nO git é um programa de controle de versões.\n\nO github é um site para gerenciar os projetos que usam o git.</string>
+    <string name="txt_codigo_fonte">Este aplicativo foi idealizado, desenvolvido e disponibilizado por um aluno da faculdade Uniasselvi.\n\n Aluno: Waldenilson Carneiro\n\n Email: waldenilsonnovaes@gmail.com\n\n Pólo de ensino a distância Athenas / São Luis - Maranhão.\n\n---\n\nO código fonte do aplicativo pode ser acessado no repositório online do github no link abaixo.\n\nhttps://github.com/waldenilson/aluno-uniasselvi\n\n---\n\nO git é um programa de controle de versões.\n\nO github é um site para gerenciar os projetos que usam o git.</string>
     <string name="txt_seminarios">Novidades</string>
     <string name="txt_info">Informações</string>
-    <string name="txt_creditos">Informações</string>
+    <string name="txt_creditos">Criador: Waldenilson Carneiro\n\nDesenvolve em Python/Django, Java/Android\n\nPrincipais ferramentas que utiliza:\n\nMySQL/PostgreSQL\n\neXtreme Programming - XP\n\nGIT\n\n---\n\nProgramador - Ministério Desenvolvimento Agrário\n\nColaborador no portal do software público\n\nFundador da Casa do Software Livre\n\nwww.acasadosoftwarelivre.com.br\n\ncontato@acasadosoftwarelivre.com.br</string>
     <string name="txt_novidades">Saiba como funciona o app.</string>
     
     <string name="lb_voltar">VOLTAR</string>
