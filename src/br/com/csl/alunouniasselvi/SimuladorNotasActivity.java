@@ -73,7 +73,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 		
 		if ( etredacao.getText().toString().equals("") || etredacao.getText().toString().equals(".") ) 
 		{
-			Toast.makeText(this, "Informe a nota da Redação", Toast.LENGTH_LONG).show();			
+			Toast.makeText(this, getString(R.string.ale_nota_redacao), Toast.LENGTH_LONG).show();			
 		}
 		else
 		{
@@ -82,7 +82,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 			
 			if( redacao < 0 || redacao > 10)
 			{
-				Toast.makeText(this, "Informe uma nota de 0 a 10.", Toast.LENGTH_LONG).show();							
+				Toast.makeText(this, getString(R.string.ale_nota_0_10), Toast.LENGTH_LONG).show();							
 			}
 			else
 			{
@@ -120,13 +120,13 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 						startActivityForResult(data,1);		
 					}
 					else
-						Toast.makeText(this, "Nenhuma possibilidade para sua aprovação.", Toast.LENGTH_LONG).show();
+						Toast.makeText(this, getString(R.string.ale_aprovacao_0), Toast.LENGTH_LONG).show();
 				}
 				else
 				{
 					if ( spnota2.getSelectedItem().toString().equals("") ) 
 					{
-						Toast.makeText(this, "Informe a nota da 2ª prova", Toast.LENGTH_LONG).show();			
+						Toast.makeText(this, getString(R.string.ale_nota_2_prova), Toast.LENGTH_LONG).show();			
 					}
 					else
 					{
@@ -155,7 +155,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 							startActivityForResult(data,1);		
 						}
 						else
-							Toast.makeText(this, "Nenhuma possibilidade para sua aprovação.", Toast.LENGTH_LONG).show();			
+							Toast.makeText(this, getString(R.string.ale_aprovacao_0), Toast.LENGTH_LONG).show();			
 					}
 				}			
 			}

@@ -7,6 +7,10 @@
     
     <string name="menu_settings">Settings</string>
     <string name="ale_buscando_dados">Buscando Dados. . .</string>
+    <string name="ale_nota_redacao">Informe a nota da Redação</string>
+    <string name="ale_nota_0_10">Informe uma nota de 0 a 10</string>
+    <string name="ale_aprovacao_0">Nenhuma possibilidade para sua aprovação</string>
+    <string name="ale_nota_2_prova">Informe a nota da 2ª prova</string>
     
     <string name="lb_simulador_notas">Simulador de Notas Finais</string>
     <string name="lb_desc_simulador_notas">Simule quanto necessitará para ser aprovado em uma disciplina.</string>
@@ -17,13 +21,13 @@
     <string name="lb_novidades">Novidades</string>
     <string name="lb_creditos">Créditos</string>
     <string name="lb_desc_creditos">Saiba mais sobre o desenvolvimento desse app.</string>
-    <string name="lb_desc_codigo_fonte">Aplicativo disponibilizado como Software Livre.</string>
+    <string name="lb_desc_codigo_fonte">App desenvolvimento através de ferramentas livres.</string>
     <string name="lb_desc_seminarios">Simulador de Notas Finais</string>
     <string name="lb_desc_novidades">Novidades</string>
     <string name="lb_info">Informações</string>
     <string name="lb_desc_info">Saiba como funciona o app.</string>
 
-    <string name="txt_codigo_fonte">Este aplicativo foi idealizado, desenvolvido e disponibilizado como software livre por um aluno da faculdade Uniasselvi.\n\n Aluno: Waldenilson Carneiro\n\n Email: waldenilsonnovaes@gmail.com\n\n Pólo de ensino a distância Athenas / São Luis - Maranhão.\n\n\nO código fonte do aplicativo pode ser acessado no repositório online do github no link abaixo.\n\nhttps://github.com/waldenilson/aluno-uniasselvi\n\n\nO git é um programa de controle de versões.\n\nO github é um site para gerenciar os projetos que usam o git.</string>
+    <string name="txt_codigo_fonte">Este aplicativo foi idealizado, desenvolvido e disponibilizado por um aluno da faculdade Uniasselvi.\n\n Aluno: Waldenilson Carneiro\n\n Email: waldenilsonnovaes@gmail.com\n\n Pólo de ensino a distância Athenas / São Luis - Maranhão.\n\n\nO código fonte do aplicativo pode ser acessado no repositório online do github no link abaixo.\n\nhttps://github.com/waldenilson/aluno-uniasselvi\n\n\nO git é um programa de controle de versões.\n\nO github é um site para gerenciar os projetos que usam o git.</string>
     <string name="txt_seminarios">Novidades</string>
     <string name="txt_info">Informações</string>
     <string name="txt_creditos">Informações</string>
