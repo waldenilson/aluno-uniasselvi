@@ -113,7 +113,7 @@
 	                android:layout_marginRight="5dp"
                     android:textColor="#666"
                     android:textSize="12sp"
-                    android:text="TextView" />
+                    android:text="@string/txt_novidades" />
 
             </LinearLayout>
         </ScrollView>

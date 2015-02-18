@@ -83,16 +83,21 @@ public final class R {
         public static final int lb_desc_seminarios=0x7f04000f;
         public static final int lb_desc_simulador_notas=0x7f040006;
         public static final int lb_info=0x7f040011;
-        public static final int lb_marcar_nota2=0x7f040014;
-        public static final int lb_nota_1_objetiva=0x7f040015;
-        public static final int lb_nota_redacao=0x7f040016;
+        public static final int lb_marcar_nota2=0x7f040019;
+        public static final int lb_nota_1_objetiva=0x7f04001a;
+        public static final int lb_nota_redacao=0x7f04001b;
         public static final int lb_novidades=0x7f04000b;
         public static final int lb_resultado_simulador_notas=0x7f040007;
         public static final int lb_seminarios=0x7f04000a;
         public static final int lb_simulador_notas=0x7f040005;
-        public static final int lb_simular=0x7f040017;
-        public static final int lb_voltar=0x7f040013;
+        public static final int lb_simular=0x7f04001c;
+        public static final int lb_voltar=0x7f040018;
         public static final int menu_settings=0x7f040003;
+        public static final int txt_codigo_fonte=0x7f040013;
+        public static final int txt_creditos=0x7f040016;
+        public static final int txt_info=0x7f040015;
+        public static final int txt_novidades=0x7f040017;
+        public static final int txt_seminarios=0x7f040014;
     }
     public static final class style {
         /** 

@@ -22,6 +22,12 @@
     <string name="lb_desc_novidades">Novidades</string>
     <string name="lb_info">Informações</string>
     <string name="lb_desc_info">Saiba como funciona o app.</string>
+
+    <string name="txt_codigo_fonte">Simulador de Notas Finais</string>
+    <string name="txt_seminarios">Novidades</string>
+    <string name="txt_info">Informações</string>
+    <string name="txt_creditos">Informações</string>
+    <string name="txt_novidades">Saiba como funciona o app.</string>
     
     <string name="lb_voltar">VOLTAR</string>
     <string name="lb_marcar_nota2">Marque para informar a nota da 2ª prova.</string>
