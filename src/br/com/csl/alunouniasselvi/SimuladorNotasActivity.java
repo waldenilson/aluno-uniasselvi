@@ -143,7 +143,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 							for ( int z=1; z<=3; z++)
 							{
 								res = redacao + (nota2/(p1*peso)) + (y*(p3/15)) + (z*(p4/3));
-								if(res>6.6 && res<=6.8)
+								if(res>6.6 && res<=7.0)
 								{
 									pos++;
 									mensagens.put(pos+"","Acertando "+y+" questão(ôes) na objetiva final e "+z+" na discursiva.");
