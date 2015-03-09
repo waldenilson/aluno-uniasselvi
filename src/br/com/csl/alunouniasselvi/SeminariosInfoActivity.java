@@ -8,14 +8,14 @@ import android.content.Intent;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.View;
 
-public class SeminariosActivity extends Activity implements IActivity {
+public class SeminariosInfoActivity extends Activity implements IActivity {
 
     private ProgressDialog pd;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_seminarios);
+		setContentView(R.layout.activity_info_seminarios);
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
 		final Bundle extra = getIntent().getExtras();

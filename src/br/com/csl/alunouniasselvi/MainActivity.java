@@ -103,7 +103,7 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 		if( arg2 == 0 )
 			bt_simulador_notas();
 		else if( arg2 == 1){
-			Intent data = new Intent(this, SeminariosActivity.class);
+			Intent data = new Intent(this, SeminariosInfoActivity.class);
 			startActivityForResult(data,1);				
 		}
 		else if( arg2 == 3){

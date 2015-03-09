@@ -17,12 +17,14 @@
     <string name="lb_resultado_simulador_notas">Resultado da Simulação</string>
     <string name="lb_desc_resultado_simulador_notas">Possibilidade(s) mínima(s) para você ser aprovado.</string>
     <string name="lb_codigo_fonte">Código Fonte</string>
-    <string name="lb_seminarios">Seminário Interdisciplinar</string>
+    <string name="lb_seminarios">Meus Seminários</string>
+    <string name="lb_info_seminarios">Seminário Interdisciplinar</string>
     <string name="lb_novidades">Novidades</string>
     <string name="lb_creditos">Créditos</string>
     <string name="lb_desc_creditos">Saiba mais sobre o desenvolvedor deste app.</string>
     <string name="lb_desc_codigo_fonte">App desenvolvimento através de ferramentas livres.</string>
     <string name="lb_desc_seminarios">Controle das tarefas dos seus seminários.</string>
+    <string name="lb_desc_info_seminarios">Controle das tarefas dos seus seminários.</string>
     <string name="lb_desc_novidades">Acompanhe o desenvolvimento deste e de outros apps.</string>
     <string name="lb_info">Informações</string>
     <string name="lb_desc_info">Saiba como funciona o app.</string>

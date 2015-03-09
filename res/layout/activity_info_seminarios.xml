@@ -32,52 +32,33 @@
 	            android:layout_height="wrap_content"
 	            android:src="@drawable/ic_launcher" />
         </LinearLayout>
-
+        
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
             android:layout_weight="10"
             android:gravity="center_vertical"
             android:orientation="vertical" >
-
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#fff"
+                android:text="@string/lb_info_seminarios"
                 android:textSize="15sp"
-                android:text="@string/lb_seminarios" />
-			
-			
-		
-		</LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginRight="5dp"
-            android:gravity="center_horizontal|center_vertical" >
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="click_bt_bar_info"
-                android:src="@drawable/about" />
-
+                android:textColor="#fff" />
         </LinearLayout>
         
    </LinearLayout>
-   
+    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:background="#666" >
     </LinearLayout>
- 
-<LinearLayout
+    
+    
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="#fff"
@@ -85,36 +66,42 @@
         android:gravity="center_vertical|center_horizontal" >
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:text="@string/lb_desc_seminarios"
+            android:text="@string/lb_desc_info_seminarios"
             android:textSize="13sp" />
         
-    </LinearLayout>    
+    </LinearLayout>
+    
 
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:background="#fff"
+            android:layout_margin="10dp"
+            android:layout_weight="10" >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-	            android:layout_margin="10dp"
-	            android:background="#fff"
-	            android:fillViewport="true"
-	            android:layout_weight="10" 
                 android:orientation="vertical" >
 
-		        <ListView
-		            android:id="@+id/lv_seminario"
-		            android:layout_width="match_parent"
-		            android:layout_height="match_parent"
-		            android:layout_marginTop="10dp"
-		            android:layout_marginRight="10dp"
-		            android:layout_marginLeft="10dp" >
-		        </ListView>
-	        
+                <TextView
+                    android:id="@+id/tv_creditos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+	                android:layout_marginTop="10dp"
+	                android:layout_marginLeft="5dp"
+	                android:layout_marginRight="5dp"
+                    android:textColor="#666"
+                    android:textSize="12sp"
+                    android:text="@string/txt_seminarios" />
+
             </LinearLayout>
+        </ScrollView>
     
 </LinearLayout>
-
