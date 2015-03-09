@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.csl.alunouniasselvi.abstractactivity.IActivity;
+import br.com.csl.alunouniasselvi.controller.GlobalController;
 import br.com.csl.alunouniasselvi.list.ListViewImageAdapter;
 import br.com.csl.alunouniasselvi.list.ListViewMenuAdapter;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 
     private ProgressDialog pd;
     private ListView lvmenu;
+    private GlobalController control = new GlobalController();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -103,7 +105,8 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 		if( arg2 == 0 )
 			bt_simulador_notas();
 		else if( arg2 == 1){
-			Intent data = new Intent(this, SeminariosInfoActivity.class);
+			Intent data = new Intent(this, SeminariosActivity.class);
+			data.putExtra("control", control);
 			startActivityForResult(data,1);				
 		}
 		else if( arg2 == 3){
