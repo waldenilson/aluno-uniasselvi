@@ -20,70 +20,36 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SeminariosActivity extends Activity implements IActivity {
+public class NovoSeminarioActivity extends Activity implements IActivity {
 
     private ProgressDialog pd;
-    private ListView lvseminario;
 	private GlobalController control;
-	private List<String> seminarios;
-	private TextView tvnolist;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_seminarios);
+		setContentView(R.layout.activity_novo_seminario);
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
 		final Bundle extra = getIntent().getExtras();
 		control = (GlobalController) extra.getSerializable("control");		
 
-		abrirDialogProcessamento();
-		try
-		{
-			JSONArray j = new JSONArray(control.seminario);
-			seminarios = new ArrayList<String>();
-			if (j.length()>0)
-			{
-				for(int x=0;x<j.length();x++)
-					seminarios.add( j.getJSONObject(x).getString("modulo") );
-				fecharDialogProcessamento();
-				tvnolist.setVisibility(View.INVISIBLE);
-			}
-			else{
-				fecharDialogProcessamento();
-				lvseminario.setVisibility(View.INVISIBLE);
-			}
-		}
-		catch(JSONException e)
-		{
-			fecharDialogProcessamento();
-			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
-			super.finish();						
-		}
-
-		ListViewMenuAdapter lv = new ListViewMenuAdapter(this, seminarios, seminarios);
-		lvseminario.setAdapter(lv);
-		lvseminario.setTextFilterEnabled(true);
 				
 	}
 
 	private void init(){
-		lvseminario = (ListView) findViewById(R.id.lv_seminario);
-		tvnolist = (TextView) findViewById(R.id.tv_nolist);
 	}
 
-	public void bt_novo(View v) {
+	public void bt_criar(View v) {
 		// TODO Auto-generated method stub
-		Intent data = new Intent(this, NovoSeminarioActivity.class);
-		data.putExtra("control", control);
-		startActivityForResult(data,1);				
+//		Intent data = new Intent(this, SeminariosInfoActivity.class);
+//		startActivityForResult(data,1);				
+		Toast.makeText(this, "novo", Toast.LENGTH_LONG).show();
 	}
 
 	@Override
 	public void click_bt_bar_info(View v) {
 		// TODO Auto-generated method stub
-		Intent data = new Intent(this, SeminariosInfoActivity.class);
-		startActivityForResult(data,1);				
 	}
 	
 	@Override
@@ -115,13 +81,6 @@ public class SeminariosActivity extends Activity implements IActivity {
 		getIntent().putExtra("control", control);
 		setResult(1, getIntent());
 		super.finish();
-	}
-	
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		// TODO Auto-generated method stub
-		super.onActivityResult(requestCode, resultCode, data);
-		control = (GlobalController) data.getSerializableExtra("control");
 	}
 
 }

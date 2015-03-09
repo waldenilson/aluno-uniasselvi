@@ -60,14 +60,15 @@ public final class R {
         public static final int activity_layout=0x7f030004;
         public static final int activity_main=0x7f030005;
         public static final int activity_novidades=0x7f030006;
-        public static final int activity_resultado_simulador=0x7f030007;
-        public static final int activity_seminarios=0x7f030008;
-        public static final int activity_simulador_notas=0x7f030009;
-        public static final int listimage=0x7f03000a;
-        public static final int listmenu=0x7f03000b;
-        public static final int listsimple=0x7f03000c;
-        public static final int spinner_item=0x7f03000d;
-        public static final int splash=0x7f03000e;
+        public static final int activity_novo_seminario=0x7f030007;
+        public static final int activity_resultado_simulador=0x7f030008;
+        public static final int activity_seminarios=0x7f030009;
+        public static final int activity_simulador_notas=0x7f03000a;
+        public static final int listimage=0x7f03000b;
+        public static final int listmenu=0x7f03000c;
+        public static final int listsimple=0x7f03000d;
+        public static final int spinner_item=0x7f03000e;
+        public static final int splash=0x7f03000f;
     }
     public static final class menu {
         public static final int activity_main=0x7f060000;
@@ -85,31 +86,34 @@ public final class R {
         public static final int er_json=0x7f04000a;
         public static final int lb_codigo_fonte=0x7f04000f;
         public static final int lb_creditos=0x7f040013;
+        public static final int lb_criar_seminario=0x7f04001d;
         public static final int lb_desc_codigo_fonte=0x7f040015;
         public static final int lb_desc_creditos=0x7f040014;
         public static final int lb_desc_info=0x7f04001a;
         public static final int lb_desc_info_seminarios=0x7f040017;
         public static final int lb_desc_novidades=0x7f040018;
+        public static final int lb_desc_novo_seminario=0x7f04001c;
         public static final int lb_desc_resultado_simulador_notas=0x7f04000e;
         public static final int lb_desc_seminarios=0x7f040016;
         public static final int lb_desc_simulador_notas=0x7f04000c;
         public static final int lb_info=0x7f040019;
         public static final int lb_info_seminarios=0x7f040011;
-        public static final int lb_marcar_nota2=0x7f040021;
-        public static final int lb_nota_1_objetiva=0x7f040022;
-        public static final int lb_nota_redacao=0x7f040023;
+        public static final int lb_marcar_nota2=0x7f040024;
+        public static final int lb_nota_1_objetiva=0x7f040025;
+        public static final int lb_nota_redacao=0x7f040026;
         public static final int lb_novidades=0x7f040012;
+        public static final int lb_novo_seminario=0x7f04001b;
         public static final int lb_resultado_simulador_notas=0x7f04000d;
         public static final int lb_seminarios=0x7f040010;
         public static final int lb_simulador_notas=0x7f04000b;
-        public static final int lb_simular=0x7f040024;
-        public static final int lb_voltar=0x7f040020;
+        public static final int lb_simular=0x7f040027;
+        public static final int lb_voltar=0x7f040023;
         public static final int menu_settings=0x7f040003;
-        public static final int txt_codigo_fonte=0x7f04001b;
-        public static final int txt_creditos=0x7f04001e;
-        public static final int txt_info=0x7f04001d;
-        public static final int txt_novidades=0x7f04001f;
-        public static final int txt_seminarios=0x7f04001c;
+        public static final int txt_codigo_fonte=0x7f04001e;
+        public static final int txt_creditos=0x7f040021;
+        public static final int txt_info=0x7f040020;
+        public static final int txt_novidades=0x7f040022;
+        public static final int txt_seminarios=0x7f04001f;
     }
     public static final class style {
         /** 
