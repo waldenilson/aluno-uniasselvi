@@ -25,7 +25,6 @@ public class SeminariosActivity extends Activity implements IActivity {
     private ProgressDialog pd;
     private ListView lvseminario;
 	private GlobalController control;
-	private List<String> seminarios;
 	private TextView tvnolist;
 	
 	@Override
@@ -42,14 +41,18 @@ public class SeminariosActivity extends Activity implements IActivity {
 	private void criarLista()
 	{
 		abrirDialogProcessamento();
+		List<String> modulos = new ArrayList<String>();
+		List<String> descricoes = new ArrayList<String>();
 		try
 		{
 			JSONArray j = new JSONArray(control.seminario);
-			seminarios = new ArrayList<String>();
 			if (j.length()>0)
 			{
 				for(int x=0;x<j.length();x++)
-					seminarios.add( j.getJSONObject(x).getString("tema_base") );
+				{
+					modulos.add( j.getJSONObject(x).getString("modulo") );
+					descricoes.add( j.getJSONObject(x).getString("descricao") );
+				}
 				fecharDialogProcessamento();
 				tvnolist.setVisibility(View.INVISIBLE);
 				lvseminario.setVisibility(View.VISIBLE);
@@ -67,7 +70,7 @@ public class SeminariosActivity extends Activity implements IActivity {
 			super.finish();						
 		}
 
-		ListViewMenuAdapter lv = new ListViewMenuAdapter(this, seminarios, seminarios);
+		ListViewMenuAdapter lv = new ListViewMenuAdapter(this, modulos, descricoes);
 		lvseminario.setAdapter(lv);
 		lvseminario.setTextFilterEnabled(true);		
 	}

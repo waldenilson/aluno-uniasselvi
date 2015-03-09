@@ -123,4 +123,13 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 		}		
 	}
 
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		if( resultCode == 1)
+			control = (GlobalController) data.getSerializableExtra("control");
+	}
+	
+	
 }

@@ -55,6 +55,22 @@ public class NovoSeminarioActivity extends Activity implements IActivity {
 				JSONObject jo = new JSONObject();
 				jo.put("tema_base", ettemabase.getText().toString() );
 				jo.put("tema_grupo", ettemagrupo.getText().toString() );
+				jo.put("curso", ettemagrupo.getText().toString() );
+				jo.put("turma", ettemagrupo.getText().toString() );
+				jo.put("grupo", ettemagrupo.getText().toString() );
+				jo.put("descricao", ettemagrupo.getText().toString() );
+				jo.put("modulo", ettemagrupo.getText().toString() );
+				jo.put("cidade_polo", ettemagrupo.getText().toString() );
+				//etapas
+				JSONArray etapas = new JSONArray();
+				JSONObject et1 = new JSONObject(); et1.put("id", "1"); et1.put("nome", "Orientação"); etapas.put(et1);
+				JSONObject et2 = new JSONObject(); et2.put("id", "2"); et2.put("nome", "Estudos preliminares"); etapas.put(et2);
+				JSONObject et3 = new JSONObject(); et3.put("id", "3"); et3.put("nome", "Planejamento"); etapas.put(et3);
+				JSONObject et4 = new JSONObject(); et4.put("id", "4"); et4.put("nome", "Execução"); etapas.put(et4);
+				JSONObject et5 = new JSONObject(); et5.put("id", "5"); et5.put("nome", "Análise"); etapas.put(et5);
+				JSONObject et6 = new JSONObject(); et6.put("id", "6"); et6.put("nome", "Socialização"); etapas.put(et6);				
+				jo.put("etapas", etapas);
+				
 				j.put(jo);
 				control.seminario = j.toString();
 				control.updateSeminario();
