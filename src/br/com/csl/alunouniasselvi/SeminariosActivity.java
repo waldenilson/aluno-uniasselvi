@@ -1,7 +1,15 @@
 package br.com.csl.alunouniasselvi;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import br.com.csl.alunouniasselvi.abstractactivity.IActivity;
 import br.com.csl.alunouniasselvi.controller.GlobalController;
+import br.com.csl.alunouniasselvi.list.ListViewMenuAdapter;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -9,12 +17,15 @@ import android.content.Intent;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class SeminariosActivity extends Activity implements IActivity {
 
     private ProgressDialog pd;
     private ListView lvseminario;
 	private GlobalController control;
+	private List<String> seminarios;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -23,6 +34,31 @@ public class SeminariosActivity extends Activity implements IActivity {
 		init();
 		final Bundle extra = getIntent().getExtras();
 		control = (GlobalController) extra.getSerializable("control");		
+
+		abrirDialogProcessamento();
+		try
+		{
+			JSONArray j = new JSONArray(control.seminario);
+			seminarios = new ArrayList<String>();
+			if (j.length()>0)
+				for(int x=0;x<j.length();x++)
+					seminarios.add( j.getJSONObject(x).getString("modulo") );
+			else{
+				fecharDialogProcessamento();
+				Toast.makeText(this, getString(R.string.ale_retorno_vazio), Toast.LENGTH_LONG).show();
+				super.finish();			
+			}
+		}
+		catch(JSONException e)
+		{
+			fecharDialogProcessamento();
+			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
+			super.finish();						
+		}
+
+		ListViewMenuAdapter lv = new ListViewMenuAdapter(this, seminarios, seminarios);
+		lvseminario.setAdapter(lv);
+		lvseminario.setTextFilterEnabled(true);
 				
 	}
 
