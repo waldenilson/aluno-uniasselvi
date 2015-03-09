@@ -44,7 +44,18 @@ public class NovoSeminarioActivity extends Activity implements IActivity {
 		// TODO Auto-generated method stub
 //		Intent data = new Intent(this, SeminariosInfoActivity.class);
 //		startActivityForResult(data,1);				
-		Toast.makeText(this, "novo", Toast.LENGTH_LONG).show();
+		try
+		{
+			JSONArray j = new JSONArray(control.seminario);
+			JSONObject jo = new JSONObject("{modulo:'2º modulo'}");
+			j.put(jo);
+			control.seminario = j.toString();
+			control.updateSeminario();
+			Toast.makeText(this, "ok", Toast.LENGTH_LONG).show();
+		}
+		catch(JSONException e){
+			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
+		}
 	}
 
 	@Override

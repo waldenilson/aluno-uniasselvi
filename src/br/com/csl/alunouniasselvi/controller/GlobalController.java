@@ -32,6 +32,10 @@ public class GlobalController implements Serializable {
 		criarConfig();
 	}
 
+	public void updateSeminario(){
+		criarArquivo("seminario", this.seminario, "txt");
+	}
+	
 	public void criarConfig(){
 		if ( ! isFile("seminario", "txt") )
 			criarArquivo("seminario", this.seminario, "txt");
@@ -39,7 +43,7 @@ public class GlobalController implements Serializable {
 			this.seminario = buscarArquivo("seminario", "txt");
 	}
 	
-	public boolean criarArquivo(String nome, String corpo, String extensao)
+	private boolean criarArquivo(String nome, String corpo, String extensao)
 	{
 		
 		// teste criacao arquivo txt com xml da app
@@ -59,7 +63,7 @@ public class GlobalController implements Serializable {
 			}
 	}
 
-	public boolean isFile(String nome, String extensao)
+	private boolean isFile(String nome, String extensao)
 	{
 			File dir = new File( FILES );
 			File f = new File(dir,nome+"."+extensao);
@@ -69,7 +73,7 @@ public class GlobalController implements Serializable {
 				return false;		
 	}
 	
-	public String buscarArquivo(String nome, String extensao)
+	private String buscarArquivo(String nome, String extensao)
 	{
 		String retorno = "";
 		// teste buscar arquivo txt com xml da app
