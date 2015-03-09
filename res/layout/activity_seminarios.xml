@@ -105,6 +105,13 @@
 	            android:layout_weight="10" 
                 android:orientation="vertical" >
 
+                <TextView
+                    android:id="@+id/tv_nolist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inicie o controle do seu seminário adicionando no botão abaixo. NOVO SEMINÁRIO."
+                    android:textSize="13sp" />
+
 		        <ListView
 		            android:id="@+id/lv_seminario"
 		            android:layout_width="match_parent"
@@ -115,6 +122,23 @@
 		        </ListView>
 	        
             </LinearLayout>
-    
+            
+		    <LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="50dp"
+		        android:background="@drawable/aluno_uniasselvi_top"
+		        android:orientation="horizontal"
+		        android:gravity="center_horizontal" >
+		
+		        <Button
+		            android:id="@+id/button1"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:background="@drawable/aluno_uniasselvi_top"
+		            android:text="NOVO SEMINÁRIO"
+		            android:onClick="bt_novo" />
+		        
+		    </LinearLayout>
+		            
 </LinearLayout>
 

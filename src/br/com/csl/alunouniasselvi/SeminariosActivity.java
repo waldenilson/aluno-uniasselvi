@@ -17,6 +17,7 @@ import android.content.Intent;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class SeminariosActivity extends Activity implements IActivity {
@@ -25,6 +26,7 @@ public class SeminariosActivity extends Activity implements IActivity {
     private ListView lvseminario;
 	private GlobalController control;
 	private List<String> seminarios;
+	private TextView tvnolist;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +43,15 @@ public class SeminariosActivity extends Activity implements IActivity {
 			JSONArray j = new JSONArray(control.seminario);
 			seminarios = new ArrayList<String>();
 			if (j.length()>0)
+			{
 				for(int x=0;x<j.length();x++)
 					seminarios.add( j.getJSONObject(x).getString("modulo") );
+				fecharDialogProcessamento();
+				tvnolist.setVisibility(View.INVISIBLE);
+			}
 			else{
 				fecharDialogProcessamento();
-				Toast.makeText(this, getString(R.string.ale_retorno_vazio), Toast.LENGTH_LONG).show();
-				super.finish();			
+				lvseminario.setVisibility(View.INVISIBLE);
 			}
 		}
 		catch(JSONException e)
@@ -64,6 +69,14 @@ public class SeminariosActivity extends Activity implements IActivity {
 
 	private void init(){
 		lvseminario = (ListView) findViewById(R.id.lv_seminario);
+		tvnolist = (TextView) findViewById(R.id.tv_nolist);
+	}
+
+	public void bt_novo(View v) {
+		// TODO Auto-generated method stub
+//		Intent data = new Intent(this, SeminariosInfoActivity.class);
+//		startActivityForResult(data,1);				
+		Toast.makeText(this, "novo", Toast.LENGTH_LONG).show();
 	}
 
 	@Override
