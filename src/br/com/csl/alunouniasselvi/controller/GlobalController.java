@@ -1,5 +1,9 @@
 package br.com.csl.alunouniasselvi.controller;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
@@ -11,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Environment;
 
 public class GlobalController implements Serializable {
 	
@@ -20,8 +25,79 @@ public class GlobalController implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private String keyAccess = "chave";
+	public String seminario = "[]";
+	private final String FILES = Environment.getExternalStorageDirectory()+"/AlunoUniasselvi/files/";
 		
 	public GlobalController(){
+		criarConfig();
+	}
+
+	public void criarConfig(){
+		if ( ! isFile("seminario", "txt") )
+			criarArquivo("seminario", this.seminario, "txt");
+		else
+			this.seminario = buscarArquivo("seminario", "txt");
+	}
+	
+	public boolean criarArquivo(String nome, String corpo, String extensao)
+	{
+		
+		// teste criacao arquivo txt com xml da app
+			try 
+			{
+				File dir = new File( FILES );
+                dir.mkdirs();
+				new File(dir,nome+"."+extensao);
+				FileWriter fw = new FileWriter( FILES+nome+"."+extensao , false );
+				fw.write(corpo);
+				fw.close();
+				
+				return true;
+			}
+			catch (IOException e) {
+				return false;
+			}
+	}
+
+	public boolean isFile(String nome, String extensao)
+	{
+			File dir = new File( FILES );
+			File f = new File(dir,nome+"."+extensao);
+			if(f.exists()) // se arquivo existe
+				return true;
+			else
+				return false;		
+	}
+	
+	public String buscarArquivo(String nome, String extensao)
+	{
+		String retorno = "";
+		// teste buscar arquivo txt com xml da app
+		try 
+		{
+			File dir = new File( FILES );
+            
+			File f = new File(dir,nome+"."+extensao);
+			StringBuffer bufSaida = new StringBuffer();
+
+			if(f.exists()) // se arquivo existe
+			{
+				BufferedReader br = new BufferedReader(new FileReader(f) );
+                String line;
+                while( (line = br.readLine() ) != null)
+                {
+                    bufSaida.append(line+"\n");
+                }
+                br.close();
+                retorno = bufSaida.toString();
+			}
+			else // se arquivo nao existir
+				retorno = "03";
+		}
+		catch (IOException e) {
+			retorno = "00";
+		}
+		return retorno;
 	}
 
 	public Bitmap getBitmapFromURL(String src) {
