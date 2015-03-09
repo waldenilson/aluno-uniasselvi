@@ -49,7 +49,7 @@ public class SeminariosActivity extends Activity implements IActivity {
 			if (j.length()>0)
 			{
 				for(int x=0;x<j.length();x++)
-					seminarios.add( j.getJSONObject(x).getString("modulo") );
+					seminarios.add( j.getJSONObject(x).getString("tema_base") );
 				fecharDialogProcessamento();
 				tvnolist.setVisibility(View.INVISIBLE);
 				lvseminario.setVisibility(View.VISIBLE);

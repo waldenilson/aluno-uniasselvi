@@ -16,6 +16,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +25,7 @@ public class NovoSeminarioActivity extends Activity implements IActivity {
 
     private ProgressDialog pd;
 	private GlobalController control;
+	private EditText ettemabase, ettemagrupo;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,24 +40,32 @@ public class NovoSeminarioActivity extends Activity implements IActivity {
 	}
 
 	private void init(){
+		ettemabase = (EditText) findViewById(R.id.et_tema_base);
+		ettemagrupo = (EditText) findViewById(R.id.et_tema_grupo);
 	}
 
 	public void bt_criar(View v) {
 		// TODO Auto-generated method stub
-//		Intent data = new Intent(this, SeminariosInfoActivity.class);
-//		startActivityForResult(data,1);				
-		try
+		
+		if( ettemabase.getText().toString().length() > 3 )
 		{
-			JSONArray j = new JSONArray(control.seminario);
-			JSONObject jo = new JSONObject("{modulo:'2º modulo'}");
-			j.put(jo);
-			control.seminario = j.toString();
-			control.updateSeminario();
-			finish();
+			try
+			{
+				JSONArray j = new JSONArray(control.seminario);
+				JSONObject jo = new JSONObject();
+				jo.put("tema_base", ettemabase.getText().toString() );
+				jo.put("tema_grupo", ettemagrupo.getText().toString() );
+				j.put(jo);
+				control.seminario = j.toString();
+				control.updateSeminario();
+				finish();
+			}
+			catch(JSONException e){
+				Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
+			}
 		}
-		catch(JSONException e){
-			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
-		}
+		else
+			Toast.makeText(this, getString(R.string.ale_temabase), Toast.LENGTH_LONG).show();
 	}
 
 	@Override

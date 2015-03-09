@@ -12,7 +12,9 @@
     <string name="ale_nota_0_10">Informe uma nota de 0 a 10</string>
     <string name="ale_aprovacao_0">Nenhuma possibilidade para sua aprovação</string>
     <string name="ale_nota_2_prova">Informe a nota da 2ª prova</string>
-    
+	
+	<string name="ale_temabase">Informe ao menos 3 caracteres no tema base</string>
+        
     <string name="er_json">Erro no tratamento dos dados</string>
     
     <string name="lb_simulador_notas">Simulador de Notas Finais</string>

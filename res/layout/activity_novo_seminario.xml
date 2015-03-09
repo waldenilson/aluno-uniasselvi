@@ -93,6 +93,24 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:orientation="vertical" >
+
+                <EditText
+                    android:id="@+id/et_tema_base"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Informe o tema base do módulo"
+                    android:ems="10" >
+                </EditText>
+                
+                <EditText
+                    android:id="@+id/et_tema_grupo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Informe o tema do seu grupo"
+                    android:layout_marginTop="10dp"
+                    android:ems="10" >
+                </EditText>
+                
             </LinearLayout>
         </ScrollView>
 
