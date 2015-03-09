@@ -58,7 +58,7 @@ public class SeminariosInfoActivity extends Activity implements IActivity {
 	@Override
 	public void finish() 
 	{
-		setResult(1, getIntent());
+		setResult(2, getIntent());
 		super.finish();
 	}
 

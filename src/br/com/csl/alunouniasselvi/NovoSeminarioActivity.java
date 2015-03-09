@@ -51,7 +51,7 @@ public class NovoSeminarioActivity extends Activity implements IActivity {
 			j.put(jo);
 			control.seminario = j.toString();
 			control.updateSeminario();
-			Toast.makeText(this, "ok", Toast.LENGTH_LONG).show();
+			finish();
 		}
 		catch(JSONException e){
 			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();

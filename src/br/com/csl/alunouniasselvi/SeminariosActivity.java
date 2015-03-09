@@ -36,7 +36,11 @@ public class SeminariosActivity extends Activity implements IActivity {
 		init();
 		final Bundle extra = getIntent().getExtras();
 		control = (GlobalController) extra.getSerializable("control");		
+		criarLista();				
+	}
 
+	private void criarLista()
+	{
 		abrirDialogProcessamento();
 		try
 		{
@@ -48,10 +52,12 @@ public class SeminariosActivity extends Activity implements IActivity {
 					seminarios.add( j.getJSONObject(x).getString("modulo") );
 				fecharDialogProcessamento();
 				tvnolist.setVisibility(View.INVISIBLE);
+				lvseminario.setVisibility(View.VISIBLE);
 			}
 			else{
 				fecharDialogProcessamento();
 				lvseminario.setVisibility(View.INVISIBLE);
+				tvnolist.setVisibility(View.VISIBLE);
 			}
 		}
 		catch(JSONException e)
@@ -63,10 +69,9 @@ public class SeminariosActivity extends Activity implements IActivity {
 
 		ListViewMenuAdapter lv = new ListViewMenuAdapter(this, seminarios, seminarios);
 		lvseminario.setAdapter(lv);
-		lvseminario.setTextFilterEnabled(true);
-				
+		lvseminario.setTextFilterEnabled(true);		
 	}
-
+	
 	private void init(){
 		lvseminario = (ListView) findViewById(R.id.lv_seminario);
 		tvnolist = (TextView) findViewById(R.id.tv_nolist);
@@ -121,7 +126,11 @@ public class SeminariosActivity extends Activity implements IActivity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
 		super.onActivityResult(requestCode, resultCode, data);
-		control = (GlobalController) data.getSerializableExtra("control");
+		if( resultCode == 1)
+		{
+			control = (GlobalController) data.getSerializableExtra("control");
+			criarLista();
+		}
 	}
 
 }
