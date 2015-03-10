@@ -16,8 +16,10 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,7 +27,10 @@ public class NovoSeminarioActivity extends Activity implements IActivity {
 
     private ProgressDialog pd;
 	private GlobalController control;
-	private EditText ettemabase, etcurso, etmodulo, etgrupo;
+	private EditText ettemabase, etcurso, etgrupo;
+	private Spinner spmodulo;
+	private int idmodulo;
+	private ArrayAdapter<String> aa;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +40,25 @@ public class NovoSeminarioActivity extends Activity implements IActivity {
 		init();
 		final Bundle extra = getIntent().getExtras();
 		control = (GlobalController) extra.getSerializable("control");		
-
-				
+		aa = new ArrayAdapter<String>(this, R.layout.spinner_item);
+		aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spmodulo.setAdapter(aa);
+		aa.add("1º Modulo");
+		aa.add("2º Modulo");
+		aa.add("3º Modulo");
+		aa.add("4º Modulo");
+		aa.add("5º Modulo");
+		aa.add("6º Modulo");
+		aa.add("7º Modulo");
+		aa.add("8º Modulo");
+		aa.add("9º Modulo");
+		aa.add("10º Modulo");				
 	}
 
 	private void init(){
 		ettemabase = (EditText) findViewById(R.id.et_tema_base);
 		etcurso = (EditText) findViewById(R.id.et_nome_curso);
-		etmodulo = (EditText) findViewById(R.id.et_modulo);
+		spmodulo = (Spinner) findViewById(R.id.sp_modulo);
 		etgrupo = (EditText) findViewById(R.id.et_grupo);
 	}
 
@@ -60,7 +76,7 @@ public class NovoSeminarioActivity extends Activity implements IActivity {
 					jo.put("tema_base", ettemabase.getText().toString() );//*
 					jo.put("curso", etcurso.getText().toString() );//*
 					jo.put("grupo", etgrupo.getText().toString() );
-					jo.put("modulo", etmodulo.getText().toString() );//*
+					jo.put("modulo", spmodulo.getSelectedItem().toString() );//*
 					//etapas
 					JSONArray etapas = new JSONArray();
 					JSONObject et1 = new JSONObject(); et1.put("id", "1"); et1.put("nome", "Orientação"); etapas.put(et1);

@@ -26,10 +26,9 @@ public final class R {
         public static final int button4=0x7f070017;
         public static final int cb_2nota=0x7f070014;
         public static final int et_grupo=0x7f07000e;
-        public static final int et_modulo=0x7f07000d;
-        public static final int et_nome_curso=0x7f07000c;
+        public static final int et_nome_curso=0x7f07000b;
         public static final int et_redacao=0x7f070013;
-        public static final int et_tema_base=0x7f07000b;
+        public static final int et_tema_base=0x7f07000c;
         public static final int imageView1=0x7f070001;
         public static final int imageView2=0x7f070000;
         public static final int imageView3=0x7f070006;
@@ -41,6 +40,7 @@ public final class R {
         public static final int menu_settings=0x7f070020;
         public static final int scrollView1=0x7f070004;
         public static final int sp_2nota=0x7f070016;
+        public static final int sp_modulo=0x7f07000d;
         public static final int textView1=0x7f07001f;
         public static final int textView2=0x7f070008;
         public static final int textView3=0x7f070002;
