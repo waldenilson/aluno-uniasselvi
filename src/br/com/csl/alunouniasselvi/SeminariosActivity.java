@@ -143,9 +143,12 @@ public class SeminariosActivity extends Activity implements IActivity, OnItemCli
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		// TODO Auto-generated method stub
-		
-		Toast.makeText(this, "clicou", Toast.LENGTH_LONG).show();
-			
+
+		Intent data = new Intent(this, CodigoFonteActivity.class);
+		data.putExtra("control", control);
+		data.putExtra("seminario", arg2);
+		startActivityForResult(data,1);				
+
 	}
 
 }
