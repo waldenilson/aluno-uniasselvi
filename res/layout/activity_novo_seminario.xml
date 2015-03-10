@@ -98,16 +98,35 @@
                     android:id="@+id/et_tema_base"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Informe o tema base do módulo"
+                    android:hint="Informe o tema do seminário"
                     android:ems="10" >
                 </EditText>
                 
                 <EditText
-                    android:id="@+id/et_tema_grupo"
+                    android:id="@+id/et_nome_curso"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Informe o tema do seu grupo"
+                    android:hint="Informe o curso"
                     android:layout_marginTop="10dp"
+                    android:ems="10" >
+                </EditText>
+                
+                <EditText
+                    android:id="@+id/et_modulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Informe o módulo"
+                    android:layout_marginTop="10dp"
+                    android:ems="10" >
+                </EditText>
+                
+                <EditText
+                    android:id="@+id/et_grupo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Informe os participantes do grupo"
+                    android:layout_marginTop="10dp"
+                    android:inputType="textMultiLine"
                     android:ems="10" >
                 </EditText>
                 

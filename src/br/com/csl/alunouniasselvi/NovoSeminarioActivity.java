@@ -25,7 +25,7 @@ public class NovoSeminarioActivity extends Activity implements IActivity {
 
     private ProgressDialog pd;
 	private GlobalController control;
-	private EditText ettemabase, ettemagrupo;
+	private EditText ettemabase, etcurso, etmodulo, etgrupo;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,26 +41,24 @@ public class NovoSeminarioActivity extends Activity implements IActivity {
 
 	private void init(){
 		ettemabase = (EditText) findViewById(R.id.et_tema_base);
-		ettemagrupo = (EditText) findViewById(R.id.et_tema_grupo);
+		etcurso = (EditText) findViewById(R.id.et_nome_curso);
+		etmodulo = (EditText) findViewById(R.id.et_modulo);
+		etgrupo = (EditText) findViewById(R.id.et_grupo);
 	}
 
 	public void bt_criar(View v) {
 		// TODO Auto-generated method stub
 		
-		if( ettemabase.getText().toString().length() > 3 )
+		if( ettemabase.getText().toString().length() >= 3 )
 		{
 			try
 			{
 				JSONArray j = new JSONArray(control.seminario);
 				JSONObject jo = new JSONObject();
-				jo.put("tema_base", ettemabase.getText().toString() );
-				jo.put("tema_grupo", ettemagrupo.getText().toString() );
-				jo.put("curso", ettemagrupo.getText().toString() );
-				jo.put("turma", ettemagrupo.getText().toString() );
-				jo.put("grupo", ettemagrupo.getText().toString() );
-				jo.put("descricao", ettemagrupo.getText().toString() );
-				jo.put("modulo", ettemagrupo.getText().toString() );
-				jo.put("cidade_polo", ettemagrupo.getText().toString() );
+				jo.put("tema_base", ettemabase.getText().toString() );//*
+				jo.put("curso", etcurso.getText().toString() );//*
+				jo.put("grupo", etgrupo.getText().toString() );
+				jo.put("modulo", etmodulo.getText().toString() );//*
 				//etapas
 				JSONArray etapas = new JSONArray();
 				JSONObject et1 = new JSONObject(); et1.put("id", "1"); et1.put("nome", "Orientação"); etapas.put(et1);

@@ -26,7 +26,7 @@ public class GlobalController implements Serializable {
 	
 	private String keyAccess = "chave";
 	public String seminario = "[]";
-	private final String FILES = Environment.getExternalStorageDirectory()+"/AlunoUniasselvi/files/";
+	private final String FILES = Environment.getExternalStorageDirectory()+"/AlunoUniasselvi/files/control/";
 		
 	public GlobalController(){
 		criarConfig();
