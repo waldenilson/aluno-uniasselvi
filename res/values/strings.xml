@@ -14,7 +14,8 @@
     <string name="ale_nota_2_prova">Informe a nota da 2ª prova</string>
 	
 	<string name="ale_temabase">Informe ao menos 3 caracteres no tema do seminário</string>
-        
+	<string name="ale_curso">Informe ao menos 3 caracteres no nome do curso</string>
+	
     <string name="er_json">Erro no tratamento dos dados</string>
     
     <string name="lb_simulador_notas">Simulador de Notas Finais</string>

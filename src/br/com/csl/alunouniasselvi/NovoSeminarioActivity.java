@@ -51,32 +51,37 @@ public class NovoSeminarioActivity extends Activity implements IActivity {
 		
 		if( ettemabase.getText().toString().length() >= 3 )
 		{
-			try
+			if( etcurso.getText().toString().length() >= 3 )
 			{
-				JSONArray j = new JSONArray(control.seminario);
-				JSONObject jo = new JSONObject();
-				jo.put("tema_base", ettemabase.getText().toString() );//*
-				jo.put("curso", etcurso.getText().toString() );//*
-				jo.put("grupo", etgrupo.getText().toString() );
-				jo.put("modulo", etmodulo.getText().toString() );//*
-				//etapas
-				JSONArray etapas = new JSONArray();
-				JSONObject et1 = new JSONObject(); et1.put("id", "1"); et1.put("nome", "Orientação"); etapas.put(et1);
-				JSONObject et2 = new JSONObject(); et2.put("id", "2"); et2.put("nome", "Estudos preliminares"); etapas.put(et2);
-				JSONObject et3 = new JSONObject(); et3.put("id", "3"); et3.put("nome", "Planejamento"); etapas.put(et3);
-				JSONObject et4 = new JSONObject(); et4.put("id", "4"); et4.put("nome", "Execução"); etapas.put(et4);
-				JSONObject et5 = new JSONObject(); et5.put("id", "5"); et5.put("nome", "Análise"); etapas.put(et5);
-				JSONObject et6 = new JSONObject(); et6.put("id", "6"); et6.put("nome", "Socialização"); etapas.put(et6);				
-				jo.put("etapas", etapas);
-				
-				j.put(jo);
-				control.seminario = j.toString();
-				control.updateSeminario();
-				finish();
+				try
+				{
+					JSONArray j = new JSONArray(control.seminario);
+					JSONObject jo = new JSONObject();
+					jo.put("tema_base", ettemabase.getText().toString() );//*
+					jo.put("curso", etcurso.getText().toString() );//*
+					jo.put("grupo", etgrupo.getText().toString() );
+					jo.put("modulo", etmodulo.getText().toString() );//*
+					//etapas
+					JSONArray etapas = new JSONArray();
+					JSONObject et1 = new JSONObject(); et1.put("id", "1"); et1.put("nome", "Orientação"); etapas.put(et1);
+					JSONObject et2 = new JSONObject(); et2.put("id", "2"); et2.put("nome", "Estudos preliminares"); etapas.put(et2);
+					JSONObject et3 = new JSONObject(); et3.put("id", "3"); et3.put("nome", "Planejamento"); etapas.put(et3);
+					JSONObject et4 = new JSONObject(); et4.put("id", "4"); et4.put("nome", "Execução"); etapas.put(et4);
+					JSONObject et5 = new JSONObject(); et5.put("id", "5"); et5.put("nome", "Análise"); etapas.put(et5);
+					JSONObject et6 = new JSONObject(); et6.put("id", "6"); et6.put("nome", "Socialização"); etapas.put(et6);				
+					jo.put("etapas", etapas);
+					
+					j.put(jo);
+					control.seminario = j.toString();
+					control.updateSeminario();
+					finish();
+				}
+				catch(JSONException e){
+					Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
+				}
 			}
-			catch(JSONException e){
-				Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
-			}
+			else
+				Toast.makeText(this, getString(R.string.ale_curso), Toast.LENGTH_LONG).show();
 		}
 		else
 			Toast.makeText(this, getString(R.string.ale_temabase), Toast.LENGTH_LONG).show();
