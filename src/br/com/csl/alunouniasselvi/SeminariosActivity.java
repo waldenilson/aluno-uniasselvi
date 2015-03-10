@@ -16,11 +16,14 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SeminariosActivity extends Activity implements IActivity {
+public class SeminariosActivity extends Activity implements IActivity, OnItemClickListener {
 
     private ProgressDialog pd;
     private ListView lvseminario;
@@ -72,7 +75,8 @@ public class SeminariosActivity extends Activity implements IActivity {
 
 		ListViewMenuAdapter lv = new ListViewMenuAdapter(this, modulos, descricoes);
 		lvseminario.setAdapter(lv);
-		lvseminario.setTextFilterEnabled(true);		
+		lvseminario.setTextFilterEnabled(true);
+		lvseminario.setOnItemClickListener(this);
 	}
 	
 	private void init(){
@@ -134,6 +138,14 @@ public class SeminariosActivity extends Activity implements IActivity {
 			control = (GlobalController) data.getSerializableExtra("control");
 			criarLista();
 		}
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		// TODO Auto-generated method stub
+		
+		Toast.makeText(this, "clicou", Toast.LENGTH_LONG).show();
+			
 	}
 
 }
