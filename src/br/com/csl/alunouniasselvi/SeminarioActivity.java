@@ -29,6 +29,7 @@ public class SeminarioActivity extends Activity implements IActivity {
 	private GlobalController control;
 	private JSONObject obj;
 	private int id_seminario;
+	private TextView tvcurso,tvmodulo,tvtema_base,tvparticipantes;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,18 +38,33 @@ public class SeminarioActivity extends Activity implements IActivity {
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
 		final Bundle extra = getIntent().getExtras();
-		control = (GlobalController) extra.getSerializable("control");
-				
+		control = (GlobalController) extra.getSerializable("control");				
 		id_seminario = extra.getInt("seminario");
-				
+		try {
+			JSONArray j = new JSONArray(control.seminario);
+			obj = j.getJSONObject(id_seminario);
+			tvcurso.setText( "Curso: "+obj.getString("curso") );
+			tvmodulo.setText( "Módulo: "+obj.getString("modulo") );
+			tvtema_base.setText( "Tema Base: "+obj.getString("tema_base") );
+			tvparticipantes.setText( "Participantes do grupo: "+obj.getString("grupo") );
+			
+		} catch (JSONException e) {
+			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
+			super.finish();						
+		}
+			
 	}
 
 	private void init(){
+		tvcurso = (TextView) findViewById(R.id.tv_curso);
+		tvmodulo = (TextView) findViewById(R.id.tv_modulo);
+		tvtema_base = (TextView) findViewById(R.id.tv_tema_base);
+		tvparticipantes = (TextView) findViewById(R.id.tv_participantes);
 	}
 
 	public void bt_salvar(View v) {
 		// TODO Auto-generated method stub
-		
+		Toast.makeText(this, "salvo", Toast.LENGTH_LONG).show();
 	}
 
 	public void click_bt_bar_alterar(View v) {
