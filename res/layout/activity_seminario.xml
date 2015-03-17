@@ -12,6 +12,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical" >
 
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -44,23 +45,42 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/lb_codigo_fonte"
+                android:text="@string/lb_edicao_seminario"
                 android:textSize="15sp"
                 android:textColor="#fff" />
         </LinearLayout>
-
+        
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginRight="5dp"
             android:gravity="center_horizontal|center_vertical" >
-			<ImageView
-                android:id="@+id/imageView2"
+
+            <ImageView
+                android:id="@+id/imageView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="click_bt_bar_info"
-                android:src="@drawable/about" />            
+                android:onClick="click_bt_bar_alterar"
+                android:src="@drawable/about" />
+
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_horizontal|center_vertical" >
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="click_bt_bar_excluir"
+                android:src="@drawable/about" />
+
         </LinearLayout>
         
    </LinearLayout>
@@ -69,25 +89,6 @@
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:background="#666" >
-    </LinearLayout>
-    
-    
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#fff"
-        android:orientation="vertical"
-        android:gravity="center_vertical|center_horizontal" >
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:text="@string/lb_desc_codigo_fonte"
-            android:textSize="13sp" />
-        
     </LinearLayout>
     
 
@@ -102,20 +103,32 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:orientation="vertical" >
-
-                <TextView
-                    android:id="@+id/tv_creditos"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-	                android:layout_marginTop="10dp"
-	                android:layout_marginLeft="5dp"
-	                android:layout_marginRight="5dp"
-                    android:textColor="#666"
-                    android:textSize="12sp"
-                    android:text="@string/txt_codigo_fonte" />
-
+                
             </LinearLayout>
         </ScrollView>
+
+
+    
+		    <LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="50dp"
+		        android:background="@drawable/aluno_uniasselvi_top"
+		        android:orientation="horizontal"
+		        android:gravity="center_horizontal" >
+				        
+                <Button
+		            android:id="@+id/button2"
+		            android:layout_width="0dip"
+		            android:layout_weight="1"
+		            android:layout_height="wrap_content"
+		            android:background="@drawable/aluno_uniasselvi_top"
+		            android:text="@string/lb_salvar_seminario"
+		            android:onClick="bt_salvar" />
+		        		        		        
+		    </LinearLayout>
     
 </LinearLayout>
