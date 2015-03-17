@@ -27,7 +27,7 @@ public class NovoSeminarioActivity extends Activity implements IActivity {
 
     private ProgressDialog pd;
 	private GlobalController control;
-	private EditText ettemabase, etcurso, etgrupo;
+	private EditText ettemabase, etcurso;
 	private Spinner spmodulo;
 	private int idmodulo;
 	private ArrayAdapter<String> aa;
@@ -59,7 +59,6 @@ public class NovoSeminarioActivity extends Activity implements IActivity {
 		ettemabase = (EditText) findViewById(R.id.et_tema_base);
 		etcurso = (EditText) findViewById(R.id.et_nome_curso);
 		spmodulo = (Spinner) findViewById(R.id.sp_modulo);
-		etgrupo = (EditText) findViewById(R.id.et_grupo);
 	}
 
 	public void bt_criar(View v) {
@@ -74,8 +73,9 @@ public class NovoSeminarioActivity extends Activity implements IActivity {
 					JSONArray j = new JSONArray(control.seminario);
 					JSONObject jo = new JSONObject();
 					jo.put("tema_base", ettemabase.getText().toString() );//*
+					jo.put("tema_grupo", "" );
 					jo.put("curso", etcurso.getText().toString() );//*
-					jo.put("grupo", etgrupo.getText().toString() );
+					jo.put("grupo", "" );
 					jo.put("modulo", spmodulo.getSelectedItem().toString() );//*
 					//etapas
 					JSONArray etapas = new JSONArray();
