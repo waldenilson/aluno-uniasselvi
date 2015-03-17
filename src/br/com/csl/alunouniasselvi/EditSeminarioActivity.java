@@ -116,23 +116,6 @@ public class EditSeminarioActivity extends Activity implements IActivity {
 			Toast.makeText(this, getString(R.string.ale_temabase), Toast.LENGTH_LONG).show();
 	}
 
-	public void bt_excluir(View v) {
-		try
-		{
-			JSONArray j = new JSONArray(control.seminario);
-			JSONArray aux = new JSONArray();
-			for (int x=0; x < j.length(); x++){
-				if( x != id_seminario )
-					aux.put( j.getJSONObject(x) );
-			}
-			control.seminario = aux.toString();
-			control.updateSeminario();
-			finish();
-		}
-		catch(JSONException e){
-			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
-		}
-	}
 	@Override
 	public void click_bt_bar_info(View v) {
 		// TODO Auto-generated method stub

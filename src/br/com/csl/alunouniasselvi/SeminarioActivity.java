@@ -60,8 +60,22 @@ public class SeminarioActivity extends Activity implements IActivity {
 
 	}
 	
-	public void bt_click_bt_bar_excluir(View v) {
-
+	public void click_bt_bar_excluir(View v) {
+		try
+		{
+			JSONArray j = new JSONArray(control.seminario);
+			JSONArray aux = new JSONArray();
+			for (int x=0; x < j.length(); x++){
+				if( x != id_seminario )
+					aux.put( j.getJSONObject(x) );
+			}
+			control.seminario = aux.toString();
+			control.updateSeminario();
+			finish();
+		}
+		catch(JSONException e){
+			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
+		}
 	}
 
 	@Override
