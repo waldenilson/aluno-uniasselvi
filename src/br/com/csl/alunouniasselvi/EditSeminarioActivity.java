@@ -40,10 +40,31 @@ public class EditSeminarioActivity extends Activity implements IActivity {
 		init();
 		final Bundle extra = getIntent().getExtras();
 		control = (GlobalController) extra.getSerializable("control");
-		
+				
 		int seminario = extra.getInt("seminario");
-		Toast.makeText(this, "seminario: "+seminario, Toast.LENGTH_LONG).show();
 		
+		try
+		{
+			JSONArray j = new JSONArray(control.seminario);
+			JSONObject obj = j.getJSONObject(seminario);
+			Toast.makeText(this, obj.getString("modulo"), Toast.LENGTH_LONG).show();
+		}
+		catch(JSONException e)
+		{
+			fecharDialogProcessamento();
+			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
+			super.finish();						
+		}
+
+		
+	}
+
+	private void init(){
+		ettemabase = (EditText) findViewById(R.id.et_edit_tema_base);
+		etcurso = (EditText) findViewById(R.id.et_edit_nome_curso);
+		spmodulo = (Spinner) findViewById(R.id.sp_edit_modulo);
+		etgrupo = (EditText) findViewById(R.id.et_edit_grupo);
+
 		aa = new ArrayAdapter<String>(this, R.layout.spinner_item);
 		aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spmodulo.setAdapter(aa);
@@ -56,14 +77,7 @@ public class EditSeminarioActivity extends Activity implements IActivity {
 		aa.add("7º Modulo");
 		aa.add("8º Modulo");
 		aa.add("9º Modulo");
-		aa.add("10º Modulo");				
-	}
-
-	private void init(){
-		ettemabase = (EditText) findViewById(R.id.et_edit_tema_base);
-		etcurso = (EditText) findViewById(R.id.et_edit_nome_curso);
-		spmodulo = (Spinner) findViewById(R.id.sp_edit_modulo);
-		etgrupo = (EditText) findViewById(R.id.et_edit_grupo);
+		aa.add("10º Modulo");
 	}
 
 	public void bt_salvar(View v) {
