@@ -47,7 +47,8 @@ public class EditSeminarioActivity extends Activity implements IActivity {
 		{
 			JSONArray j = new JSONArray(control.seminario);
 			JSONObject obj = j.getJSONObject(seminario);
-			Toast.makeText(this, obj.getString("modulo"), Toast.LENGTH_LONG).show();
+			Toast.makeText(this, obj.getString("curso")+obj.getString("tema_base")+obj.getString("modulo"), Toast.LENGTH_LONG).show();
+			spmodulo.setSelection( ( Integer.parseInt( obj.getString("modulo").substring(0, 1) ) - 1 ) );
 		}
 		catch(JSONException e)
 		{
