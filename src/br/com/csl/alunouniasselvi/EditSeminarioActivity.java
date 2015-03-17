@@ -31,6 +31,8 @@ public class EditSeminarioActivity extends Activity implements IActivity {
 	private Spinner spmodulo;
 	private int idmodulo;
 	private ArrayAdapter<String> aa;
+	private JSONObject obj;
+	private int id_seminario;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +43,14 @@ public class EditSeminarioActivity extends Activity implements IActivity {
 		final Bundle extra = getIntent().getExtras();
 		control = (GlobalController) extra.getSerializable("control");
 				
-		int seminario = extra.getInt("seminario");
+		id_seminario = extra.getInt("seminario");
 		
 		try
 		{
 			JSONArray j = new JSONArray(control.seminario);
-			JSONObject obj = j.getJSONObject(seminario);
-			Toast.makeText(this, obj.getString("curso")+obj.getString("tema_base")+obj.getString("modulo"), Toast.LENGTH_LONG).show();
+			obj = j.getJSONObject(id_seminario);
+			etcurso.setText( obj.getString("curso") );
+			ettemabase.setText( obj.getString("tema_base") );
 			spmodulo.setSelection( ( Integer.parseInt( obj.getString("modulo").substring(0, 1) ) - 1 ) );
 		}
 		catch(JSONException e)
@@ -91,22 +94,13 @@ public class EditSeminarioActivity extends Activity implements IActivity {
 				try
 				{
 					JSONArray j = new JSONArray(control.seminario);
-					JSONObject jo = new JSONObject();
-					jo.put("tema_base", ettemabase.getText().toString() );//*
-					jo.put("curso", etcurso.getText().toString() );//*
-					jo.put("grupo", etgrupo.getText().toString() );
-					jo.put("modulo", spmodulo.getSelectedItem().toString() );//*
-					//etapas
-					JSONArray etapas = new JSONArray();
-					JSONObject et1 = new JSONObject(); et1.put("id", "1"); et1.put("nome", "Orientação"); etapas.put(et1);
-					JSONObject et2 = new JSONObject(); et2.put("id", "2"); et2.put("nome", "Estudos preliminares"); etapas.put(et2);
-					JSONObject et3 = new JSONObject(); et3.put("id", "3"); et3.put("nome", "Planejamento"); etapas.put(et3);
-					JSONObject et4 = new JSONObject(); et4.put("id", "4"); et4.put("nome", "Execução"); etapas.put(et4);
-					JSONObject et5 = new JSONObject(); et5.put("id", "5"); et5.put("nome", "Análise"); etapas.put(et5);
-					JSONObject et6 = new JSONObject(); et6.put("id", "6"); et6.put("nome", "Socialização"); etapas.put(et6);				
-					jo.put("etapas", etapas);
+					obj.put("tema_base", ettemabase.getText().toString() );//*
+					obj.put("curso", etcurso.getText().toString() );//*
+					obj.put("grupo", etgrupo.getText().toString() );
+					obj.put("modulo", spmodulo.getSelectedItem().toString() );//*
 					
-					j.put(jo);
+					
+					j.put(id_seminario, obj);
 					control.seminario = j.toString();
 					control.updateSeminario();
 					finish();
