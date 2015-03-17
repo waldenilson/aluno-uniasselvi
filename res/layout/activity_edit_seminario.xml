@@ -45,7 +45,7 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/lb_novo_seminario"
+                android:text="@string/lb_edicao_seminario"
                 android:textSize="15sp"
                 android:textColor="#fff" />
         </LinearLayout>
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:text="@string/lb_desc_novo_seminario"
+            android:text="@string/lb_desc_edicao_seminario"
             android:textSize="13sp" />
         
     </LinearLayout>
@@ -100,29 +100,28 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:ems="10"
-                    android:hint="Informe o curso" >
+                    android:hint="Meu Curso" >
 
                     <requestFocus />
-                </EditText>
-
-                <EditText
-                    android:id="@+id/et_edit_tema_base"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Informe o tema do seminário"
-                    android:ems="10" >
                 </EditText>
 
                 <Spinner
                     android:id="@+id/sp_edit_modulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/et_edit_tema_base"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Tema base do módulo" />
                 
                 <EditText
                     android:id="@+id/et_edit_grupo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Informe os participantes do grupo"
+                    android:hint="Participantes do grupo"
                     android:layout_marginTop="10dp"
                     android:lines="4"
                     android:inputType="textMultiLine"
@@ -143,12 +142,32 @@
 		
 		        <Button
 		            android:id="@+id/button1"
-		            android:layout_width="match_parent"
+		            android:layout_width="0dip"
+		            android:layout_weight="1"
+		            android:layout_height="wrap_content"
+		            android:background="@drawable/aluno_uniasselvi_top"
+		            android:text="@string/lb_excluir_seminario"
+		            android:onClick="bt_excluir" />
+
+                <EditText
+                    android:id="@+id/et_separate"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.2"
+		            android:background="@drawable/aluno_uniasselvi_top"
+		            android:gravity="center_horizontal|center_vertical"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="|" />
+		        
+                <Button
+		            android:id="@+id/button2"
+		            android:layout_width="0dip"
+		            android:layout_weight="1"
 		            android:layout_height="wrap_content"
 		            android:background="@drawable/aluno_uniasselvi_top"
 		            android:text="@string/lb_salvar_seminario"
 		            android:onClick="bt_salvar" />
-		        
+		        		        		        
 		    </LinearLayout>
     
 </LinearLayout>

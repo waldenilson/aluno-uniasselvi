@@ -73,7 +73,6 @@ public class NovoSeminarioActivity extends Activity implements IActivity {
 					JSONArray j = new JSONArray(control.seminario);
 					JSONObject jo = new JSONObject();
 					jo.put("tema_base", ettemabase.getText().toString() );//*
-					jo.put("tema_grupo", "" );
 					jo.put("curso", etcurso.getText().toString() );//*
 					jo.put("grupo", "" );
 					jo.put("modulo", spmodulo.getSelectedItem().toString() );//*

@@ -100,23 +100,22 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:ems="10"
-                    android:hint="Informe o curso" >
+                    android:hint="Meu Curso" >
 
                     <requestFocus />
-                </EditText>
-
-                <EditText
-                    android:id="@+id/et_tema_base"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Informe o tema do seminário"
-                    android:ems="10" >
                 </EditText>
 
                 <Spinner
                     android:id="@+id/sp_modulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/et_tema_base"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Tema base do módulo" />
                 
             </LinearLayout>
         </ScrollView>
