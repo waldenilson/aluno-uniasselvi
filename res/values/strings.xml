@@ -37,6 +37,7 @@
     <string name="lb_novo_seminario">Novo Seminário</string>
     <string name="lb_desc_novo_seminario">Adicionar seminário para controle das tarefas.</string>
     <string name="lb_criar_seminario">Criar Seminário</string>
+    <string name="lb_salvar_seminario">Salvar Seminário</string>
     
     <string name="txt_codigo_fonte">Este aplicativo foi idealizado, desenvolvido e disponibilizado por um aluno da faculdade Uniasselvi.\n\n Aluno: Waldenilson Carneiro\n\n Email: waldenilsonnovaes@gmail.com\n\n Pólo de ensino a distância Athenas / São Luis - Maranhão.\n\n---\n\nO código fonte do aplicativo pode ser acessado no repositório online do github no link abaixo.\n\nhttps://github.com/waldenilson/aluno-uniasselvi\n\n---\n\nO git é um programa de controle de versões.\n\nO github é um site para gerenciar os projetos que usam o git.</string>
     <string name="txt_seminarios">Esta será uma das próximas funcionalidades do app.\n\nVocê poderá controlar as tarefas do seu grupo do seminário interdisciplinar semestre a semestre.\n\n---\n\nAs tarefas serão organizadas dentro das etapas do cronograma:\n\nOrientação\nEstudos Preliminares\nPlanejamento\nExecução\nAnálise\nSocialização</string>
