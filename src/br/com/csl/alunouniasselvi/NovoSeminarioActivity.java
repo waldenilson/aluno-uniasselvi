@@ -78,12 +78,12 @@ public class NovoSeminarioActivity extends Activity implements IActivity {
 					jo.put("modulo", spmodulo.getSelectedItem().toString() );//*
 					//etapas
 					JSONArray etapas = new JSONArray();
-					JSONObject et1 = new JSONObject(); et1.put("id", "1"); et1.put("nome", "Orientação"); etapas.put(et1);
-					JSONObject et2 = new JSONObject(); et2.put("id", "2"); et2.put("nome", "Estudos preliminares"); etapas.put(et2);
-					JSONObject et3 = new JSONObject(); et3.put("id", "3"); et3.put("nome", "Planejamento"); etapas.put(et3);
-					JSONObject et4 = new JSONObject(); et4.put("id", "4"); et4.put("nome", "Execução"); etapas.put(et4);
-					JSONObject et5 = new JSONObject(); et5.put("id", "5"); et5.put("nome", "Análise"); etapas.put(et5);
-					JSONObject et6 = new JSONObject(); et6.put("id", "6"); et6.put("nome", "Socialização"); etapas.put(et6);				
+					JSONObject et1 = new JSONObject(); et1.put("id", "1"); et1.put("nome", "Orientação - 4hs"); etapas.put(et1);
+					JSONObject et2 = new JSONObject(); et2.put("id", "2"); et2.put("nome", "Estudos preliminares - 5hs"); etapas.put(et2);
+					JSONObject et3 = new JSONObject(); et3.put("id", "3"); et3.put("nome", "Planejamento - 5hs"); etapas.put(et3);
+					JSONObject et4 = new JSONObject(); et4.put("id", "4"); et4.put("nome", "Execução - 4hs"); etapas.put(et4);
+					JSONObject et5 = new JSONObject(); et5.put("id", "5"); et5.put("nome", "Análise - 18hs"); etapas.put(et5);
+					JSONObject et6 = new JSONObject(); et6.put("id", "6"); et6.put("nome", "Socialização - 4hs"); etapas.put(et6);				
 					jo.put("etapas", etapas);
 					
 					j.put(jo);
