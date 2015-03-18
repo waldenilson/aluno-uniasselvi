@@ -29,7 +29,7 @@ public class SeminarioActivity extends Activity implements IActivity {
 	private GlobalController control;
 	private JSONObject obj;
 	private int id_seminario;
-	private TextView tvcurso,tvmodulo,tvtema_base,tvparticipantes;
+	private TextView tvcurso,tvtema_base,tvparticipantes;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +40,21 @@ public class SeminarioActivity extends Activity implements IActivity {
 		final Bundle extra = getIntent().getExtras();
 		control = (GlobalController) extra.getSerializable("control");				
 		id_seminario = extra.getInt("seminario");
+		montarActivity();
+	}
+
+	private void init(){
+		tvcurso = (TextView) findViewById(R.id.tv_curso);
+		tvtema_base = (TextView) findViewById(R.id.tv_tema_base);
+		tvparticipantes = (TextView) findViewById(R.id.tv_participantes);
+	}
+	
+	private void montarActivity()
+	{
 		try {
 			JSONArray j = new JSONArray(control.seminario);
 			obj = j.getJSONObject(id_seminario);
-			tvcurso.setText( "Curso: "+obj.getString("curso") );
-			tvmodulo.setText( "Módulo: "+obj.getString("modulo") );
+			tvcurso.setText( "Curso: "+obj.getString("curso")+". "+obj.getString("modulo") );
 			tvtema_base.setText( "Tema Base: "+obj.getString("tema_base") );
 			tvparticipantes.setText( "Participantes do grupo: "+obj.getString("grupo") );
 			
@@ -52,14 +62,6 @@ public class SeminarioActivity extends Activity implements IActivity {
 			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
 			super.finish();						
 		}
-			
-	}
-
-	private void init(){
-		tvcurso = (TextView) findViewById(R.id.tv_curso);
-		tvmodulo = (TextView) findViewById(R.id.tv_modulo);
-		tvtema_base = (TextView) findViewById(R.id.tv_tema_base);
-		tvparticipantes = (TextView) findViewById(R.id.tv_participantes);
 	}
 
 	public void bt_salvar(View v) {
@@ -98,8 +100,10 @@ public class SeminarioActivity extends Activity implements IActivity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
 		super.onActivityResult(requestCode, resultCode, data);
-		if( resultCode == 1)
+		if( resultCode == 1){
 			control = (GlobalController) data.getSerializableExtra("control");
+			montarActivity();
+		}
 	}
 
 	@Override
