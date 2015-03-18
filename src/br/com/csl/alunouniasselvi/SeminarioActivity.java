@@ -69,6 +69,12 @@ public class SeminarioActivity extends Activity implements IActivity {
 			TextView tv6 = new TextView(this);
 
 			tv1.setText( obj.getJSONArray("etapas").getJSONObject(0).getString("nome") );
+			JSONArray task1 = obj.getJSONArray("etapas").getJSONObject(0).getJSONArray("tarefas");
+			for(int x=0;x<task1.length();x++)
+			{
+				Toast.makeText(this, task1.getJSONObject(x).getString("nome"), Toast.LENGTH_LONG).show();					
+			}
+			
 			tv2.setText( obj.getJSONArray("etapas").getJSONObject(1).getString("nome") );
 			tv3.setText( obj.getJSONArray("etapas").getJSONObject(2).getString("nome") );
 			tv4.setText( obj.getJSONArray("etapas").getJSONObject(3).getString("nome") );
