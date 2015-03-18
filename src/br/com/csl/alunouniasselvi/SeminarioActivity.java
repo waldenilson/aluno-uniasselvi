@@ -61,9 +61,26 @@ public class SeminarioActivity extends Activity implements IActivity {
 			tvtema_base.setText( "Tema Base: "+obj.getString("tema_base") );
 			tvparticipantes.setText( "Participantes do grupo: "+obj.getString("grupo") );
 			
-			TextView tvetapa = new TextView(this);
-			tvetapa.setText("etapa");
-			llseminario.addView( tvetapa );
+			TextView tv1 = new TextView(this);
+			TextView tv2 = new TextView(this);
+			TextView tv3 = new TextView(this);
+			TextView tv4 = new TextView(this);
+			TextView tv5 = new TextView(this);
+			TextView tv6 = new TextView(this);
+
+			tv1.setText( obj.getJSONArray("etapas").getJSONObject(0).getString("nome") );
+			tv2.setText( obj.getJSONArray("etapas").getJSONObject(1).getString("nome") );
+			tv3.setText( obj.getJSONArray("etapas").getJSONObject(2).getString("nome") );
+			tv4.setText( obj.getJSONArray("etapas").getJSONObject(3).getString("nome") );
+			tv5.setText( obj.getJSONArray("etapas").getJSONObject(4).getString("nome") );
+			tv6.setText( obj.getJSONArray("etapas").getJSONObject(5).getString("nome") );
+
+			llseminario.addView( tv1 );
+			llseminario.addView( tv2 );
+			llseminario.addView( tv3 );
+			llseminario.addView( tv4 );
+			llseminario.addView( tv5 );
+			llseminario.addView( tv6 );
 			
 		} catch (JSONException e) {
 			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
