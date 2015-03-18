@@ -18,6 +18,7 @@ import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -30,6 +31,7 @@ public class SeminarioActivity extends Activity implements IActivity {
 	private JSONObject obj;
 	private int id_seminario;
 	private TextView tvcurso,tvtema_base,tvparticipantes;
+	private LinearLayout llseminario;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class SeminarioActivity extends Activity implements IActivity {
 		tvcurso = (TextView) findViewById(R.id.tv_curso);
 		tvtema_base = (TextView) findViewById(R.id.tv_tema_base);
 		tvparticipantes = (TextView) findViewById(R.id.tv_participantes);
+		llseminario = (LinearLayout) findViewById(R.id.ll_seminario);
 	}
 	
 	private void montarActivity()
@@ -57,6 +60,10 @@ public class SeminarioActivity extends Activity implements IActivity {
 			tvcurso.setText( "Curso: "+obj.getString("curso")+". "+obj.getString("modulo") );
 			tvtema_base.setText( "Tema Base: "+obj.getString("tema_base") );
 			tvparticipantes.setText( "Participantes do grupo: "+obj.getString("grupo") );
+			
+			TextView tvetapa = new TextView(this);
+			tvetapa.setText("etapa");
+			llseminario.addView( tvetapa );
 			
 		} catch (JSONException e) {
 			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
