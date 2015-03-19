@@ -26,62 +26,55 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class EtapasActivity extends Activity implements IActivity, OnItemClickListener {
+public class TarefasActivity extends Activity implements IActivity, OnItemClickListener {
 
     private ProgressDialog pd;
 	private GlobalController control;
 	private JSONObject obj;
-	private int id_seminario;
-	private TextView tvcurso,tvtema_base,tvparticipantes;
-    private ListView lvetapa;
+	private int id_seminario, id_etapa;
+	private TextView tvcurso,tvtema_base,tvetapa;
+    private ListView lvtarefa;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_etapas);
+		setContentView(R.layout.activity_tarefas);
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
 		final Bundle extra = getIntent().getExtras();
 		control = (GlobalController) extra.getSerializable("control");				
 		id_seminario = extra.getInt("seminario");
+		id_etapa = extra.getInt("etapa");
 		criarLista();
 	}
 
 	private void init(){
-		tvcurso = (TextView) findViewById(R.id.tv_curso);
-		tvtema_base = (TextView) findViewById(R.id.tv_tema_base);
-		tvparticipantes = (TextView) findViewById(R.id.tv_participantes);
-		lvetapa = (ListView) findViewById(R.id.lv_etapa);
+		tvcurso = (TextView) findViewById(R.id.tv_task_curso);
+		tvtema_base = (TextView) findViewById(R.id.tv_task_tema_base);
+		tvetapa = (TextView) findViewById(R.id.tv_etapa);
+		lvtarefa = (ListView) findViewById(R.id.lv_tarefa);
 	}
 	
 	private void criarLista()
 	{
-		List<String> etapas = new ArrayList<String>();
+		List<String> tarefas = new ArrayList<String>();
 		List<String> descricoes = new ArrayList<String>();
 		try 
 		{
 			JSONArray j = new JSONArray(control.seminario);
-			obj = j.getJSONObject(id_seminario);
-			tvcurso.setText( obj.getString("curso") );
-			tvtema_base.setText( obj.getString("tema_base") );
-			tvparticipantes.setText( "Participantes: "+obj.getString("grupo") );
-			if (obj.getJSONArray("etapas").length()>0)
-			{
-				for(int x=0;x<obj.getJSONArray("etapas").length();x++)
-				{
-					etapas.add( obj.getJSONArray("etapas").getJSONObject(x).getString("nome") );
-					descricoes.add( obj.getJSONArray("etapas").getJSONObject(x).getString("descricao") );
-				}
-			}			
+			Toast.makeText(this,
+					j.getJSONObject(id_seminario).getJSONArray("etapas").getJSONObject(id_etapa).getJSONArray("tarefas").toString(),
+					Toast.LENGTH_LONG).show();
+
 		} catch (JSONException e) {
 			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
 			super.finish();						
 		}
 
-		ListViewMenuAdapter lv = new ListViewMenuAdapter(this, etapas, descricoes);
-		lvetapa.setAdapter(lv);
-		lvetapa.setTextFilterEnabled(true);
-		lvetapa.setOnItemClickListener(this);
+		ListViewMenuAdapter lv = new ListViewMenuAdapter(this, tarefas, descricoes);
+		lvtarefa.setAdapter(lv);
+		lvtarefa.setTextFilterEnabled(true);
+		lvtarefa.setOnItemClickListener(this);
 
 	}
 
@@ -94,7 +87,7 @@ public class EtapasActivity extends Activity implements IActivity, OnItemClickLi
 
 		Intent data = new Intent(this, EditSeminarioActivity.class);
 		data.putExtra("control", control);
-		data.putExtra("seminario", id_seminario);
+		data.putExtra("etapa", id_etapa);
 		startActivityForResult(data,1);				
 
 	}
@@ -105,7 +98,7 @@ public class EtapasActivity extends Activity implements IActivity, OnItemClickLi
 			JSONArray j = new JSONArray(control.seminario);
 			JSONArray aux = new JSONArray();
 			for (int x=0; x < j.length(); x++){
-				if( x != id_seminario )
+				if( x != id_etapa )
 					aux.put( j.getJSONObject(x) );
 			}
 			control.seminario = aux.toString();
@@ -166,12 +159,6 @@ public class EtapasActivity extends Activity implements IActivity, OnItemClickLi
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		// TODO Auto-generated method stub
-
-		Intent data = new Intent(this, TarefasActivity.class);
-		data.putExtra("control", control);
-		data.putExtra("seminario", id_seminario);
-		data.putExtra("etapa", arg2);
-		startActivityForResult(data,1);				
 		
 	}
 
