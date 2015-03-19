@@ -32,8 +32,10 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 	private GlobalController control;
 	private JSONObject obj;
 	private int id_seminario, id_etapa;
-	private TextView tvcurso,tvtema_base,tvetapa;
-    private ListView lvtarefa;
+	private TextView tvcurso,tvtema_base,tvparticipantes;
+    private ListView lvetapa;
+    
+    private List<String> tarefas, descricoes;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,43 +46,49 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 		final Bundle extra = getIntent().getExtras();
 		control = (GlobalController) extra.getSerializable("control");				
 		id_seminario = extra.getInt("seminario");
-		id_etapa = extra.getInt("etapa");
 		criarLista();
 	}
 
 	private void init(){
-		tvcurso = (TextView) findViewById(R.id.tv_tasks_curso);
-		tvtema_base = (TextView) findViewById(R.id.tv_tasks_tema_base);
-		tvetapa = (TextView) findViewById(R.id.tv_tasks_etapa);
-		lvtarefa = (ListView) findViewById(R.id.lv_tarefa);
+		tvcurso = (TextView) findViewById(R.id.tv_curso);
+		tvtema_base = (TextView) findViewById(R.id.tv_tema_base);
+		tvparticipantes = (TextView) findViewById(R.id.tv_participantes);
+		lvetapa = (ListView) findViewById(R.id.lv_etapa);
 	}
 	
 	private void criarLista()
 	{
-		List<String> tarefas = new ArrayList<String>();
-		List<String> descricoes = new ArrayList<String>();
+		tarefas = new ArrayList<String>();
+		descricoes = new ArrayList<String>();
 		try 
 		{
 			JSONArray j = new JSONArray(control.seminario);
-			obj = j.getJSONObject(id_seminario).getJSONArray("etapas").getJSONObject(id_etapa);
-			if (obj.getJSONArray("tarefas").length()>0)
+			obj = j.getJSONObject(id_seminario);
+			tvcurso.setText( obj.getString("curso") );
+			tvtema_base.setText( obj.getString("tema_base") );
+			tvparticipantes.setText( "Participantes: "+obj.getString("grupo") );
+
+			if (obj.getJSONArray("etapas").length()>0)
 			{
-				for(int x=0;x<obj.getJSONArray("tarefas").length();x++)
+				for(int x=0;x<obj.getJSONArray("etapas").length();x++)
 				{
-					tarefas.add( obj.getJSONArray("tarefas").getJSONObject(x).getString("nome") );
-					descricoes.add( obj.getJSONArray("tarefas").getJSONObject(x).getString("descricao") );
+					JSONArray tasks = obj.getJSONArray("etapas").getJSONObject(x).getJSONArray("tarefas");
+					for(int y=0; y<tasks.length();y++)
+					{
+						tarefas.add( tasks.getJSONObject(y).getString("nome") );
+						descricoes.add( obj.getJSONArray("etapas").getJSONObject(x).getString("nome") );
+					}
 				}
 			}			
-
 		} catch (JSONException e) {
 			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
 			super.finish();						
 		}
 
 		ListViewMenuAdapter lv = new ListViewMenuAdapter(this, tarefas, descricoes);
-		lvtarefa.setAdapter(lv);
-		lvtarefa.setTextFilterEnabled(true);
-		lvtarefa.setOnItemClickListener(this);
+		lvetapa.setAdapter(lv);
+		lvetapa.setTextFilterEnabled(true);
+		lvetapa.setOnItemClickListener(this);
 
 	}
 
@@ -93,7 +101,7 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 
 		Intent data = new Intent(this, EditSeminarioActivity.class);
 		data.putExtra("control", control);
-		data.putExtra("etapa", id_etapa);
+		data.putExtra("seminario", id_seminario);
 		startActivityForResult(data,1);				
 
 	}
@@ -104,7 +112,7 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 			JSONArray j = new JSONArray(control.seminario);
 			JSONArray aux = new JSONArray();
 			for (int x=0; x < j.length(); x++){
-				if( x != id_etapa )
+				if( x != id_seminario )
 					aux.put( j.getJSONObject(x) );
 			}
 			control.seminario = aux.toString();
@@ -169,10 +177,10 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 		Intent data = new Intent(this, TarefaActivity.class);
 		data.putExtra("control", control);
 		data.putExtra("seminario", id_seminario);
-		data.putExtra("etapa", id_etapa);
+		data.putExtra("etapa", descricoes.get(arg2));
 		data.putExtra("tarefa", arg2);
 		startActivityForResult(data,1);				
-		
+
 	}
 
 }
