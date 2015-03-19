@@ -70,9 +70,12 @@ public class SeminarioActivity extends Activity implements IActivity {
 
 			tv1.setText( obj.getJSONArray("etapas").getJSONObject(0).getString("nome") );
 			JSONArray task1 = obj.getJSONArray("etapas").getJSONObject(0).getJSONArray("tarefas");
+			LinearLayout ll1 = new LinearLayout(this);
 			for(int x=0;x<task1.length();x++)
 			{
-				Toast.makeText(this, task1.getJSONObject(x).getString("nome"), Toast.LENGTH_LONG).show();					
+				TextView t1 = new TextView(this);
+				t1.setText( task1.getJSONObject(x).getString("nome") );
+				ll1.addView(t1);
 			}
 			
 			tv2.setText( obj.getJSONArray("etapas").getJSONObject(1).getString("nome") );
@@ -82,6 +85,7 @@ public class SeminarioActivity extends Activity implements IActivity {
 			tv6.setText( obj.getJSONArray("etapas").getJSONObject(5).getString("nome") );
 
 			llseminario.addView( tv1 );
+			llseminario.addView(ll1);
 			llseminario.addView( tv2 );
 			llseminario.addView( tv3 );
 			llseminario.addView( tv4 );
