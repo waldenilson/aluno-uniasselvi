@@ -26,64 +26,32 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TarefasActivity extends Activity implements IActivity, OnItemClickListener {
+public class TarefaActivity extends Activity implements IActivity {
 
     private ProgressDialog pd;
 	private GlobalController control;
 	private JSONObject obj;
-	private int id_seminario, id_etapa;
-	private TextView tvcurso,tvtema_base,tvetapa;
-    private ListView lvtarefa;
+	private int id_seminario, id_etapa, id_tarefa;
+	private TextView tvcurso, tvetapa;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_tarefas);
+		setContentView(R.layout.activity_tarefa);
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
 		final Bundle extra = getIntent().getExtras();
 		control = (GlobalController) extra.getSerializable("control");				
 		id_seminario = extra.getInt("seminario");
 		id_etapa = extra.getInt("etapa");
-		criarLista();
+		id_tarefa = extra.getInt("tarefa");
 	}
 
 	private void init(){
-		tvcurso = (TextView) findViewById(R.id.tv_tasks_curso);
-		tvtema_base = (TextView) findViewById(R.id.tv_tasks_tema_base);
-		tvetapa = (TextView) findViewById(R.id.tv_tasks_etapa);
-		lvtarefa = (ListView) findViewById(R.id.lv_tarefa);
+		tvcurso = (TextView) findViewById(R.id.tv_task_curso);
+		tvetapa = (TextView) findViewById(R.id.tv_task_etapa);
 	}
 	
-	private void criarLista()
-	{
-		List<String> tarefas = new ArrayList<String>();
-		List<String> descricoes = new ArrayList<String>();
-		try 
-		{
-			JSONArray j = new JSONArray(control.seminario);
-			obj = j.getJSONObject(id_seminario).getJSONArray("etapas").getJSONObject(id_etapa);
-			if (obj.getJSONArray("tarefas").length()>0)
-			{
-				for(int x=0;x<obj.getJSONArray("tarefas").length();x++)
-				{
-					tarefas.add( obj.getJSONArray("tarefas").getJSONObject(x).getString("nome") );
-					descricoes.add( obj.getJSONArray("tarefas").getJSONObject(x).getString("descricao") );
-				}
-			}			
-
-		} catch (JSONException e) {
-			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
-			super.finish();						
-		}
-
-		ListViewMenuAdapter lv = new ListViewMenuAdapter(this, tarefas, descricoes);
-		lvtarefa.setAdapter(lv);
-		lvtarefa.setTextFilterEnabled(true);
-		lvtarefa.setOnItemClickListener(this);
-
-	}
-
 	public void bt_salvar(View v) {
 		// TODO Auto-generated method stub
 		Toast.makeText(this, "salvo", Toast.LENGTH_LONG).show();
@@ -122,7 +90,6 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 		super.onActivityResult(requestCode, resultCode, data);
 		if( resultCode == 1){
 			control = (GlobalController) data.getSerializableExtra("control");
-			criarLista();
 		}
 	}
 
@@ -160,19 +127,6 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 		getIntent().putExtra("control", control);
 		setResult(1, getIntent());
 		super.finish();
-	}
-
-	@Override
-	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-		// TODO Auto-generated method stub
-
-		Intent data = new Intent(this, TarefaActivity.class);
-		data.putExtra("control", control);
-		data.putExtra("seminario", id_seminario);
-		data.putExtra("etapa", id_etapa);
-		data.putExtra("tarefa", arg2);
-		startActivityForResult(data,1);				
-		
 	}
 
 }
