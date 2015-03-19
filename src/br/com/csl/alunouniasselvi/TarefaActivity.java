@@ -32,7 +32,8 @@ public class TarefaActivity extends Activity implements IActivity {
 	private GlobalController control;
 	private JSONObject obj;
 	private int id_seminario, id_etapa, id_tarefa;
-	private TextView tvcurso, tvetapa;
+	private TextView tvcurso, tvetapa, tvnome;
+	private EditText etdescricao;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +51,13 @@ public class TarefaActivity extends Activity implements IActivity {
 	private void init(){
 		tvcurso = (TextView) findViewById(R.id.tv_task_curso);
 		tvetapa = (TextView) findViewById(R.id.tv_task_etapa);
+		tvnome = (TextView) findViewById(R.id.tv_task_nome);
+		etdescricao = (EditText) findViewById(R.id.et_task_descricao);
 	}
 	
 	public void bt_salvar(View v) {
 		// TODO Auto-generated method stub
-		Toast.makeText(this, "salvo", Toast.LENGTH_LONG).show();
+		Toast.makeText(this, "t: "+id_tarefa, Toast.LENGTH_LONG).show();
 	}
 
 	public void click_bt_bar_alterar(View v) {
