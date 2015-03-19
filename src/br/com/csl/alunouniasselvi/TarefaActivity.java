@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -34,6 +35,7 @@ public class TarefaActivity extends Activity implements IActivity {
 	private int id_seminario, id_etapa, id_tarefa;
 	private TextView tvcurso, tvetapa, tvnome;
 	private EditText etdescricao;
+	private CheckBox cbtarefa;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,20 @@ public class TarefaActivity extends Activity implements IActivity {
 		id_seminario = extra.getInt("seminario");
 		id_etapa = extra.getInt("etapa");
 		id_tarefa = extra.getInt("tarefa");
+		
+		try 
+		{
+			JSONArray j = new JSONArray(control.seminario);
+			obj = j.getJSONObject(id_seminario).getJSONArray("etapas").getJSONObject(id_etapa).getJSONArray("tarefas").getJSONObject(id_tarefa);
+			tvnome.setText("Tarefa: "+obj.getString("nome"));
+			etdescricao.setText(obj.getString("descricao"));
+			cbtarefa.setChecked( Boolean.parseBoolean( obj.getString("check") ) );
+
+		} catch (JSONException e) {
+			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
+			super.finish();						
+		}
+
 	}
 
 	private void init(){
@@ -53,11 +69,30 @@ public class TarefaActivity extends Activity implements IActivity {
 		tvetapa = (TextView) findViewById(R.id.tv_task_etapa);
 		tvnome = (TextView) findViewById(R.id.tv_task_nome);
 		etdescricao = (EditText) findViewById(R.id.et_task_descricao);
+		cbtarefa = (CheckBox) findViewById(R.id.cb_task);
 	}
 	
 	public void bt_salvar(View v) {
 		// TODO Auto-generated method stub
-		Toast.makeText(this, "t: "+id_tarefa, Toast.LENGTH_LONG).show();
+		
+		try 
+		{
+			JSONArray j = new JSONArray(control.seminario);
+			obj = j.getJSONObject(id_seminario).getJSONArray("etapas").getJSONObject(id_etapa).getJSONArray("tarefas").getJSONObject(id_tarefa);
+			obj.put("descricao", etdescricao.getText().toString());
+			obj.put("check", ""+cbtarefa.isChecked());
+			
+			j.getJSONObject(id_seminario).getJSONArray("etapas").getJSONObject(id_etapa).getJSONArray("tarefas").put(id_tarefa, obj);
+			control.seminario = j.toString();
+			control.updateSeminario();
+			finish();
+			
+		} catch (JSONException e) {
+			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
+			super.finish();						
+		}
+		
+	
 	}
 
 	public void click_bt_bar_alterar(View v) {
