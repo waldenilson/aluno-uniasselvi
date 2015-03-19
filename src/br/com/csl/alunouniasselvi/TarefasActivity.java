@@ -62,9 +62,15 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 		try 
 		{
 			JSONArray j = new JSONArray(control.seminario);
-			Toast.makeText(this,
-					j.getJSONObject(id_seminario).getJSONArray("etapas").getJSONObject(id_etapa).getJSONArray("tarefas").toString(),
-					Toast.LENGTH_LONG).show();
+			obj = j.getJSONObject(id_seminario).getJSONArray("etapas").getJSONObject(id_etapa);
+			if (obj.getJSONArray("tarefas").length()>0)
+			{
+				for(int x=0;x<obj.getJSONArray("tarefas").length();x++)
+				{
+					tarefas.add( obj.getJSONArray("tarefas").getJSONObject(x).getString("nome") );
+					descricoes.add( obj.getJSONArray("tarefas").getJSONObject(x).getString("descricao") );
+				}
+			}			
 
 		} catch (JSONException e) {
 			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
@@ -159,6 +165,8 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		// TODO Auto-generated method stub
+
+		Toast.makeText(this,"",	Toast.LENGTH_LONG).show();
 		
 	}
 

@@ -81,38 +81,38 @@ public class NovoSeminarioActivity extends Activity implements IActivity {
 					JSONObject et1 = new JSONObject(); et1.put("id", "1"); et1.put("nome", "Orientação"); et1.put("descricao", ""); et1.put("ch", "4"); etapas.put(et1);
 					//tarefas
 						JSONArray t1 = new JSONArray();
-						JSONObject t11 = new JSONObject(); t11.put("check", "0"); t11.put("nome", "Tarefa 01"); t1.put(t11);
-						JSONObject t12 = new JSONObject(); t12.put("check", "0"); t12.put("nome", "Tarefa 02"); t1.put(t12);					
+						JSONObject t11 = new JSONObject(); t11.put("check", "0"); t11.put("nome", "Tarefa 01"); t11.put("descricao", ""); t1.put(t11);
+						JSONObject t12 = new JSONObject(); t12.put("check", "0"); t12.put("nome", "Tarefa 02"); t12.put("descricao", ""); t1.put(t12);					
 						et1.put("tarefas", t1);					
 					JSONObject et2 = new JSONObject(); et2.put("id", "2"); et2.put("nome", "Estudos preliminares"); et2.put("descricao", ""); et2.put("ch", "5"); etapas.put(et2);
 					//tarefas
 						JSONArray t2 = new JSONArray();
-						JSONObject t21 = new JSONObject(); t21.put("check", "0"); t21.put("nome", "Tarefa 01"); t2.put(t21);
-						JSONObject t22 = new JSONObject(); t22.put("check", "0"); t22.put("nome", "Tarefa 02"); t2.put(t22);					
-						et1.put("tarefas", t2);
+						JSONObject t21 = new JSONObject(); t21.put("check", "0"); t21.put("nome", "Tarefa 01"); t21.put("descricao", ""); t2.put(t21);
+						JSONObject t22 = new JSONObject(); t22.put("check", "0"); t22.put("nome", "Tarefa 02"); t22.put("descricao", ""); t2.put(t22);					
+						et2.put("tarefas", t2);
 					JSONObject et3 = new JSONObject(); et3.put("id", "3"); et3.put("nome", "Planejamento"); et3.put("descricao", ""); et3.put("ch", "5"); etapas.put(et3);
 					//tarefas
 						JSONArray t3 = new JSONArray();
-						JSONObject t31 = new JSONObject(); t31.put("check", "0"); t31.put("nome", "Tarefa 01"); t3.put(t31);
-						JSONObject t32 = new JSONObject(); t32.put("check", "0"); t32.put("nome", "Tarefa 02"); t3.put(t32);					
-						et1.put("tarefas", t3);
+						JSONObject t31 = new JSONObject(); t31.put("check", "0"); t31.put("nome", "Tarefa 01"); t31.put("descricao", ""); t3.put(t31);
+						JSONObject t32 = new JSONObject(); t32.put("check", "0"); t32.put("nome", "Tarefa 02"); t32.put("descricao", ""); t3.put(t32);					
+						et3.put("tarefas", t3);
 					JSONObject et4 = new JSONObject(); et4.put("id", "4"); et4.put("nome", "Execução"); et4.put("descricao", ""); et4.put("ch", "4"); etapas.put(et4);
 					//tarefas
 						JSONArray t4 = new JSONArray();
-						JSONObject t41 = new JSONObject(); t41.put("check", "0"); t41.put("nome", "Tarefa 01"); t4.put(t41);
-						JSONObject t42 = new JSONObject(); t42.put("check", "0"); t42.put("nome", "Tarefa 02"); t4.put(t42);					
-						et1.put("tarefas", t4);
+						JSONObject t41 = new JSONObject(); t41.put("check", "0"); t41.put("nome", "Tarefa 01"); t41.put("descricao", ""); t4.put(t41);
+						JSONObject t42 = new JSONObject(); t42.put("check", "0"); t42.put("nome", "Tarefa 02"); t42.put("descricao", ""); t4.put(t42);					
+						et4.put("tarefas", t4);
 					JSONObject et5 = new JSONObject(); et5.put("id", "5"); et5.put("nome", "Análise"); et5.put("descricao", ""); et5.put("ch", "18"); etapas.put(et5);
 					//tarefas
 						JSONArray t5 = new JSONArray();
-						JSONObject t51 = new JSONObject(); t51.put("check", "0"); t51.put("nome", "Tarefa 01"); t5.put(t51);
-						JSONObject t52 = new JSONObject(); t52.put("check", "0"); t52.put("nome", "Tarefa 02"); t5.put(t52);					
+						JSONObject t51 = new JSONObject(); t51.put("check", "0"); t51.put("nome", "Tarefa 01"); t51.put("descricao", ""); t5.put(t51);
+						JSONObject t52 = new JSONObject(); t52.put("check", "0"); t52.put("nome", "Tarefa 02"); t52.put("descricao", ""); t5.put(t52);					
 						et5.put("tarefas", t5);
 					JSONObject et6 = new JSONObject(); et6.put("id", "6"); et6.put("nome", "Socialização"); et6.put("descricao", ""); et6.put("ch", "4"); etapas.put(et6);				
 					//tarefas
 						JSONArray t6 = new JSONArray();
-						JSONObject t61 = new JSONObject(); t61.put("check", "0"); t11.put("nome", "Tarefa 01"); t6.put(t61);
-						JSONObject t62 = new JSONObject(); t62.put("check", "0"); t12.put("nome", "Tarefa 02"); t6.put(t62);					
+						JSONObject t61 = new JSONObject(); t61.put("check", "0"); t61.put("nome", "Tarefa 01"); t61.put("descricao", ""); t6.put(t61);
+						JSONObject t62 = new JSONObject(); t62.put("check", "0"); t62.put("nome", "Tarefa 02"); t62.put("descricao", ""); t6.put(t62);					
 						et6.put("tarefas", t6);
 					jo.put("etapas", etapas);
 					
