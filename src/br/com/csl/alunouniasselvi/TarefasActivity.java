@@ -34,9 +34,10 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 	private int id_seminario, id_etapa;
 	private TextView tvcurso,tvtema_base,tvparticipantes;
     private ListView lvetapa;
-    
     private List<String> tarefas, descricoes;
-	
+	private List<Integer> auxetapa = new ArrayList<Integer>();
+	private List<Integer> auxtarefa = new ArrayList<Integer>();
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -75,6 +76,8 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 					JSONArray tasks = obj.getJSONArray("etapas").getJSONObject(x).getJSONArray("tarefas");
 					for(int y=0; y<tasks.length();y++)
 					{
+						auxetapa.add( x );
+						auxtarefa.add( y );
 						tarefas.add( tasks.getJSONObject(y).getString("nome") );
 						descricoes.add( obj.getJSONArray("etapas").getJSONObject(x).getString("nome") );
 					}
@@ -177,8 +180,8 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 		Intent data = new Intent(this, TarefaActivity.class);
 		data.putExtra("control", control);
 		data.putExtra("seminario", id_seminario);
-		data.putExtra("etapa", descricoes.get(arg2));
-		data.putExtra("tarefa", arg2);
+		data.putExtra("etapa", auxetapa.get(arg2));
+		data.putExtra("tarefa", auxtarefa.get(arg2));
 		startActivityForResult(data,1);				
 
 	}

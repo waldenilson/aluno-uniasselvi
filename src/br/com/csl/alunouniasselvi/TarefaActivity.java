@@ -53,12 +53,13 @@ public class TarefaActivity extends Activity implements IActivity {
 		{
 			JSONArray j = new JSONArray(control.seminario);
 			obj = j.getJSONObject(id_seminario).getJSONArray("etapas").getJSONObject(id_etapa).getJSONArray("tarefas").getJSONObject(id_tarefa);
+
 			tvnome.setText("Tarefa: "+obj.getString("nome"));
 			etdescricao.setText(obj.getString("descricao"));
 			cbtarefa.setChecked( Boolean.parseBoolean( obj.getString("check") ) );
 
 		} catch (JSONException e) {
-			Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
+			Toast.makeText(this, getString(R.string.er_json)+e.getMessage(), Toast.LENGTH_LONG).show();
 			super.finish();						
 		}
 
