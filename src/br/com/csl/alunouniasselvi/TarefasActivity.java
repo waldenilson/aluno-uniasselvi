@@ -94,12 +94,33 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 		lvetapa.setOnItemClickListener(this);
 
 	}
-
-	public void bt_salvar(View v) {
-		// TODO Auto-generated method stub
-		Toast.makeText(this, "salvo", Toast.LENGTH_LONG).show();
-	}
-
+	
+	public void click_bt_bar_alterar(View v) {
+		
+		 Intent data = new Intent(this, EditSeminarioActivity.class);
+		 data.putExtra("control", control);
+		 data.putExtra("etapa", id_etapa);
+		 startActivityForResult(data,1);
+		
+		 }
+		
+	public void click_bt_bar_excluir(View v) {
+		 try
+		 {
+		 JSONArray j = new JSONArray(control.seminario);
+		 JSONArray aux = new JSONArray();
+		 for (int x=0; x < j.length(); x++){
+		 if( x != id_etapa )
+		 aux.put( j.getJSONObject(x) );
+		 }
+		 control.seminario = aux.toString();
+		 control.updateSeminario();
+		 finish();
+		 }
+		 catch(JSONException e){
+		 Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
+		 }
+		 }
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
