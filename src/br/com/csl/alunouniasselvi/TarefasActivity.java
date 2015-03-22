@@ -9,6 +9,7 @@ import org.json.JSONObject;
 
 import br.com.csl.alunouniasselvi.abstractactivity.IActivity;
 import br.com.csl.alunouniasselvi.controller.GlobalController;
+import br.com.csl.alunouniasselvi.list.ListViewDetailAdapter;
 import br.com.csl.alunouniasselvi.list.ListViewMenuAdapter;
 import android.os.Bundle;
 import android.app.Activity;
@@ -34,7 +35,7 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 	private int id_seminario, id_etapa;
 	private TextView tvcurso, tvtema_base,tvparticipantes;
     private ListView lvetapa;
-    private List<String> tarefas, descricoes;
+    private List<String> tarefas, descricoes, valores;
 	private List<Integer> auxetapa = new ArrayList<Integer>();
 	private List<Integer> auxtarefa = new ArrayList<Integer>();
 
@@ -61,6 +62,7 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 	{
 		tarefas = new ArrayList<String>();
 		descricoes = new ArrayList<String>();
+		valores = new ArrayList<String>();
 		try 
 		{
 			JSONArray j = new JSONArray(control.seminario);
@@ -80,6 +82,10 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 						auxtarefa.add( y );
 						tarefas.add( tasks.getJSONObject(y).getString("nome") );
 						descricoes.add( obj.getJSONArray("etapas").getJSONObject(x).getString("nome") );
+						if( Boolean.parseBoolean(tasks.getJSONObject(y).getString("check")) )
+							valores.add( "Sanado" );
+						else
+							valores.add( "Pendente" );
 					}
 				}
 			}			
@@ -88,7 +94,7 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 			super.finish();						
 		}
 
-		ListViewMenuAdapter lv = new ListViewMenuAdapter(this, tarefas, descricoes);
+		ListViewDetailAdapter lv = new ListViewDetailAdapter(this, tarefas, descricoes, valores);
 		lvetapa.setAdapter(lv);
 		lvetapa.setTextFilterEnabled(true);
 		lvetapa.setOnItemClickListener(this);
