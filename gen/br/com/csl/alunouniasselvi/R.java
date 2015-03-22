@@ -37,10 +37,9 @@ public final class R {
         public static final int imageView1=0x7f070001;
         public static final int imageView2=0x7f070000;
         public static final int imageView3=0x7f070006;
-        public static final int imageView4=0x7f070023;
         public static final int iv_listimage=0x7f070027;
         public static final int linearLayout1=0x7f07002d;
-        public static final int lv_etapa=0x7f070026;
+        public static final int lv_etapa=0x7f070025;
         public static final int lv_menu=0x7f07000e;
         public static final int lv_resultado=0x7f070014;
         public static final int lv_seminario=0x7f070016;
@@ -62,10 +61,11 @@ public final class R {
         public static final int tv_listmenu=0x7f07002a;
         public static final int tv_listmenudesc=0x7f07002b;
         public static final int tv_listsimple=0x7f07002c;
-        public static final int tv_modulo=0x7f070025;
+        public static final int tv_modulo=0x7f070024;
         public static final int tv_nolist=0x7f070015;
-        public static final int tv_participantes=0x7f070024;
+        public static final int tv_participantes=0x7f070023;
         public static final int tv_resultado_desc=0x7f070013;
+        public static final int tv_separator=0x7f070026;
         public static final int tv_task_curso=0x7f07001d;
         public static final int tv_task_etapa=0x7f07001c;
         public static final int tv_task_nome=0x7f07001e;

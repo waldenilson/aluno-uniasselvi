@@ -95,7 +95,7 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 
 	}
 	
-	public void click_bt_bar_alterar(View v) {
+	public void bt_alterar(View v) {
 		
 		 Intent data = new Intent(this, EditSeminarioActivity.class);
 		 data.putExtra("control", control);
@@ -104,7 +104,7 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 		
 		 }
 		
-	public void click_bt_bar_excluir(View v) {
+	public void bt_excluir(View v) {
 		 try
 		 {
 		 JSONArray j = new JSONArray(control.seminario);
