@@ -32,7 +32,7 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 	private GlobalController control;
 	private JSONObject obj;
 	private int id_seminario, id_etapa;
-	private TextView tvcurso,tvtema_base,tvparticipantes;
+	private TextView tvcurso, tvtema_base,tvparticipantes;
     private ListView lvetapa;
     private List<String> tarefas, descricoes;
 	private List<Integer> auxetapa = new ArrayList<Integer>();
@@ -65,10 +65,10 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 		{
 			JSONArray j = new JSONArray(control.seminario);
 			obj = j.getJSONObject(id_seminario);
-			tvcurso.setText( obj.getString("curso") );
-			tvtema_base.setText( obj.getString("tema_base") );
+			tvcurso.setText( "Curso: "+obj.getString("curso") );
+			tvtema_base.setText( obj.getString("modulo")+" - Tema: "+obj.getString("tema_base") );
 			tvparticipantes.setText( "Participantes: "+obj.getString("grupo") );
-
+			
 			if (obj.getJSONArray("etapas").length()>0)
 			{
 				for(int x=0;x<obj.getJSONArray("etapas").length();x++)
