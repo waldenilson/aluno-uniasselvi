@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,6 +37,7 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 	private TextView tvcurso, tvtema_base,tvparticipantes;
     private ListView lvetapa;
     private List<String> tarefas, descricoes, valores;
+    private List<Integer> colors;
 	private List<Integer> auxetapa = new ArrayList<Integer>();
 	private List<Integer> auxtarefa = new ArrayList<Integer>();
 
@@ -63,6 +65,7 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 		tarefas = new ArrayList<String>();
 		descricoes = new ArrayList<String>();
 		valores = new ArrayList<String>();
+		colors = new ArrayList<Integer>();
 		try 
 		{
 			JSONArray j = new JSONArray(control.seminario);
@@ -83,9 +86,15 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 						tarefas.add( tasks.getJSONObject(y).getString("nome") );
 						descricoes.add( obj.getJSONArray("etapas").getJSONObject(x).getString("nome") );
 						if( Boolean.parseBoolean(tasks.getJSONObject(y).getString("check")) )
+						{
 							valores.add( "Sanado" );
+							colors.add( Color.CYAN );
+						}
 						else
+						{
 							valores.add( "Pendente" );
+							colors.add( Color.MAGENTA );
+						}
 					}
 				}
 			}			
@@ -94,7 +103,7 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 			super.finish();						
 		}
 
-		ListViewDetailAdapter lv = new ListViewDetailAdapter(this, tarefas, descricoes, valores);
+		ListViewDetailAdapter lv = new ListViewDetailAdapter(this, tarefas, descricoes, valores, colors);
 		lvetapa.setAdapter(lv);
 		lvetapa.setTextFilterEnabled(true);
 		lvetapa.setOnItemClickListener(this);
