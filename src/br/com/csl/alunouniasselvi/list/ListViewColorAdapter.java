@@ -13,20 +13,20 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class ListViewDetailAdapter extends BaseAdapter
+public class ListViewColorAdapter extends BaseAdapter
 {
 	Activity context;
 	List<String> title;
 	List<String> desc;
-	List<String> value;
+	List<Integer> color;
 	
 
-	public ListViewDetailAdapter(Activity context, List<String> title, List<String> desc, List<String> value) {
+	public ListViewColorAdapter(Activity context, List<String> title, List<String> desc, List<Integer> color) {
 		super();
 		this.context = context;
 		this.title = title;
 		this.desc = desc;
-		this.value = value;
+		this.color = color;
 	}
 
 	public int getCount() {
@@ -45,7 +45,8 @@ public class ListViewDetailAdapter extends BaseAdapter
 	}
 
 	private class ViewHolder {
-        TextView txtViewTitle, txtViewValue, txtViewDesc;
+        TextView txtViewTitle, txtViewDesc;
+        LinearLayout llView;
 	}
 
 	public View getView(int position, View convertView, ViewGroup parent)
@@ -56,11 +57,11 @@ public class ListViewDetailAdapter extends BaseAdapter
 
 		if (convertView == null)
 		{
-			convertView = inflater.inflate(R.layout.listdetail, null);
+			convertView = inflater.inflate(R.layout.listcolor, null);
 			holder = new ViewHolder();
-			holder.txtViewTitle = (TextView) convertView.findViewById(R.id.tv_listdetail_title);
-			holder.txtViewDesc = (TextView) convertView.findViewById(R.id.tv_listdetail_desc);
-			holder.txtViewValue = (TextView) convertView.findViewById(R.id.tv_listdetail_value);
+			holder.txtViewTitle = (TextView) convertView.findViewById(R.id.tv_listcolor_title);
+			holder.txtViewDesc = (TextView) convertView.findViewById(R.id.tv_listcolor_desc);
+			holder.llView = (LinearLayout) convertView.findViewById(R.id.ll_listcolor);
 			convertView.setTag(holder);
 		}
 		else
@@ -69,7 +70,7 @@ public class ListViewDetailAdapter extends BaseAdapter
 		}
 		holder.txtViewTitle.setText(title.get(position).toString());
 		holder.txtViewDesc.setText(desc.get(position).toString());
-		holder.txtViewValue.setText(value.get(position).toString());
+		holder.llView.setBackgroundColor( color.get(position) );
 	return convertView;
 	}
 
