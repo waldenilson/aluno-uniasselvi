@@ -23,7 +23,7 @@ import android.widget.Toast;
 public class SimuladorNotasActivity extends Activity implements IActivity, OnCheckedChangeListener {
 
     private ProgressDialog pd;
-	private GlobalController control = new GlobalController();
+	private GlobalController control;
 	private EditText etredacao;
 	private Spinner spnota2;
 	private CheckBox cbnota2;
@@ -36,6 +36,9 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 		setContentView(R.layout.activity_simulador_notas);
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
+		final Bundle extra = getIntent().getExtras();
+		control = (GlobalController) extra.getSerializable("control");				
+
 		cbnota2.setOnCheckedChangeListener(this);
 		aa = new ArrayAdapter<String>(this, R.layout.spinner_item);
 		aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -173,6 +176,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 	public void click_bt_bar_info(View v) {
 		// TODO Auto-generated method stub
 		Intent data = new Intent(this, InfoActivity.class);
+		data.putExtra("control", control);
 		startActivityForResult(data,1);						
 	}
 
@@ -218,6 +222,15 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 				spnota2.setVisibility(View.INVISIBLE);
 				tv1objetiva.setVisibility(View.INVISIBLE);
 			}
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		if( resultCode == 1){
+			control = (GlobalController) data.getSerializableExtra("control");
+		}
 	}
 
 }
