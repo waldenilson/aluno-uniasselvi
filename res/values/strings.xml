@@ -34,13 +34,13 @@
     <string name="lb_desc_novidades">Acompanhe o desenvolvimento deste e de outros apps.</string>
     <string name="lb_info">Informações</string>
     <string name="lb_desc_info">Saiba como funciona o app.</string>
-    <string name="lb_novo_seminario">Novo Seminário</string>
+    <string name="lb_novo_seminario">NOVO SEMINÁRIO</string>
     <string name="lb_desc_novo_seminario">Adicionar seminário para controle das tarefas.</string>
-    <string name="lb_edicao_seminario">Editar Seminário</string>
+    <string name="lb_edicao_seminario">EDITAR SEMINÁRIO</string>
     <string name="lb_desc_edicao_seminario">Controle das tarefas</string>
-    <string name="lb_criar_seminario">Criar Seminário</string>
-    <string name="lb_salvar_seminario">Salvar Seminário</string>
-    <string name="lb_excluir_seminario">Excluir Seminário</string>
+    <string name="lb_criar_seminario">CRIAR SEMINÁRIO</string>
+    <string name="lb_salvar_seminario">SALVAR SEMINÁRIO</string>
+    <string name="lb_excluir_seminario">EXCLUIR SEMINÁRIO</string>
     
     <string name="txt_codigo_fonte">Este aplicativo foi idealizado, desenvolvido e disponibilizado por um aluno da faculdade Uniasselvi.\n\n Aluno: Waldenilson Carneiro\n\n Email: waldenilsonnovaes@gmail.com\n\n Pólo de ensino a distância Athenas / São Luis - Maranhão.\n\n---\n\nO código fonte do aplicativo pode ser acessado no repositório online do github no link abaixo.\n\nhttps://github.com/waldenilson/aluno-uniasselvi\n\n---\n\nO git é um programa de controle de versões.\n\nO github é um site para gerenciar os projetos que usam o git.</string>
     <string name="txt_seminarios">Esta será uma das próximas funcionalidades do app.\n\nVocê poderá controlar as tarefas do seu grupo do seminário interdisciplinar semestre a semestre.\n\n---\n\nAs tarefas serão organizadas dentro das etapas do cronograma:\n\nOrientação - CH: 4\nEstudos Preliminares - CH: 5\nPlanejamento - CH: 5\nExecução - CH: 4\nAnálise - CH: 18\nSocialização - CH: 4\n\nCH = Carga Horária</string>
