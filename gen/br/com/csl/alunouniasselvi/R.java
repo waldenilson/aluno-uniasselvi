@@ -76,9 +76,9 @@ public final class R {
         public static final int tv_participantes=0x7f070023;
         public static final int tv_resultado_desc=0x7f070013;
         public static final int tv_separator=0x7f070026;
-        public static final int tv_task_curso=0x7f07001d;
-        public static final int tv_task_etapa=0x7f07001c;
-        public static final int tv_task_nome=0x7f07001e;
+        public static final int tv_task_curso=0x7f07001c;
+        public static final int tv_task_etapa=0x7f07001e;
+        public static final int tv_task_tema_base=0x7f07001d;
         public static final int tv_tema_base=0x7f070022;
     }
     public static final class layout {

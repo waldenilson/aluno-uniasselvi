@@ -33,7 +33,7 @@ public class TarefaActivity extends Activity implements IActivity {
 	private GlobalController control;
 	private JSONObject obj;
 	private int id_seminario, id_etapa, id_tarefa;
-	private TextView tvcurso, tvetapa, tvnome;
+	private TextView tvcurso, tvtema, tvetapa;
 	private EditText etdescricao;
 	private CheckBox cbtarefa;
 	
@@ -52,12 +52,18 @@ public class TarefaActivity extends Activity implements IActivity {
 		try 
 		{
 			JSONArray j = new JSONArray(control.seminario);
-			obj = j.getJSONObject(id_seminario).getJSONArray("etapas").getJSONObject(id_etapa).getJSONArray("tarefas").getJSONObject(id_tarefa);
+			JSONObject seminario = j.getJSONObject(id_seminario);
+			JSONObject etapa = seminario.getJSONArray("etapas").getJSONObject(id_etapa);
+			obj = etapa.getJSONArray("tarefas").getJSONObject(id_tarefa);
 
-			tvnome.setText("Tarefa: "+obj.getString("nome"));
-			etdescricao.setText(obj.getString("descricao"));
+			tvcurso.setText( "Curso: "+seminario.getString("curso") );
+			tvtema.setText( seminario.getString("modulo")+" - Tema: "+seminario.getString("tema_base") );
+			tvetapa.setText("Etapa: "+etapa.getString("nome"));
+			
+			cbtarefa.setText( obj.getString("nome") );
 			cbtarefa.setChecked( Boolean.parseBoolean( obj.getString("check") ) );
-
+			etdescricao.setText(obj.getString("descricao"));
+			
 		} catch (JSONException e) {
 			Toast.makeText(this, getString(R.string.er_json)+e.getMessage(), Toast.LENGTH_LONG).show();
 			super.finish();						
@@ -67,8 +73,8 @@ public class TarefaActivity extends Activity implements IActivity {
 
 	private void init(){
 		tvcurso = (TextView) findViewById(R.id.tv_task_curso);
+		tvtema = (TextView) findViewById(R.id.tv_task_tema_base);
 		tvetapa = (TextView) findViewById(R.id.tv_task_etapa);
-		tvnome = (TextView) findViewById(R.id.tv_task_nome);
 		etdescricao = (EditText) findViewById(R.id.et_task_descricao);
 		cbtarefa = (CheckBox) findViewById(R.id.cb_task);
 	}
