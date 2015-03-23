@@ -6,6 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import br.com.csl.alunouniasselvi.abstractactivity.IActivity;
 import br.com.csl.alunouniasselvi.controller.GlobalController;
+import br.com.csl.alunouniasselvi.list.ListViewDetailAdapter;
 import br.com.csl.alunouniasselvi.list.ListViewMenuAdapter;
 import android.os.Bundle;
 import android.app.Activity;
@@ -42,15 +43,34 @@ public class SeminariosActivity extends Activity implements IActivity, OnItemCli
 		abrirDialogProcessamento();
 		List<String> modulos = new ArrayList<String>();
 		List<String> descricoes = new ArrayList<String>();
+		List<String> porcentagens = new ArrayList<String>();
 		try
 		{
 			JSONArray j = new JSONArray(control.seminario);
 			if (j.length()>0)
 			{
+								
 				for(int x=0;x<j.length();x++)
 				{
 					modulos.add( j.getJSONObject(x).getString("modulo")+" - "+j.getJSONObject(x).getString("curso") );
 					descricoes.add( j.getJSONObject(x).getString("tema_base") );
+
+					double total_task = 0, ok_task = 0;
+					if (j.getJSONObject(x).getJSONArray("etapas").length()>0)
+					{
+						for(int y=0;y<j.getJSONObject(x).getJSONArray("etapas").length();y++)
+						{
+							JSONArray tasks = j.getJSONObject(x).getJSONArray("etapas").getJSONObject(y).getJSONArray("tarefas");
+							total_task += tasks.length();
+							for(int z=0; z<tasks.length();z++)
+							{
+								if( Boolean.parseBoolean( tasks.getJSONObject(z).getString("check") ) )
+									ok_task ++;
+							}
+						}
+					}
+					Double porc = (ok_task/total_task)*100;
+					porcentagens.add( porc.intValue()+"% Concluído" );
 				}
 				fecharDialogProcessamento();
 				tvnolist.setVisibility(View.INVISIBLE);
@@ -69,7 +89,7 @@ public class SeminariosActivity extends Activity implements IActivity, OnItemCli
 			super.finish();						
 		}
 
-		ListViewMenuAdapter lv = new ListViewMenuAdapter(this, modulos, descricoes);
+		ListViewDetailAdapter lv = new ListViewDetailAdapter(this, modulos, descricoes, porcentagens);
 		lvseminario.setAdapter(lv);
 		lvseminario.setTextFilterEnabled(true);
 		lvseminario.setOnItemClickListener(this);
