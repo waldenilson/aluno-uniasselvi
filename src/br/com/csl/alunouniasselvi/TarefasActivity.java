@@ -114,6 +114,12 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 		 }
 		
 	public void bt_excluir(View v) {
+		 Intent data = new Intent(this, ConfirmDeleteSeminarioActivity.class);
+		 data.putExtra("control", control);
+		 startActivityForResult(data,1);
+	}
+
+	private void excluir() {
 		 try
 		 {
 		 JSONArray j = new JSONArray(control.seminario);
@@ -128,8 +134,9 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 		 }
 		 catch(JSONException e){
 		 Toast.makeText(this, getString(R.string.er_json), Toast.LENGTH_LONG).show();
-		 }
-		 }
+		 }	 
+	}
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
@@ -137,6 +144,10 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 		if( resultCode == 1){
 			control = (GlobalController) data.getSerializableExtra("control");
 			criarLista();
+		}
+		else if (resultCode == 2){
+			control = (GlobalController) data.getSerializableExtra("control");
+			excluir();			
 		}
 	}
 

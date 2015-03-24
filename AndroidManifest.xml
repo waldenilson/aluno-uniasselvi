@@ -123,6 +123,13 @@
             android:label="@string/app_name" >
         </activity>
         
+        <activity
+            android:name="br.com.csl.alunouniasselvi.ConfirmDeleteSeminarioActivity"
+            android:theme="@android:style/Theme.Dialog"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name">
+        </activity>
+        
      </application>
 
 </manifest>
