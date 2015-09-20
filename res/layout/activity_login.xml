@@ -75,6 +75,7 @@
             android:textSize="13sp" />
         
     </LinearLayout>
+
     
 
         <ScrollView
@@ -90,18 +91,43 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
-                <TextView
-                    android:id="@+id/tv_creditos"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-	                android:layout_marginTop="10dp"
-	                android:layout_marginLeft="5dp"
-	                android:layout_marginRight="5dp"
-                    android:textColor="#666"
-                    android:textSize="12sp"
-                    android:text="@string/txt_codigo_fonte" />
+			    <EditText
+			        android:id="@+id/et_login_nome"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:ems="10" >
+			
+			    </EditText>
+
+			    <EditText
+			        android:id="@+id/et_login_senha"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:ems="10"
+			        android:inputType="textPassword" >
+			    </EditText>
 
             </LinearLayout>
         </ScrollView>
-    
+
+		
+        	<LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="50dp"
+		        android:background="@drawable/aluno_uniasselvi_top"
+		        android:orientation="horizontal"
+		        android:gravity="center_horizontal" >
+		
+                <Button
+		            android:id="@+id/button1"
+		            android:layout_width="0dip"
+		            android:layout_weight="1"
+		            android:layout_height="wrap_content"
+		            android:background="@drawable/aluno_uniasselvi_top"
+		            android:text="ACESSAR"
+		            android:onClick="bt_acessar" />
+		        		        		        
+		    </LinearLayout>
+        
+
 </LinearLayout>

@@ -176,7 +176,6 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 	public void click_bt_bar_info(View v) {
 		// TODO Auto-generated method stub
 		Intent data = new Intent(this, InfoActivity.class);
-		data.putExtra("control", control);
 		startActivityForResult(data,1);						
 	}
 
@@ -206,7 +205,6 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 	@Override
 	public void finish() 
 	{
-		getIntent().putExtra("control", control);
 		setResult(1, getIntent());
 		super.finish();
 	}

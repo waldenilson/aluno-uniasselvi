@@ -8,11 +8,11 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.View;
+import android.widget.Toast;
 
 public class CodigoFonteActivity extends Activity implements IActivity {
 
     private ProgressDialog pd;
-	private GlobalController control;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +20,7 @@ public class CodigoFonteActivity extends Activity implements IActivity {
 		setContentView(R.layout.activity_codigo_fonte);
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
-		final Bundle extra = getIntent().getExtras();
-		control = (GlobalController) extra.getSerializable("control");				
-		
+		final Bundle extra = getIntent().getExtras();		
 	}
 
 	private void init(){
@@ -69,9 +67,6 @@ public class CodigoFonteActivity extends Activity implements IActivity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
 		super.onActivityResult(requestCode, resultCode, data);
-		if( resultCode == 1){
-			control = (GlobalController) data.getSerializableExtra("control");
-		}
 	}
 
 }

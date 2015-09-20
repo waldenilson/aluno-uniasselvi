@@ -7,10 +7,12 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import br.com.csl.alunouniasselvi.controller.GlobalController;
+
+
 @SuppressWarnings("serial")
 public class RestController extends AbstractRestController implements Serializable {
 
-	@SuppressWarnings("unused")
 	private static List<Object> tratarWS(String res)
 	{
 		List<Object> retorno = new ArrayList<Object>();
@@ -28,8 +30,14 @@ public class RestController extends AbstractRestController implements Serializab
 		{
 			retorno.add(res);
 			retorno.add(null);
+			retorno.add(e.getMessage());
 			return retorno;
 		}
 	}
+
+	public static List<Object> login(String key,String email, String senha){
+		return tratarWS( wsRest("login/?key="+key+"&email="+email+"&password="+senha) );
+	}
+
 	
 }

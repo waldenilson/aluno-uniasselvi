@@ -6,24 +6,20 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.Serializable;
 import java.math.BigInteger;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
+
+import android.app.Application;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Environment;
 
-public class GlobalController implements Serializable {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
+public class GlobalController extends Application {
+		
 	private String keyAccess = "chave";
 	public String seminario = "[]";
 	private final String FILES = Environment.getExternalStorageDirectory()+"/AlunoUniasselvi/files/control/";

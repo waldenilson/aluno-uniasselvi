@@ -6,10 +6,10 @@ import java.net.URL;
 
 public class WebService 
 {	
-	private static final String PROTOCOL = "";//http
-	private static final String SERVER = "";//IP;
-	private static final String PORT = "";//80
-	private static final String PROJECT = "";//ws
+	private static final String PROTOCOL = "http";//http
+	private static final String SERVER = "quintaparte.com";//IP;
+	private static final String PORT = "80";//80
+	private static final String PROJECT = "sistema/aluno-uniasselvi-server/ws";//ws
 	
 	public WebService(){
 	}

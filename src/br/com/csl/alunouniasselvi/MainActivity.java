@@ -15,6 +15,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
@@ -22,8 +23,7 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 
     private ProgressDialog pd;
     private ListView lvmenu;
-    private GlobalController control = new GlobalController();
-
+    
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -49,7 +49,7 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 		lvmenu.setAdapter(lv);
 		lvmenu.setTextFilterEnabled(true);
 		lvmenu.setOnItemClickListener(this);	
-
+		
 	}
 
 	private void init(){
@@ -62,7 +62,6 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 	
 	public void bt_simulador_notas(){
 		Intent data = new Intent(this, SimuladorNotasActivity.class);
-		data.putExtra("control", control);
 		startActivityForResult(data,1);		
 	}
 
@@ -70,7 +69,6 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 	public void click_bt_bar_info(View v) {
 		// TODO Auto-generated method stub
 		Intent data = new Intent(this, InfoActivity.class);
-		data.putExtra("control", control);
 		startActivityForResult(data,1);				
 	}
 
@@ -108,22 +106,18 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 			bt_simulador_notas();
 		else if( arg2 == 1){
 			Intent data = new Intent(this, SeminariosActivity.class);
-			data.putExtra("control", control);
 			startActivityForResult(data,1);				
 		}
 		else if( arg2 == 3){
 			Intent data = new Intent(this, CreditosActivity.class);
-			data.putExtra("control", control);
 			startActivityForResult(data,1);				
 		}
 		else if( arg2 == 2){
 			Intent data = new Intent(this, CodigoFonteActivity.class);
-			data.putExtra("control", control);
 			startActivityForResult(data,1);				
 		}
 		else if( arg2 == 4){
 			Intent data = new Intent(this, NovidadesActivity.class);
-			data.putExtra("control", control);
 			startActivityForResult(data,1);				
 		}		
 	}
@@ -132,8 +126,6 @@ public class MainActivity extends Activity implements IActivity, OnItemClickList
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
 		super.onActivityResult(requestCode, resultCode, data);
-		if( resultCode == 1)
-			control = (GlobalController) data.getSerializableExtra("control");
 	}
 	
 	

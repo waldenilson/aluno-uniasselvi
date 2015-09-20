@@ -103,7 +103,6 @@ public class SeminariosActivity extends Activity implements IActivity, OnItemCli
 	public void bt_novo(View v) {
 		// TODO Auto-generated method stub
 		Intent data = new Intent(this, NovoSeminarioActivity.class);
-		data.putExtra("control", control);
 		startActivityForResult(data,1);				
 	}
 
@@ -140,7 +139,6 @@ public class SeminariosActivity extends Activity implements IActivity, OnItemCli
 	@Override
 	public void finish() 
 	{
-		getIntent().putExtra("control", control);
 		setResult(1, getIntent());
 		super.finish();
 	}
@@ -161,8 +159,6 @@ public class SeminariosActivity extends Activity implements IActivity, OnItemCli
 		// TODO Auto-generated method stub
 
 		Intent data = new Intent(this, TarefasActivity.class);
-		data.putExtra("control", control);
-		data.putExtra("seminario", arg2);
 		startActivityForResult(data,1);				
 
 	}

@@ -107,15 +107,12 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 	public void bt_alterar(View v) {
 		
 		 Intent data = new Intent(this, EditSeminarioActivity.class);
-		 data.putExtra("control", control);
-		 data.putExtra("etapa", id_etapa);
 		 startActivityForResult(data,1);
 		
 		 }
 		
 	public void bt_excluir(View v) {
 		 Intent data = new Intent(this, ConfirmDeleteSeminarioActivity.class);
-		 data.putExtra("control", control);
 		 startActivityForResult(data,1);
 	}
 
@@ -182,7 +179,6 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 	@Override
 	public void finish() 
 	{
-		getIntent().putExtra("control", control);
 		setResult(1, getIntent());
 		super.finish();
 	}
@@ -192,10 +188,6 @@ public class TarefasActivity extends Activity implements IActivity, OnItemClickL
 		// TODO Auto-generated method stub
 
 		Intent data = new Intent(this, TarefaActivity.class);
-		data.putExtra("control", control);
-		data.putExtra("seminario", id_seminario);
-		data.putExtra("etapa", auxetapa.get(arg2));
-		data.putExtra("tarefa", auxtarefa.get(arg2));
 		startActivityForResult(data,1);				
 
 	}

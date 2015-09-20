@@ -142,7 +142,6 @@ public class TarefaActivity extends Activity implements IActivity {
 	@Override
 	public void finish() 
 	{
-		getIntent().putExtra("control", control);
 		setResult(1, getIntent());
 		super.finish();
 	}
