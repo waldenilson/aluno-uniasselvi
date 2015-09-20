@@ -1,7 +1,6 @@
 package br.com.csl.alunouniasselvi;
 
 import br.com.csl.alunouniasselvi.abstractactivity.IActivity;
-import br.com.csl.alunouniasselvi.controller.GlobalController;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -12,17 +11,13 @@ import android.view.View;
 public class InfoActivity extends Activity implements IActivity {
 
     private ProgressDialog pd;
-	private GlobalController control;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_info);
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
-		init();
-		final Bundle extra = getIntent().getExtras();
-		control = (GlobalController) extra.getSerializable("control");				
-		
+		init();		
 	}
 
 	private void init(){
@@ -68,9 +63,6 @@ public class InfoActivity extends Activity implements IActivity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
 		super.onActivityResult(requestCode, resultCode, data);
-		if( resultCode == 1){
-			control = (GlobalController) data.getSerializableExtra("control");
-		}
 	}
 
 }

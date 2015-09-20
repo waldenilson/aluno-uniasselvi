@@ -4,7 +4,7 @@ import java.util.List;
 import org.json.JSONObject;
 import br.com.csl.alunouniasselvi.abstractactivity.IActivity;
 import br.com.csl.alunouniasselvi.controller.GlobalController;
-import br.com.csl.alunouniasselvi.controller.abstractcontroller.RestController;
+import br.com.csl.alunouniasselvi.controller.abstractcontroller.WSController;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -37,7 +37,7 @@ public class LoginActivity extends Activity implements IActivity {
 
 	public void bt_acessar(View v){
 		
-		List<Object> user = RestController.login(control.getKeyAccess(), nome.getText().toString(), senha.getText().toString());
+		List<Object> user = WSController.login(control.getKeyAccess(), nome.getText().toString(), senha.getText().toString());
 
 		@SuppressWarnings("unchecked")
 		List<JSONObject> lj = (List<JSONObject>) user.get(1);

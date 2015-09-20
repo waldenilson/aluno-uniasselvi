@@ -1,0 +1,30 @@
+package br.com.csl.alunouniasselvi.controller.abstractcontroller;
+import br.com.csl.alunouniasselvi.webservice.WebService;
+
+public abstract class AbstractWSController {
+	
+	
+	protected static String wsRest(String rest)
+	{		
+		try
+		{
+			return WebService.
+					consumirServicos(converterCaracteresURL(rest)).
+					replace("&quot;", "\"");
+		}
+		catch(Exception e)
+		{
+			return "00";
+		}
+	}
+	private static String converterCaracteresURL(String rest)
+	{
+		rest = rest.replace(" ", "%20");
+		rest = rest.replace("\"", "%22");
+		rest = rest.replace("[", "%5B");
+		rest = rest.replace("]", "%5D");
+		rest = rest.replace("{", "%7B");
+		rest = rest.replace("}", "%7D");
+		return rest;
+	}
+}

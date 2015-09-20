@@ -4,7 +4,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import br.com.csl.alunouniasselvi.abstractactivity.IActivity;
-import br.com.csl.alunouniasselvi.controller.GlobalController;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -23,7 +22,6 @@ import android.widget.Toast;
 public class SimuladorNotasActivity extends Activity implements IActivity, OnCheckedChangeListener {
 
     private ProgressDialog pd;
-	private GlobalController control;
 	private EditText etredacao;
 	private Spinner spnota2;
 	private CheckBox cbnota2;
@@ -36,8 +34,7 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 		setContentView(R.layout.activity_simulador_notas);
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
-		final Bundle extra = getIntent().getExtras();
-		control = (GlobalController) extra.getSerializable("control");				
+//		final Bundle extra = getIntent().getExtras();
 
 		cbnota2.setOnCheckedChangeListener(this);
 		aa = new ArrayAdapter<String>(this, R.layout.spinner_item);
@@ -226,9 +223,6 @@ public class SimuladorNotasActivity extends Activity implements IActivity, OnChe
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
 		super.onActivityResult(requestCode, resultCode, data);
-		if( resultCode == 1){
-			control = (GlobalController) data.getSerializableExtra("control");
-		}
 	}
 
 }

@@ -14,7 +14,7 @@ public class WebService
 	public WebService(){
 	}
 	
-	public static String consumirServicosRest(String servico)
+	public static String consumirServicos(String servico)
 	{
 		String res = "0";
 		try

@@ -24,7 +24,6 @@ public class SeminariosActivity extends Activity implements IActivity, OnItemCli
 
     private ProgressDialog pd;
     private ListView lvseminario;
-	private GlobalController control;
 	private TextView tvnolist;
 	
 	@Override
@@ -33,8 +32,6 @@ public class SeminariosActivity extends Activity implements IActivity, OnItemCli
 		setContentView(R.layout.activity_seminarios);
 		getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		init();
-		final Bundle extra = getIntent().getExtras();
-		control = (GlobalController) extra.getSerializable("control");		
 		criarLista();				
 	}
 
@@ -46,7 +43,7 @@ public class SeminariosActivity extends Activity implements IActivity, OnItemCli
 		List<String> porcentagens = new ArrayList<String>();
 		try
 		{
-			JSONArray j = new JSONArray(control.seminario);
+			JSONArray j = new JSONArray();
 			if (j.length()>0)
 			{
 								
@@ -149,7 +146,6 @@ public class SeminariosActivity extends Activity implements IActivity, OnItemCli
 		super.onActivityResult(requestCode, resultCode, data);
 		if( resultCode == 1)
 		{
-			control = (GlobalController) data.getSerializableExtra("control");
 			criarLista();
 		}
 	}
