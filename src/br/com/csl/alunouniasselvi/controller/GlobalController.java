@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Application;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Environment;
@@ -23,7 +24,8 @@ public class GlobalController extends Application {
 	private String keyAccess = "chave";
 	public String seminario = "[]";
 	private final String FILES = Environment.getExternalStorageDirectory()+"/AlunoUniasselvi/files/control/";
-		
+	private SQLiteDatabase database;
+	
 	public GlobalController(){
 		criarConfig();
 	}
@@ -148,4 +150,9 @@ public class GlobalController extends Application {
 	public void setKeyAccess(String keyAccess) {
 		this.keyAccess = keyAccess;
 	}	
+
+	public SQLiteDatabase getDatabase() {
+		return openOrCreateDatabase( FILES + "alunouniasselvisqlite.db", MODE_PRIVATE, null);
+	}
+
 }
